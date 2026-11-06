@@ -1,3 +1,4 @@
+/* build 2.2 */
 (() => {
 const $ = id => document.getElementById(id);
 const C = {les:'#314C2C',gly:'#1B2A18',mol:'#FBF6EC',wht:'#FFFFFF',son:'#F6B93B',ter:'#DC643D',par:'#A9D48E',neb:'#D7E6FB',kam:'#66705F',pis:'#E6DFD0'};
@@ -118,8 +119,10 @@ $('bLogo').onclick=e=>{const b=e.target.closest('[data-v]');if(!b)return;press($
 $('bIcon').innerHTML=ICONS.filter(i=>i[1]!=='arrow').map(i=>`<option value="${i[1]}">${i[2]}</option>`).join('');$('bIcon').value='legal';
 ['bChip','bHead','bSub','bBig','bIcon','bDate','bTime','bPlace'].forEach(id=>$(id).addEventListener('input',()=>draw()));
 function loadImg(file,cb){if(!file)return cb(null);const url=URL.createObjectURL(file);const im=new Image();im.onload=()=>cb(im);im.onerror=()=>{toast('Не вдалося відкрити файл');cb(null)};im.src=url}
-$('bPhoto').onchange=e=>loadImg(e.target.files[0],im=>{B.photo=im;draw()});
-$('bDonor').onchange=e=>loadImg(e.target.files[0],im=>{B.donor=im;draw()});
+function upl(id,key){const inp=$(id),nm=$(id+'N'),x=$(id+'X');
+  inp.onchange=e=>{const f=e.target.files[0];loadImg(f,im=>{B[key]=im;nm.textContent=im?f.name:'Файл не обрано';x.hidden=!im;draw()})};
+  x.onclick=()=>{B[key]=null;inp.value='';nm.textContent='Файл не обрано';x.hidden=true;draw()}}
+upl('bPhoto','photo');upl('bDonor','donor');
 
 const FD='Manrope',FT='Onest';
 function setLS(v){if('letterSpacing' in ctx)ctx.letterSpacing=v}

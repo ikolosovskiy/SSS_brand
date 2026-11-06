@@ -1,4 +1,5 @@
 <!doctype html>
+<!-- build 2.2 -->
 <html lang="uk">
 <head>
 <meta charset="utf-8">
@@ -147,7 +148,13 @@ section.s{padding:104px 0 24px}
 .bprev{position:sticky;top:84px;background:#ECE5D6;border-radius:20px;padding:24px;display:grid;place-items:center;min-height:420px}
 .bprev canvas{max-width:100%;max-height:72vh;height:auto;border-radius:6px;box-shadow:0 24px 50px -24px rgba(27,42,24,.6);transition:opacity .2s}
 .bprev .meta{margin-top:14px;display:flex;gap:10px;flex-wrap:wrap;justify-content:center;align-items:center}
-.file{display:flex;gap:8px;align-items:center}
+.file{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.file input[type=file]{position:absolute;width:1px;height:1px;opacity:0;pointer-events:none}
+.up{display:inline-flex;align-items:center;gap:8px;border:1.5px solid var(--les);color:var(--les);background:var(--wht);border-radius:99px;padding:9px 16px;font:700 14px var(--fd);cursor:pointer;transition:background .2s,color .2s}
+.up:hover{background:var(--les);color:var(--mol)}
+.file input:focus-visible+.up{outline:3px solid var(--son);outline-offset:2px}
+.fn{font:500 13px var(--ft);color:var(--kam);overflow-wrap:anywhere}
+.rm{border:0;background:none;color:var(--ter);font:700 13px var(--fd);cursor:pointer;padding:4px}
 .file input{font-size:13px;max-width:100%}
 .hint{font-size:13px;color:var(--kam)}
 .two{display:grid;grid-template-columns:1fr 1fr;gap:10px}
@@ -229,7 +236,7 @@ footer a{color:var(--mol)}
     <div class="lgstage" id="lgStage"><svg id="lgSvg" class="lgsvg" data-kind="ua" role="img" aria-label="Логотип"></svg></div>
     <div class="card lgctl">
       <div><span class="lbl">Версія</span><div class="row" style="display:flex;gap:6px;flex-wrap:wrap;margin-top:10px" id="lgKind">
-        <button class="chip" data-v="ua" aria-pressed="true">Українська</button><button class="chip" data-v="en" aria-pressed="false">English</button><button class="chip" data-v="sym" aria-pressed="false">Символ</button></div></div>
+        <button class="chip" data-v="ua" aria-pressed="true">Українська</button><button class="chip" data-v="en" aria-pressed="false">Англійська</button><button class="chip" data-v="sym" aria-pressed="false">Символ</button></div></div>
       <div><span class="lbl">Фон</span><div class="sw8" id="lgBg" style="margin-top:10px"></div></div>
       <div style="display:flex;gap:8px;flex-wrap:wrap"><button class="btn g s" id="lgSvgDl">SVG</button><button class="btn p s" id="lgPngDl">PNG · 2000 px</button></div>
       <p class="hint" id="lgNote"></p>
@@ -303,9 +310,9 @@ footer a{color:var(--mol)}
       <label class="f" id="wBig">Велике число або слово<input type="text" id="bBig" value="543 370" maxlength="9"></label>
       <label class="f" id="wIcon">Іконка<select id="bIcon"></select></label>
       <div class="two" id="wEv"><label class="f">Дата<input type="text" id="bDate" value="14 листопада"></label><label class="f">Час<input type="text" id="bTime" value="15:00"></label><label class="f" style="grid-column:1/-1">Місце<input type="text" id="bPlace" value="Zoom · реєстрація в профілі"></label></div>
-      <label class="f" id="wPhoto">Фото<span class="file"><input type="file" id="bPhoto" accept="image/*"></span><span class="hint">Без фото буде заглушка. Фото обрізається автоматично.</span></label>
-      <label class="f">Логотип донора (необов’язково)<span class="file"><input type="file" id="bDonor" accept="image/png,image/svg+xml,image/jpeg"></span></label>
-      <div><span class="lbl">Логотип SSS</span><div class="row" id="bLogo" style="margin-top:8px"><button class="chip" data-v="ua" aria-pressed="true">Повний</button><button class="chip" data-v="sym" aria-pressed="false">Символ</button><button class="chip" data-v="en" aria-pressed="false">English</button></div></div>
+      <div class="f" id="wPhoto" style="display:grid;gap:6px;font:600 13px var(--fd)">Фото<span class="file"><input type="file" id="bPhoto" accept="image/*"><label class="up" for="bPhoto">Обрати фото</label><span class="fn" id="bPhotoN">Файл не обрано</span><button type="button" class="rm" id="bPhotoX" hidden>Прибрати</button></span><span class="hint">Без фото буде заглушка. Фото обрізається автоматично.</span></div>
+      <div class="f" style="display:grid;gap:6px;font:600 13px var(--fd)">Логотип донора (необов’язково)<span class="file"><input type="file" id="bDonor" accept="image/png,image/svg+xml,image/jpeg"><label class="up" for="bDonor">Обрати файл</label><span class="fn" id="bDonorN">Файл не обрано</span><button type="button" class="rm" id="bDonorX" hidden>Прибрати</button></span><span class="hint">PNG або SVG з прозорим фоном.</span></div>
+      <div><span class="lbl">Логотип SSS</span><div class="row" id="bLogo" style="margin-top:8px"><button class="chip" data-v="ua" aria-pressed="true">Повний</button><button class="chip" data-v="sym" aria-pressed="false">Символ</button><button class="chip" data-v="en" aria-pressed="false">Англійська</button></div></div>
     </div>
     <div class="bprev"><canvas id="cv" width="1080" height="1350" aria-label="Попередній перегляд допису"></canvas>
       <div class="meta"><button class="btn p" id="bDl">Завантажити PNG</button><span class="hint" id="bInfo"></span></div>
@@ -356,8 +363,8 @@ footer a{color:var(--mol)}
   <div style="display:grid;gap:6px;text-align:right"><a href="brandbook.html">Повний брендбук</a><a href="docs/SSS_Brandbook_2.0.pdf" download>Брендбук PDF</a><a href="sss-brand-kit.zip" download>Усі файли ZIP</a><span>info@sss-ua.org</span></div>
 </div></footer>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
-<script src="assets/icons.js"></script>
-<script src="assets/logo.js"></script>
-<script src="assets/app.js"></script>
+<script src="assets/icons.js?v=2.2"></script>
+<script src="assets/logo.js?v=2.2"></script>
+<script src="assets/app.js?v=2.2"></script>
 </body>
 </html>
