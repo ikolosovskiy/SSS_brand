@@ -1,0 +1,361 @@
+<!doctype html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Бренд-кіт SSS</title>
+<meta name="description" content="Логотипи, кольори, шрифти, іконки, конструктор дописів і шаблони Canva Благодійного фонду «Стабілізейшен Суппорт Сервісез».">
+<link rel="icon" href="logo/svg/sss-symbol-lis.svg">
+<style>
+@font-face{font-family:Manrope;font-weight:500;src:url(fonts/Manrope/Manrope-Medium.ttf)}
+@font-face{font-family:Manrope;font-weight:600;src:url(fonts/Manrope/Manrope-SemiBold.ttf)}
+@font-face{font-family:Manrope;font-weight:700;src:url(fonts/Manrope/Manrope-Bold.ttf)}
+@font-face{font-family:Manrope;font-weight:800;src:url(fonts/Manrope/Manrope-ExtraBold.ttf)}
+@font-face{font-family:Onest;font-weight:400;src:url(fonts/Onest/Onest-Regular.ttf)}
+@font-face{font-family:Onest;font-weight:500;src:url(fonts/Onest/Onest-Medium.ttf)}
+@font-face{font-family:Onest;font-weight:600;src:url(fonts/Onest/Onest-SemiBold.ttf)}
+:root{
+  --les:#314C2C;--gly:#1B2A18;--mol:#FBF6EC;--wht:#fff;--son:#F6B93B;--ter:#DC643D;--par:#A9D48E;--neb:#D7E6FB;--kam:#66705F;--pis:#E6DFD0;
+  --les-t:#3D5C37;--les1:#E3E7DC;
+  --fd:Manrope,Montserrat,Arial,sans-serif;--ft:Onest,Arial,sans-serif;--r:16px;
+  --ease:cubic-bezier(.2,.7,.2,1);
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{margin:0;background:var(--mol);color:var(--gly);font:16px/1.55 var(--ft);-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{font-family:var(--fd);font-weight:800;letter-spacing:-.025em;line-height:1.02;margin:0;text-wrap:balance}
+p{margin:0}
+button,input,select,textarea{font:inherit;color:inherit}
+a{color:inherit}
+.wrap{max-width:1200px;margin:0 auto;padding-inline:max(20px,env(safe-area-inset-left,0px))}
+.lbl{font:700 12px/1.2 var(--fd);letter-spacing:.09em;text-transform:uppercase;color:var(--kam)}
+.btn{display:inline-flex;align-items:center;gap:10px;border:0;border-radius:99px;padding:14px 22px;font:700 15px var(--fd);cursor:pointer;text-decoration:none;transition:transform .2s var(--ease),box-shadow .2s,background .2s}
+.btn:hover{transform:translateY(-2px)}
+.btn:focus-visible,.chip:focus-visible,.ic:focus-visible{outline:3px solid var(--son);outline-offset:2px}
+.btn.p{background:var(--son);color:var(--gly)}
+.btn.g{background:var(--les);color:var(--mol)}
+.btn.o{background:transparent;color:inherit;box-shadow:inset 0 0 0 2px currentColor}
+.btn.s{padding:10px 16px;font-size:14px}
+.btn svg{width:18px;height:18px}
+.chip{border:0;border-radius:99px;padding:8px 14px;font:700 13px var(--fd);background:var(--wht);cursor:pointer;transition:background .2s,color .2s}
+.chip[aria-pressed="true"]{background:var(--les);color:var(--mol)}
+.card{background:var(--wht);border-radius:var(--r);padding:24px;min-width:0}
+input[type=text],input[type=date],select,textarea{width:100%;background:var(--wht);border:1.5px solid var(--pis);border-radius:12px;padding:11px 14px;outline:none;transition:border .2s}
+input:focus,select:focus,textarea:focus{border-color:var(--les)}
+textarea{resize:vertical;min-height:70px}
+label.f{display:grid;gap:6px;font:600 13px var(--fd)}
+/* header */
+header.top{position:sticky;top:0;z-index:20;background:rgba(251,246,236,.86);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid transparent;transition:border .3s}
+header.top.sc{border-color:var(--pis)}
+header.top .wrap{display:flex;align-items:center;gap:22px;height:64px}
+header.top .logo{height:24px;flex:none;color:var(--les)}
+nav.mn{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;flex:1}
+nav.mn a{white-space:nowrap;text-decoration:none;font:600 14px var(--fd);padding:8px 12px;border-radius:99px;transition:background .2s}
+nav.mn a:hover,nav.mn a.on{background:var(--les1)}
+@media(max-width:860px){header.top .btn{display:none}}
+/* hero */
+.hero{background:var(--les);color:var(--mol);position:relative;overflow:hidden;padding:96px 0 72px}
+.hero .sg{position:absolute;right:-3%;bottom:-8%;font:800 clamp(180px,30vw,460px)/.78 var(--fd);letter-spacing:-.06em;color:var(--les-t);text-align:right;pointer-events:none;font-variant-numeric:tabular-nums}
+.hero .word{position:absolute;right:4%;top:16%;font:800 clamp(60px,9vw,140px)/1 var(--fd);letter-spacing:-.05em;color:var(--son);height:1.05em;overflow:hidden;pointer-events:none}
+.hero .word span{display:block;animation:wordin .7s var(--ease) both}
+@keyframes wordin{from{transform:translateY(100%);opacity:0}to{transform:none;opacity:1}}
+.hero .in{position:relative;z-index:2;max-width:720px}
+.hero h1{font-size:clamp(46px,7vw,96px);letter-spacing:-.045em;margin-top:18px}
+.hero h1 em{font-style:normal;color:var(--son)}
+.hero p.l{font-size:clamp(17px,1.6vw,20px);color:#DDE5D6;margin-top:24px;max-width:52ch}
+.hero .cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:36px}
+.hero .stats{display:flex;gap:40px;flex-wrap:wrap;margin-top:56px}
+.hero .stats b{display:block;font:800 40px/1 var(--fd);letter-spacing:-.03em;color:var(--mol)}
+.hero .stats span{font:600 13px var(--fd);color:#B9C6B2}
+.hero .lbl{color:var(--son)}
+@media(max-width:700px){.hero .word{display:none}}
+/* marquee */
+.mq{background:var(--son);overflow:hidden;padding:18px 0}
+.mq .track{display:flex;gap:44px;width:max-content;animation:mq 50s linear infinite}
+.mq svg{width:40px;height:40px;flex:none}
+@keyframes mq{to{transform:translateX(-50%)}}
+/* sections */
+section.s{padding:104px 0 24px}
+.sh{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:16px 48px;align-items:end;margin-bottom:40px}
+.sh h2{font-size:clamp(38px,5vw,64px)}
+.sh p{color:var(--kam);font-size:17px;max-width:56ch}
+.sh .lbl{grid-column:1/-1;color:var(--ter)}
+@media(max-width:800px){.sh{grid-template-columns:1fr}}
+.rv{transition:opacity .8s var(--ease),transform .8s var(--ease)}
+.rv.hid{opacity:0;transform:translateY(28px)}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
+/* logo */
+.lgw{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);gap:16px}
+@media(max-width:860px){.lgw{grid-template-columns:1fr}}
+.lgstage{border-radius:var(--r);min-height:340px;display:grid;place-items:center;padding:48px;transition:background .45s var(--ease);position:relative;overflow:hidden}
+.lgstage svg{width:min(560px,100%);height:auto;transition:fill .45s var(--ease)}
+.lgstage.sym svg{width:min(240px,60%)}
+.lgctl{display:grid;gap:20px;align-content:start}
+.sw8{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.sw8 button{aspect-ratio:1.4;border-radius:12px;border:0;cursor:pointer;position:relative;box-shadow:inset 0 0 0 1px rgba(0,0,0,.08);display:grid;place-items:center;font:800 13px var(--fd);transition:transform .2s}
+.sw8 button[aria-pressed="true"]{outline:3px solid var(--gly);outline-offset:2px}
+.sw8 button:hover{transform:scale(1.05)}
+/* colors */
+.pal{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px}
+@media(max-width:900px){.pal{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.cs{border:0;border-radius:var(--r);padding:0;overflow:hidden;background:var(--wht);cursor:pointer;text-align:left;transition:transform .25s var(--ease),box-shadow .25s}
+.cs:hover{transform:translateY(-4px);box-shadow:0 18px 30px -20px rgba(27,42,24,.5)}
+.cs .c{height:130px;padding:14px;display:flex;align-items:flex-end;font:800 20px var(--fd)}
+.cs .d{padding:12px 14px;font-size:13px;display:grid;gap:2px}
+.cs .d b{font:700 14px ui-monospace,Menlo,Consolas,monospace}
+.cc{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.3fr);gap:16px;margin-top:16px}
+@media(max-width:860px){.cc{grid-template-columns:1fr}}
+.ccprev{border-radius:var(--r);padding:32px;min-height:220px;display:flex;flex-direction:column;justify-content:space-between;transition:background .3s,color .3s}
+.ccprev .big{font:800 48px/1 var(--fd);letter-spacing:-.03em}
+.ratio{font:800 56px/1 var(--fd);letter-spacing:-.03em}
+.vd{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+.vd span{padding:6px 12px;border-radius:99px;font:700 13px var(--fd)}
+.ok{background:var(--par)}.no{background:var(--ter);color:#fff}
+/* fonts */
+.fw{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+@media(max-width:860px){.fw{grid-template-columns:1fr}}
+.tester{font-size:56px;line-height:1.1;outline:none;min-height:1.2em;overflow-wrap:anywhere;margin-top:16px}
+.tctl{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin-top:16px}
+.tctl input[type=range]{accent-color:var(--les)}
+/* icons */
+.ibar{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin-bottom:16px}
+.ibar input[type=text]{max-width:300px}
+.igrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(112px,1fr));gap:10px}
+.ic{border:0;border-radius:14px;padding:18px 8px 12px;display:flex;flex-direction:column;align-items:center;gap:10px;cursor:pointer;font:500 12px/1.25 var(--ft);text-align:center;transition:transform .2s var(--ease),box-shadow .2s,background .3s;animation:pop .45s var(--ease) both}
+.ic:hover{transform:translateY(-3px);box-shadow:0 12px 24px -16px rgba(27,42,24,.55)}
+.ic svg{width:var(--isz,44px);height:var(--isz,44px);transition:transform .3s var(--ease)}
+.ic:hover svg{transform:scale(1.12) rotate(-4deg)}
+@keyframes pop{from{opacity:0;transform:scale(.9)}}
+.drawer{position:fixed;right:max(16px,env(safe-area-inset-right,0px));bottom:calc(16px + env(safe-area-inset-bottom,0px));width:min(360px,calc(100vw - 32px));background:var(--wht);border-radius:20px;box-shadow:0 30px 60px -20px rgba(27,42,24,.5);padding:20px;z-index:30;transform:translateY(120%);transition:transform .45s var(--ease)}
+.drawer{visibility:hidden}.drawer.op{transform:none;visibility:visible}
+.drawer .pv{border-radius:14px;height:180px;display:grid;place-items:center}
+.drawer .pv svg{width:120px;height:120px}
+.drawer .x{position:absolute;right:12px;top:12px;border:0;background:var(--les1);width:34px;height:34px;border-radius:50%;cursor:pointer;font:700 18px var(--fd)}
+.drawer .acts{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:14px}
+.drawer .acts .btn{justify-content:center}
+/* builder */
+.bw{display:grid;grid-template-columns:minmax(0,420px) minmax(0,1fr);gap:24px;align-items:start}
+@media(max-width:960px){.bw{grid-template-columns:1fr}}
+.bctl{display:grid;gap:16px}
+.bctl .row{display:flex;gap:6px;flex-wrap:wrap}
+.thm{display:flex;gap:8px;flex-wrap:wrap}
+.thm button{width:42px;height:42px;border-radius:50%;border:0;cursor:pointer;box-shadow:inset 0 0 0 1px rgba(0,0,0,.1);transition:transform .2s}
+.thm button[aria-pressed="true"]{outline:3px solid var(--gly);outline-offset:3px}
+.bprev{position:sticky;top:84px;background:#ECE5D6;border-radius:20px;padding:24px;display:grid;place-items:center;min-height:420px}
+.bprev canvas{max-width:100%;max-height:72vh;height:auto;border-radius:6px;box-shadow:0 24px 50px -24px rgba(27,42,24,.6);transition:opacity .2s}
+.bprev .meta{margin-top:14px;display:flex;gap:10px;flex-wrap:wrap;justify-content:center;align-items:center}
+.file{display:flex;gap:8px;align-items:center}
+.file input{font-size:13px;max-width:100%}
+.hint{font-size:13px;color:var(--kam)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+/* templates */
+.tgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:18px;align-items:start}
+.tp{background:var(--wht);border-radius:var(--r);padding:12px;display:grid;gap:10px;transition:transform .25s var(--ease),box-shadow .25s}
+.tp:hover{transform:translateY(-4px);box-shadow:0 18px 30px -20px rgba(27,42,24,.5)}
+.tp img{width:100%;height:auto;border-radius:8px;display:block;background:var(--pis)}
+.tp b{font:700 14px var(--fd)}
+.tp .row{display:flex;gap:6px;flex-wrap:wrap}.tp .btn{white-space:nowrap}
+.steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-bottom:28px;counter-reset:st}
+@media(max-width:860px){.steps{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.steps div{background:var(--les);color:var(--mol);border-radius:var(--r);padding:20px;font-size:14px;counter-increment:st}
+.steps div::before{content:counter(st);display:block;font:800 44px/1 var(--fd);color:var(--son);margin-bottom:10px}
+/* name */
+.nm{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.4fr);gap:16px}
+@media(max-width:860px){.nm{grid-template-columns:1fr}}
+.nmout{display:grid;gap:10px}
+.nmo{background:var(--wht);border-radius:14px;padding:16px 18px;display:flex;gap:14px;justify-content:space-between;align-items:center;animation:pop .35s var(--ease) both}
+.nmo p{font:600 16px/1.4 var(--ft)}
+.nmo small{display:block;color:var(--kam);font-size:12.5px;margin-top:4px;font-weight:400}
+.cp{flex:none;border:0;background:var(--les1);border-radius:10px;padding:8px 12px;font:700 13px var(--fd);cursor:pointer}
+.cp:hover{background:var(--par)}
+/* prep */
+.pw{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+@media(max-width:860px){.pw{grid-template-columns:1fr}}
+.fname{font:600 15px ui-monospace,Menlo,Consolas,monospace;background:var(--gly);color:var(--son);padding:14px 16px;border-radius:12px;overflow-wrap:anywhere;margin-top:12px}
+.prog{height:10px;background:var(--les1);border-radius:99px;overflow:hidden;margin:10px 0 14px}
+.prog i{display:block;height:100%;background:var(--les);width:0;transition:width .4s var(--ease)}
+.ck{display:flex;gap:10px;align-items:flex-start;padding:8px 0;border-bottom:1px solid var(--pis);cursor:pointer;font-size:15px}
+.ck input{width:18px;height:18px;margin-top:3px;accent-color:var(--les)}
+footer{margin-top:104px;background:var(--gly);color:#C9D2C2;padding:56px 0 calc(56px + env(safe-area-inset-bottom,0px))}
+footer .wrap{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;align-items:flex-end}
+footer svg{height:32px;color:var(--mol)}
+footer a{color:var(--mol)}
+.toast{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom,0px));transform:translate(-50%,20px);background:var(--gly);color:var(--mol);padding:12px 18px;border-radius:99px;font:600 14px var(--fd);opacity:0;transition:.3s var(--ease);pointer-events:none;z-index:40}
+.toast.on{opacity:1;transform:translate(-50%,0)}
+</style>
+</head>
+<body>
+<header class="top" id="top">
+  <div class="wrap">
+    <a href="#hero" aria-label="На початок"><svg class="logo lgsvg" data-kind="sym" fill="currentColor"></svg></a>
+    <nav class="mn" aria-label="Розділи">
+      <a href="#logo">Логотип</a><a href="#colors">Кольори</a><a href="#fonts">Шрифти</a><a href="#icons">Іконки</a><a href="#builder">Конструктор</a><a href="#canva">Шаблони Canva</a><a href="#name">Назва фонду</a><a href="#prep">Перед публікацією</a>
+    </nav>
+    <a class="btn g s" href="brandbook.html">Брендбук</a>
+  </div>
+</header>
+
+<section class="hero" id="hero">
+  <div class="sg" id="heroNum" aria-hidden="true">543<br>370</div>
+  <div class="word" aria-hidden="true"><span id="heroWord">ДІМ</span></div>
+  <div class="wrap">
+    <div class="in">
+      <span class="lbl">Бренд-кіт · Благодійний фонд «ССС»</span>
+      <h1>Усе для макета <em>за хвилину.</em></h1>
+      <p class="l">Логотипи, кольори, шрифти і 66 фірмових іконок. Конструктор дописів для соцмереж і шаблони, які відкриваються в Canva. Без пошуку файлів по чатах.</p>
+      <div class="cta">
+        <a class="btn p" href="#builder">Створити допис</a>
+        <a class="btn o" href="sss-brand-kit.zip" download>Завантажити все · ZIP</a>
+      </div>
+      <div class="stats">
+        <div><b data-count="66">0</b><span>іконок</span></div>
+        <div><b data-count="44">0</b><span>шаблонів Canva</span></div>
+        <div><b data-count="15">0</b><span>файлів логотипа</span></div>
+        <div><b data-count="6">0</b><span>макетів у конструкторі</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="mq" aria-hidden="true"><div class="track" id="mq"></div></div>
+
+<main>
+<!-- LOGO -->
+<section class="s" id="logo"><div class="wrap">
+  <div class="sh rv"><span class="lbl">01 · Логотип</span><h2>Правильний логотип у правильному кольорі</h2><p>Оберіть версію і фон. Кольори логотипа підбираються автоматично за правилами брендбука. Завантажуйте SVG для друку і дизайну, PNG для документів і Canva.</p></div>
+  <div class="lgw rv">
+    <div class="lgstage" id="lgStage"><svg id="lgSvg" class="lgsvg" data-kind="ua" role="img" aria-label="Логотип"></svg></div>
+    <div class="card lgctl">
+      <div><span class="lbl">Версія</span><div class="row" style="display:flex;gap:6px;flex-wrap:wrap;margin-top:10px" id="lgKind">
+        <button class="chip" data-v="ua" aria-pressed="true">Українська</button><button class="chip" data-v="en" aria-pressed="false">English</button><button class="chip" data-v="sym" aria-pressed="false">Символ</button></div></div>
+      <div><span class="lbl">Фон</span><div class="sw8" id="lgBg" style="margin-top:10px"></div></div>
+      <div style="display:flex;gap:8px;flex-wrap:wrap"><button class="btn g s" id="lgSvgDl">SVG</button><button class="btn p s" id="lgPngDl">PNG · 2000 px</button></div>
+      <p class="hint" id="lgNote"></p>
+    </div>
+  </div>
+</div></section>
+
+<!-- COLORS -->
+<section class="s" id="colors"><div class="wrap">
+  <div class="sh rv"><span class="lbl">02 · Кольори</span><h2>Натисніть, щоб скопіювати</h2><p>Ліс — ключовий колір. Акценти кодують напрями: Соняшник — допомога, Небо — права, Паросток — громади, Теракота — тільки термінове.</p></div>
+  <div class="pal rv" id="pal"></div>
+  <div class="cc rv">
+    <div class="card"><span class="lbl">Перевірка контрасту</span>
+      <div class="two" style="margin-top:14px"><label class="f">Фон<select id="ccBg"></select></label><label class="f">Текст<select id="ccFg"></select></label></div>
+      <div style="margin-top:20px"><span class="ratio" id="ccR">—</span><div class="vd" id="ccV"></div></div>
+      <p class="hint" style="margin-top:14px">AA від 4,5:1 — будь-який текст. Від 3:1 — тільки заголовки від 44 px на макеті 1080 px.</p></div>
+    <div class="ccprev" id="ccP"><span class="lbl" style="color:inherit;opacity:.8">Приклад</span><div><div class="big">543 370 людей</div><p style="margin-top:8px;font-size:17px">отримали гуманітарну допомогу. Підпис основним текстом 30 px.</p></div></div>
+  </div>
+</div></section>
+
+<!-- FONTS -->
+<section class="s" id="fonts"><div class="wrap">
+  <div class="sh rv"><span class="lbl">03 · Шрифти</span><h2>Рівні цифри, чиста кирилиця</h2><p>Manrope для заголовків і чисел, Onest для тексту. Обидва безкоштовні (OFL). Встановіть на комп’ютер і завантажте в Бренд-кіт Canva.</p></div>
+  <div class="fw rv">
+    <div class="card"><div style="display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap"><span class="lbl">Manrope · заголовки, числа</span><a class="btn g s" href="fonts/Manrope/Manrope-ExtraBold.ttf" download>ExtraBold</a></div>
+      <p style="font:800 64px/1 var(--fd);letter-spacing:-.04em;margin-top:18px">543 370</p>
+      <div style="display:flex;gap:6px;flex-wrap:wrap;margin-top:16px"><a class="chip" href="fonts/Manrope/Manrope-Medium.ttf" download>Medium</a><a class="chip" href="fonts/Manrope/Manrope-SemiBold.ttf" download>SemiBold</a><a class="chip" href="fonts/Manrope/Manrope-Bold.ttf" download>Bold</a></div></div>
+    <div class="card"><div style="display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap"><span class="lbl">Onest · основний текст</span><a class="btn g s" href="fonts/Onest/Onest-Regular.ttf" download>Regular</a></div>
+      <p style="font:500 30px/1.3 var(--ft);margin-top:18px">Ґанок, їжак, єдність і апостроф — усе на місці.</p>
+      <div style="display:flex;gap:6px;flex-wrap:wrap;margin-top:16px"><a class="chip" href="fonts/Onest/Onest-Medium.ttf" download>Medium</a><a class="chip" href="fonts/Onest/Onest-SemiBold.ttf" download>SemiBold</a></div></div>
+  </div>
+  <div class="card rv" style="margin-top:16px"><span class="lbl">Перевірте свій текст</span>
+    <div class="tester" id="tester" contenteditable="true" spellcheck="false">Тренінг для фахівців соцзахисту · 2016 · 69</div>
+    <div class="tctl"><div class="row" style="display:flex;gap:6px" id="tFont"><button class="chip" data-v="800|var(--fd)" aria-pressed="true">Manrope 800</button><button class="chip" data-v="700|var(--fd)" aria-pressed="false">Manrope 700</button><button class="chip" data-v="400|var(--ft)" aria-pressed="false">Onest 400</button><button class="chip" data-v="500|var(--ft)" aria-pressed="false">Onest 500</button></div>
+      <label class="hint" style="display:flex;gap:8px;align-items:center">Розмір <input type="range" id="tSize" min="16" max="120" value="56"> <span id="tSizeV">56 px</span></label></div>
+  </div>
+</div></section>
+
+<!-- ICONS -->
+<section class="s" id="icons"><div class="wrap">
+  <div class="sh rv"><span class="lbl">04 · Іконки</span><h2>66 фірмових іконок для допомоги, людей і тем</h2><p>Знайдіть іконку, оберіть кольорову схему і натисніть: скопіюйте SVG для Figma чи завантажте PNG для Canva.</p></div>
+  <div class="ibar rv">
+    <input type="text" id="iq" placeholder="Пошук: вода, ремонт, юрист…" aria-label="Пошук іконок">
+    <div class="row" style="display:flex;gap:6px;flex-wrap:wrap" id="ig"></div>
+  </div>
+  <div class="ibar rv">
+    <span class="lbl">Схема</span><div style="display:flex;gap:6px;flex-wrap:wrap" id="ist"></div>
+    <label class="hint" style="display:flex;gap:8px;align-items:center">Розмір <input type="range" id="isz" min="28" max="72" value="44" style="accent-color:var(--les)"></label>
+  </div>
+  <div class="igrid" id="igrid"></div>
+  <p class="hint" id="icount" style="margin-top:12px"></p>
+</div></section>
+<div class="drawer" id="drawer" role="dialog" aria-label="Іконка">
+  <button class="x" id="dx" aria-label="Закрити">×</button>
+  <div class="pv" id="dpv"></div>
+  <p style="font:800 20px var(--fd);margin-top:14px" id="dn"></p><p class="hint" id="dg"></p>
+  <div class="acts"><button class="btn g s" id="dcopy">Копіювати SVG</button><button class="btn o s" id="dsvg">SVG</button><button class="btn p s" id="dpng" style="grid-column:1/-1">PNG · 512 px</button></div>
+</div>
+
+<!-- BUILDER -->
+<section class="s" id="builder"><div class="wrap">
+  <div class="sh rv"><span class="lbl">05 · Конструктор дописів</span><h2>Готовий допис за брендбуком — без дизайнера</h2><p>Оберіть формат і макет, додайте фото й текст. Поля, шрифти, кольори і розміщення логотипа виставляються автоматично. Завантажте PNG і публікуйте.</p></div>
+  <div class="bw">
+    <div class="bctl card">
+      <div><span class="lbl">Формат</span><div class="row" id="bFmt" style="margin-top:8px"></div></div>
+      <div><span class="lbl">Макет</span><div class="row" id="bTpl" style="margin-top:8px"></div></div>
+      <div><span class="lbl">Колір</span><div class="thm" id="bThm" style="margin-top:8px"></div></div>
+      <label class="f">Мітка рубрики<input type="text" id="bChip" value="Подія" maxlength="24"></label>
+      <label class="f">Заголовок<textarea id="bHead" maxlength="90">Тренінг для фахівців соцзахисту: як підтримати переселенців</textarea></label>
+      <label class="f">Підпис<textarea id="bSub" maxlength="140">Полтава · листопад 2026</textarea></label>
+      <label class="f" id="wBig">Велике число або слово<input type="text" id="bBig" value="543 370" maxlength="9"></label>
+      <label class="f" id="wIcon">Іконка<select id="bIcon"></select></label>
+      <div class="two" id="wEv"><label class="f">Дата<input type="text" id="bDate" value="14 листопада"></label><label class="f">Час<input type="text" id="bTime" value="15:00"></label><label class="f" style="grid-column:1/-1">Місце<input type="text" id="bPlace" value="Zoom · реєстрація в профілі"></label></div>
+      <label class="f" id="wPhoto">Фото<span class="file"><input type="file" id="bPhoto" accept="image/*"></span><span class="hint">Без фото буде заглушка. Фото обрізається автоматично.</span></label>
+      <label class="f">Логотип донора (необов’язково)<span class="file"><input type="file" id="bDonor" accept="image/png,image/svg+xml,image/jpeg"></span></label>
+      <div><span class="lbl">Логотип SSS</span><div class="row" id="bLogo" style="margin-top:8px"><button class="chip" data-v="ua" aria-pressed="true">Повний</button><button class="chip" data-v="sym" aria-pressed="false">Символ</button><button class="chip" data-v="en" aria-pressed="false">English</button></div></div>
+    </div>
+    <div class="bprev"><canvas id="cv" width="1080" height="1350" aria-label="Попередній перегляд допису"></canvas>
+      <div class="meta"><button class="btn p" id="bDl">Завантажити PNG</button><span class="hint" id="bInfo"></span></div>
+      <p class="hint" id="bWarn" style="margin-top:8px;color:var(--ter)"></p></div>
+  </div>
+</div></section>
+
+<!-- CANVA -->
+<section class="s" id="canva"><div class="wrap">
+  <div class="sh rv"><span class="lbl">06 · Шаблони Canva</span><h2>44 шаблони, які відкриваються в Canva</h2><p>Кожен шаблон — PDF з редагованим текстом. Canva перетворює його на дизайн: міняйте заголовок, фото і цифри.</p></div>
+  <div class="steps rv">
+    <div>Завантажте шрифти Manrope і Onest у Canva: Бренд → Шрифти → Завантажити.</div>
+    <div>Завантажте PDF шаблону нижче.</div>
+    <div>У Canva: Створити дизайн → Імпортувати файл → оберіть PDF.</div>
+    <div>Замініть текст і перетягніть своє фото на заглушку. Експорт: PNG.</div>
+  </div>
+  <div class="row rv" id="tf" style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:18px"></div>
+  <div class="tgrid" id="tgrid"></div>
+</div></section>
+
+<!-- NAME -->
+<section class="s" id="name"><div class="wrap">
+  <div class="sh rv"><span class="lbl">07 · Назва фонду</span><h2>Як правильно написати назву</h2><p>Оберіть, що ви пишете, і скопіюйте правильну форму. Юридичну назву — для документів і підпису під заявами, скорочені — для дописів і дисклеймерів.</p></div>
+  <div class="nm rv">
+    <div class="card" style="display:grid;gap:8px;align-content:start" id="nmCtx"></div>
+    <div class="nmout" id="nmOut" aria-live="polite"></div>
+  </div>
+</div></section>
+
+<!-- PREP -->
+<section class="s" id="prep"><div class="wrap">
+  <div class="sh rv"><span class="lbl">08 · Перед публікацією</span><h2>Назва файлу і чекліст</h2><p>Однакові назви файлів допомагають знаходити макети через рік. Чекліст займає хвилину і рятує від помилок у публічному просторі.</p></div>
+  <div class="pw rv">
+    <div class="card"><span class="lbl">Генератор назви файлу</span>
+      <div class="two" style="margin-top:14px"><label class="f">Дата<input type="date" id="fnD"></label><label class="f">Формат<select id="fnN"><option>IG-post</option><option>IG-story</option><option>IG-carousel</option><option>FB-post</option><option>FB-link</option><option>LI-post</option><option>LI-doc</option><option>TG-post</option><option>slide</option><option>print</option></select></label>
+      <label class="f">Рубрика<select id="fnR"><option value="podiya">Подія</option><option value="istoriya">Історія</option><option value="dopomoga">Допомога</option><option value="analityka">Аналітика</option><option value="anons">Анонс</option><option value="data">Пам’ятна дата</option><option value="zvit">Звіт</option><option value="vazhlyvo">Важливо</option><option value="podyaka">Подяка</option><option value="vakansiya">Вакансія</option></select></label>
+      <label class="f">Версія<select id="fnV"><option>v1</option><option>v2</option><option>v3</option><option>final</option></select></label>
+      <label class="f" style="grid-column:1/-1">Тема (українською)<input type="text" id="fnT" value="Тренінг у Полтаві"></label></div>
+      <div class="fname" id="fnOut"></div>
+      <button class="btn g s" id="fnCopy" style="margin-top:12px">Копіювати назву</button></div>
+    <div class="card"><span class="lbl">Чекліст</span><div class="prog"><i id="ckBar"></i></div><div id="ckList"></div></div>
+  </div>
+</div></section>
+</main>
+
+<footer><div class="wrap">
+  <div><svg class="lgsvg" data-kind="ua" fill="currentColor"></svg><p style="margin-top:16px">Бренд-кіт Благодійного фонду «Стабілізейшен Суппорт Сервісез» · версія 2.0</p></div>
+  <div style="display:grid;gap:6px;text-align:right"><a href="brandbook.html">Повний брендбук</a><a href="docs/SSS_Brandbook_2.0.pdf" download>Брендбук PDF</a><a href="sss-brand-kit.zip" download>Усі файли ZIP</a><span>info@sss-ua.org</span></div>
+</div></footer>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script src="assets/icons.js"></script>
+<script src="assets/logo.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>

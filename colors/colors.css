@@ -1,0 +1,21 @@
+:root {
+  --sss-lis: #314C2C; /* Ліс · Ключовий */
+  --sss-moloko: #FBF6EC; /* Молоко · Базовий фон */
+  --sss-glybyna: #1B2A18; /* Глибина · Текст */
+  --sss-sonyashnyk: #F6B93B; /* Соняшник · Акцент · допомога */
+  --sss-terakota: #DC643D; /* Теракота · Акцент · терміново */
+  --sss-parostok: #A9D48E; /* Паросток · Акцент · громади */
+  --sss-nebo: #D7E6FB; /* Небо · Акцент · права */
+  --sss-kamin: #66705F; /* Камінь · Другорядний текст */
+  --sss-pisok: #E6DFD0; /* Пісок · Лінії */
+  --sss-white: #FFFFFF; /* Білий · Плашки */
+  --sss-lis-tone: #3D5C37;
+  --sss-moloko-tone: #F0E8D8;
+  --sss-sonyashnyk-tone: #EBA92A;
+  --sss-nebo-tone: #C6D9F4;
+  --sss-parostok-tone: #98C77C;
+  --sss-terakota-tone: #CE5631;
+  --sss-glybyna-tone: #2A3D26;
+  --sss-font-display: "Manrope", "Montserrat", Arial, sans-serif;
+  --sss-font-text: "Onest", Arial, sans-serif;
+}

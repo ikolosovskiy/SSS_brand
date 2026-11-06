@@ -1,0 +1,464 @@
+[
+ {
+  "id": "aid",
+  "name": "Гуманітарна допомога",
+  "group": "Гуманітарне реагування",
+  "svg": "icons/svg/aid.svg",
+  "png": "icons/png/aid.png"
+ },
+ {
+  "id": "food",
+  "name": "Продуктовий набір",
+  "group": "Гуманітарне реагування",
+  "svg": "icons/svg/food.svg",
+  "png": "icons/png/food.png"
+ },
+ {
+  "id": "hygiene",
+  "name": "Гігієнічний набір",
+  "group": "Гуманітарне реагування",
+  "svg": "icons/svg/hygiene.svg",
+  "png": "icons/png/hygiene.png"
+ },
+ {
+  "id": "med",
+  "name": "Медичний набір",
+  "group": "Гуманітарне реагування",
+  "svg": "icons/svg/med.svg",
+  "png": "icons/png/med.png"
+ },
+ {
+  "id": "nfi",
+  "name": "Непродовольчі товари (НПД)",
+  "group": "Гуманітарне реагування",
+  "svg": "icons/svg/nfi.svg",
+  "png": "icons/png/nfi.png"
+ },
+ {
+  "id": "water",
+  "name": "Питна вода",
+  "group": "Гуманітарне реагування",
+  "svg": "icons/svg/water.svg",
+  "png": "icons/png/water.png"
+ },
+ {
+  "id": "wash",
+  "name": "WASH / водопостачання",
+  "group": "Гуманітарне реагування",
+  "svg": "icons/svg/wash.svg",
+  "png": "icons/png/wash.png"
+ },
+ {
+  "id": "laundry",
+  "name": "Соціальна пральня",
+  "group": "Гуманітарне реагування",
+  "svg": "icons/svg/laundry.svg",
+  "png": "icons/png/laundry.png"
+ },
+ {
+  "id": "home",
+  "name": "Житло",
+  "group": "Гуманітарне реагування",
+  "svg": "icons/svg/home.svg",
+  "png": "icons/png/home.png"
+ },
+ {
+  "id": "repair",
+  "name": "Ремонт житла",
+  "group": "Гуманітарне реагування",
+  "svg": "icons/svg/repair.svg",
+  "png": "icons/png/repair.png"
+ },
+ {
+  "id": "bricks",
+  "name": "Будматеріали",
+  "group": "Гуманітарне реагування",
+  "svg": "icons/svg/bricks.svg",
+  "png": "icons/png/bricks.png"
+ },
+ {
+  "id": "energy",
+  "name": "Енергостійкість",
+  "group": "Гуманітарне реагування",
+  "svg": "icons/svg/energy.svg",
+  "png": "icons/png/energy.png"
+ },
+ {
+  "id": "heat",
+  "name": "Обігрів",
+  "group": "Гуманітарне реагування",
+  "svg": "icons/svg/heat.svg",
+  "png": "icons/png/heat.png"
+ },
+ {
+  "id": "fuel",
+  "name": "Паливо",
+  "group": "Гуманітарне реагування",
+  "svg": "icons/svg/fuel.svg",
+  "png": "icons/png/fuel.png"
+ },
+ {
+  "id": "winter",
+  "name": "Зимова допомога",
+  "group": "Гуманітарне реагування",
+  "svg": "icons/svg/winter.svg",
+  "png": "icons/png/winter.png"
+ },
+ {
+  "id": "cash",
+  "name": "Грошова допомога",
+  "group": "Гуманітарне реагування",
+  "svg": "icons/svg/cash.svg",
+  "png": "icons/png/cash.png"
+ },
+ {
+  "id": "truck",
+  "name": "Доставка",
+  "group": "Гуманітарне реагування",
+  "svg": "icons/svg/truck.svg",
+  "png": "icons/png/truck.png"
+ },
+ {
+  "id": "boxes",
+  "name": "Логістика / склад",
+  "group": "Гуманітарне реагування",
+  "svg": "icons/svg/boxes.svg",
+  "png": "icons/png/boxes.png"
+ },
+ {
+  "id": "idp",
+  "name": "ВПО",
+  "group": "Захист і ВПО",
+  "svg": "icons/svg/idp.svg",
+  "png": "icons/png/idp.png"
+ },
+ {
+  "id": "council",
+  "name": "Ради та обговорення",
+  "group": "Захист і ВПО",
+  "svg": "icons/svg/council.svg",
+  "png": "icons/png/council.png"
+ },
+ {
+  "id": "hotline",
+  "name": "Гаряча лінія",
+  "group": "Захист і ВПО",
+  "svg": "icons/svg/hotline.svg",
+  "png": "icons/png/hotline.png"
+ },
+ {
+  "id": "legal",
+  "name": "Правова допомога",
+  "group": "Захист і ВПО",
+  "svg": "icons/svg/legal.svg",
+  "png": "icons/png/legal.png"
+ },
+ {
+  "id": "consult",
+  "name": "Консультація",
+  "group": "Захист і ВПО",
+  "svg": "icons/svg/consult.svg",
+  "png": "icons/png/consult.png"
+ },
+ {
+  "id": "docs",
+  "name": "Документи",
+  "group": "Захист і ВПО",
+  "svg": "icons/svg/docs.svg",
+  "png": "icons/png/docs.png"
+ },
+ {
+  "id": "feedback",
+  "name": "Скарги та пропозиції",
+  "group": "Захист і ВПО",
+  "svg": "icons/svg/feedback.svg",
+  "png": "icons/png/feedback.png"
+ },
+ {
+  "id": "psy",
+  "name": "Психосоціальна підтримка",
+  "group": "Захист і ВПО",
+  "svg": "icons/svg/psy.svg",
+  "png": "icons/png/psy.png"
+ },
+ {
+  "id": "shield",
+  "name": "Захист",
+  "group": "Захист і ВПО",
+  "svg": "icons/svg/shield.svg",
+  "png": "icons/png/shield.png"
+ },
+ {
+  "id": "kids",
+  "name": "Діти",
+  "group": "Захист і ВПО",
+  "svg": "icons/svg/kids.svg",
+  "png": "icons/png/kids.png"
+ },
+ {
+  "id": "elderly",
+  "name": "Літні люди",
+  "group": "Захист і ВПО",
+  "svg": "icons/svg/elderly.svg",
+  "png": "icons/png/elderly.png"
+ },
+ {
+  "id": "access",
+  "name": "Люди з інвалідністю",
+  "group": "Захист і ВПО",
+  "svg": "icons/svg/access.svg",
+  "png": "icons/png/access.png"
+ },
+ {
+  "id": "veteran",
+  "name": "Ветерани",
+  "group": "Захист і ВПО",
+  "svg": "icons/svg/veteran.svg",
+  "png": "icons/png/veteran.png"
+ },
+ {
+  "id": "equal",
+  "name": "Гендерна рівність",
+  "group": "Захист і ВПО",
+  "svg": "icons/svg/equal.svg",
+  "png": "icons/png/equal.png"
+ },
+ {
+  "id": "community",
+  "name": "Громада",
+  "group": "Громади і розвиток",
+  "svg": "icons/svg/community.svg",
+  "png": "icons/png/community.png"
+ },
+ {
+  "id": "sprout",
+  "name": "Розвиток громад",
+  "group": "Громади і розвиток",
+  "svg": "icons/svg/sprout.svg",
+  "png": "icons/png/sprout.png"
+ },
+ {
+  "id": "edu",
+  "name": "Освіта і тренінги",
+  "group": "Громади і розвиток",
+  "svg": "icons/svg/edu.svg",
+  "png": "icons/png/edu.png"
+ },
+ {
+  "id": "game",
+  "name": "Гейміфікація",
+  "group": "Громади і розвиток",
+  "svg": "icons/svg/game.svg",
+  "png": "icons/png/game.png"
+ },
+ {
+  "id": "idea",
+  "name": "Молодь та ідеї",
+  "group": "Громади і розвиток",
+  "svg": "icons/svg/idea.svg",
+  "png": "icons/png/idea.png"
+ },
+ {
+  "id": "media",
+  "name": "Медіаграмотність",
+  "group": "Громади і розвиток",
+  "svg": "icons/svg/media.svg",
+  "png": "icons/png/media.png"
+ },
+ {
+  "id": "advocacy",
+  "name": "Адвокація",
+  "group": "Громади і розвиток",
+  "svg": "icons/svg/advocacy.svg",
+  "png": "icons/png/advocacy.png"
+ },
+ {
+  "id": "law",
+  "name": "Закон і законодавство",
+  "group": "Громади і розвиток",
+  "svg": "icons/svg/law.svg",
+  "png": "icons/png/law.png"
+ },
+ {
+  "id": "partner",
+  "name": "Партнерство",
+  "group": "Громади і розвиток",
+  "svg": "icons/svg/partner.svg",
+  "png": "icons/png/partner.png"
+ },
+ {
+  "id": "gov",
+  "name": "Державні установи",
+  "group": "Громади і розвиток",
+  "svg": "icons/svg/gov.svg",
+  "png": "icons/png/gov.png"
+ },
+ {
+  "id": "pro",
+  "name": "Фахівці соцзахисту",
+  "group": "Громади і розвиток",
+  "svg": "icons/svg/pro.svg",
+  "png": "icons/png/pro.png"
+ },
+ {
+  "id": "volunteer",
+  "name": "Волонтерство",
+  "group": "Громади і розвиток",
+  "svg": "icons/svg/volunteer.svg",
+  "png": "icons/png/volunteer.png"
+ },
+ {
+  "id": "donate",
+  "name": "Підтримати фонд",
+  "group": "Громади і розвиток",
+  "svg": "icons/svg/donate.svg",
+  "png": "icons/png/donate.png"
+ },
+ {
+  "id": "jobs",
+  "name": "Вакансії та тендери",
+  "group": "Громади і розвиток",
+  "svg": "icons/svg/jobs.svg",
+  "png": "icons/png/jobs.png"
+ },
+ {
+  "id": "online",
+  "name": "Онлайн-подія",
+  "group": "Службові",
+  "svg": "icons/svg/online.svg",
+  "png": "icons/png/online.png"
+ },
+ {
+  "id": "video",
+  "name": "Відео",
+  "group": "Службові",
+  "svg": "icons/svg/video.svg",
+  "png": "icons/png/video.png"
+ },
+ {
+  "id": "quote",
+  "name": "Цитата",
+  "group": "Службові",
+  "svg": "icons/svg/quote.svg",
+  "png": "icons/png/quote.png"
+ },
+ {
+  "id": "subs",
+  "name": "Субтитри",
+  "group": "Службові",
+  "svg": "icons/svg/subs.svg",
+  "png": "icons/png/subs.png"
+ },
+ {
+  "id": "pin",
+  "name": "Локація",
+  "group": "Службові",
+  "svg": "icons/svg/pin.svg",
+  "png": "icons/png/pin.png"
+ },
+ {
+  "id": "cal",
+  "name": "Дата",
+  "group": "Службові",
+  "svg": "icons/svg/cal.svg",
+  "png": "icons/png/cal.png"
+ },
+ {
+  "id": "clock",
+  "name": "Час",
+  "group": "Службові",
+  "svg": "icons/svg/clock.svg",
+  "png": "icons/png/clock.png"
+ },
+ {
+  "id": "event",
+  "name": "Подія / форум",
+  "group": "Службові",
+  "svg": "icons/svg/event.svg",
+  "png": "icons/png/event.png"
+ },
+ {
+  "id": "report",
+  "name": "Звіт",
+  "group": "Службові",
+  "svg": "icons/svg/report.svg",
+  "png": "icons/png/report.png"
+ },
+ {
+  "id": "chart",
+  "name": "Аналітика",
+  "group": "Службові",
+  "svg": "icons/svg/chart.svg",
+  "png": "icons/png/chart.png"
+ },
+ {
+  "id": "growth",
+  "name": "Зростання",
+  "group": "Службові",
+  "svg": "icons/svg/growth.svg",
+  "png": "icons/png/growth.png"
+ },
+ {
+  "id": "alert",
+  "name": "Увага / екстрено",
+  "group": "Службові",
+  "svg": "icons/svg/alert.svg",
+  "png": "icons/png/alert.png"
+ },
+ {
+  "id": "info",
+  "name": "Інформація",
+  "group": "Службові",
+  "svg": "icons/svg/info.svg",
+  "png": "icons/png/info.png"
+ },
+ {
+  "id": "faq",
+  "name": "Питання",
+  "group": "Службові",
+  "svg": "icons/svg/faq.svg",
+  "png": "icons/png/faq.png"
+ },
+ {
+  "id": "done",
+  "name": "Виконано",
+  "group": "Службові",
+  "svg": "icons/svg/done.svg",
+  "png": "icons/png/done.png"
+ },
+ {
+  "id": "phone",
+  "name": "Телефон",
+  "group": "Службові",
+  "svg": "icons/svg/phone.svg",
+  "png": "icons/png/phone.png"
+ },
+ {
+  "id": "mail",
+  "name": "Пошта",
+  "group": "Службові",
+  "svg": "icons/svg/mail.svg",
+  "png": "icons/png/mail.png"
+ },
+ {
+  "id": "web",
+  "name": "Сайт",
+  "group": "Службові",
+  "svg": "icons/svg/web.svg",
+  "png": "icons/png/web.png"
+ },
+ {
+  "id": "heart",
+  "name": "Дякуємо",
+  "group": "Службові",
+  "svg": "icons/svg/heart.svg",
+  "png": "icons/png/heart.png"
+ },
+ {
+  "id": "arrow",
+  "name": "Стрілка / далі",
+  "group": "Службові",
+  "svg": "icons/svg/arrow.svg",
+  "png": "icons/png/arrow.png"
+ }
+]

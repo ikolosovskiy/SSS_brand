@@ -1,0 +1,72 @@
+[
+ {
+  "name": "Ліс",
+  "token": "lis",
+  "hex": "#314C2C",
+  "role": "Ключовий",
+  "tone": "#3D5C37"
+ },
+ {
+  "name": "Молоко",
+  "token": "moloko",
+  "hex": "#FBF6EC",
+  "role": "Базовий фон",
+  "tone": "#F0E8D8"
+ },
+ {
+  "name": "Глибина",
+  "token": "glybyna",
+  "hex": "#1B2A18",
+  "role": "Текст",
+  "tone": "#2A3D26"
+ },
+ {
+  "name": "Соняшник",
+  "token": "sonyashnyk",
+  "hex": "#F6B93B",
+  "role": "Акцент · допомога",
+  "tone": "#EBA92A"
+ },
+ {
+  "name": "Теракота",
+  "token": "terakota",
+  "hex": "#DC643D",
+  "role": "Акцент · терміново",
+  "tone": "#CE5631"
+ },
+ {
+  "name": "Паросток",
+  "token": "parostok",
+  "hex": "#A9D48E",
+  "role": "Акцент · громади",
+  "tone": "#98C77C"
+ },
+ {
+  "name": "Небо",
+  "token": "nebo",
+  "hex": "#D7E6FB",
+  "role": "Акцент · права",
+  "tone": "#C6D9F4"
+ },
+ {
+  "name": "Камінь",
+  "token": "kamin",
+  "hex": "#66705F",
+  "role": "Другорядний текст",
+  "tone": null
+ },
+ {
+  "name": "Пісок",
+  "token": "pisok",
+  "hex": "#E6DFD0",
+  "role": "Лінії",
+  "tone": null
+ },
+ {
+  "name": "Білий",
+  "token": "white",
+  "hex": "#FFFFFF",
+  "role": "Плашки",
+  "tone": null
+ }
+]
