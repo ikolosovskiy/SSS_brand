@@ -1,4 +1,4 @@
-/* build 2.2 */
+/* build 2.5 */
 (() => {
 const $ = id => document.getElementById(id);
 const C = {les:'#314C2C',gly:'#1B2A18',mol:'#FBF6EC',wht:'#FFFFFF',son:'#F6B93B',ter:'#DC643D',par:'#A9D48E',neb:'#D7E6FB',kam:'#66705F',pis:'#E6DFD0'};
@@ -49,6 +49,28 @@ function cc(){const b=$('ccBg').value,f=$('ccFg').value,r=cr(b,f);$('ccP').style
  $('ccV').innerHTML=`<span class="${r>=4.5?'ok':'no'}">${r>=4.5?'✓':'✗'} Будь-який текст</span><span class="${r>=3?'ok':'no'}">${r>=3?'✓':'✗'} Великі заголовки</span>`}
 $('ccBg').onchange=cc;$('ccFg').onchange=cc;cc();
 
+
+/* ---------- gradients ---------- */
+const GR=[
+ {n:'Ранок',use:'Збори, заклики до дії, подяки.',fg:C.gly,css:'linear-gradient(135deg, #F6B93B 0%, #DC643D 100%)',draw:(x,W,H)=>{const g=x.createLinearGradient(0,0,W,H);g.addColorStop(0,'#F6B93B');g.addColorStop(1,'#DC643D');x.fillStyle=g;x.fillRect(0,0,W,H)}},
+ {n:'Поле',use:'Результати, позитивні новини, звіти.',fg:C.gly,css:'linear-gradient(135deg, #A9D48E 0%, #F6B93B 100%)',draw:(x,W,H)=>{const g=x.createLinearGradient(0,0,W,H);g.addColorStop(0,'#A9D48E');g.addColorStop(1,'#F6B93B');x.fillStyle=g;x.fillRect(0,0,W,H)}},
+ {n:'Ліс',use:'Обкладинки, презентації, офіційні заяви.',fg:C.mol,css:'linear-gradient(180deg, #314C2C 0%, #1B2A18 100%)',draw:(x,W,H)=>{const g=x.createLinearGradient(0,0,0,H);g.addColorStop(0,'#314C2C');g.addColorStop(1,'#1B2A18');x.fillStyle=g;x.fillRect(0,0,W,H)}},
+ {n:'Простір',use:'Фон аналітики та інфографіки.',fg:C.gly,css:'linear-gradient(180deg, #D7E6FB 0%, #FBF6EC 100%)',draw:(x,W,H)=>{const g=x.createLinearGradient(0,0,0,H);g.addColorStop(0,'#D7E6FB');g.addColorStop(1,'#FBF6EC');x.fillStyle=g;x.fillRect(0,0,W,H)}},
+ {n:'Аура',use:'Анонси, події, сторіс. Не частіше 1 з 6 дописів.',fg:C.mol,css:'radial-gradient(60% 55% at 90% 6%, rgba(246,185,59,.9) 0%, rgba(246,185,59,0) 100%),\n  radial-gradient(75% 60% at 0% 100%, rgba(169,212,142,.75) 0%, rgba(169,212,142,0) 100%),\n  #314C2C',draw:(x,W,H)=>{x.fillStyle=C.les;x.fillRect(0,0,W,H);const r=(cx,cy,rx,ry,c,a)=>{x.save();x.translate(cx,cy);x.scale(rx/Math.max(rx,ry),ry/Math.max(rx,ry));const R=Math.max(rx,ry),g=x.createRadialGradient(0,0,0,0,0,R);g.addColorStop(0,`rgba(${c},${a})`);g.addColorStop(1,`rgba(${c},0)`);x.fillStyle=g;x.fillRect(-R*2,-R*2,R*4,R*4);x.restore()};r(W*.9,H*.06,W*.6*1.2,H*.55*1.2,'246,185,59',.9);r(0,H,W*.75*1.2,H*.6*1.2,'169,212,142',.75)}},
+ {n:'Фото-накладка',use:'Текст поверх фото знизу. PNG з прозорістю — кладіть поверх фото.',fg:C.mol,photo:1,css:'linear-gradient(180deg, rgba(27,42,24,0) 40%, rgba(27,42,24,.85) 100%)',draw:(x,W,H)=>{const g=x.createLinearGradient(0,0,0,H);g.addColorStop(.4,'rgba(27,42,24,0)');g.addColorStop(1,'rgba(27,42,24,.85)');x.fillStyle=g;x.fillRect(0,0,W,H)}},
+];
+const GF={ig:[1080,1350,'4:5'],story:[1080,1920,'9:16'],sq:[1080,1080,'1:1'],link:[1200,630,'1200×630'],slide:[1920,1080,'16:9']};let gF='ig';
+chips($('gFmt'),Object.entries(GF).map(([k,v])=>[k,v[2]]),'ig',v=>gF=v);
+$('gGrid').innerHTML=GR.map((g,i)=>`<div class="gc"><div class="sw" style="background:${g.css.replace(/\n\s*/g,' ')}${g.photo?', radial-gradient(100% 90% at 60% 35%,#f1d6b2 0,#d28e64 35%,#7b5a45 70%,#3b3027 100%)':''};color:${g.fg}"><span style="position:relative;z-index:1">${g.n}</span></div><div class="bd"><p>${g.use}</p><span class="meta">${g.css.startsWith('radial')?'Радіальний · 2 світла на Ліс':g.css.match(/\d+deg/)[0].replace('deg','°')+' · '+(g.css.match(/#[0-9A-F]{6}/g)||['#1B2A18']).join(' → ')}</span><div class="acts"><button class="btn g s" data-gc="${i}">Копіювати CSS</button><button class="btn p s" data-gp="${i}">PNG-фон</button></div></div></div>`).join('');
+function grain(x,W,H){const id=x.getImageData(0,0,W,H),d=id.data;for(let i=0;i<d.length;i+=4){const n=(Math.random()-.5)*26;d[i]+=n;d[i+1]+=n;d[i+2]+=n}x.putImageData(id,0,0)}
+$('gGrid').onclick=e=>{const c=e.target.closest('[data-gc]');if(c){copy('background: '+GR[+c.dataset.gc].css+';','CSS градієнта скопійовано');return}
+  const p=e.target.closest('[data-gp]');if(!p)return;const g=GR[+p.dataset.gp],[W,H,lab]=GF[gF],cv=document.createElement('canvas');cv.width=W;cv.height=H;const x=cv.getContext('2d');g.draw(x,W,H);if($('gGrain').checked&&!g.photo)grain(x,W,H);
+  cv.toBlob(b=>saveBlob(b,`sss-gradient-${translit(g.n)}-${W}x${H}.png`))};
+
+
+/* ---------- graphics helpers ---------- */
+if($('sgIcon'))$('sgIcon').innerHTML=iconSvg('legal',C.les,C.wht);
+document.querySelectorAll('.tone').forEach(b=>b.onclick=()=>copy(b.dataset.h,b.dataset.h+' скопійовано'));
 /* ---------- fonts tester ---------- */
 const tester=$('tester');
 $('tFont').onclick=e=>{const b=e.target.closest('[data-v]');if(!b)return;press($('tFont'),b);const [w,f]=b.dataset.v.split('|');tester.style.fontWeight=w;tester.style.fontFamily=f;tester.style.letterSpacing=f.includes('fd')?'-.03em':'0'};
@@ -108,21 +130,29 @@ const TH={
  ter:{n:'Теракота',bg:C.ter,tx:C.mol,sub:C.mol,cb:C.mol,cf:C.ter,hero:C.mol,tone:'#CE5631',logo:C.mol,il:C.mol,ia:C.son,plate:true}};
 const DEF={photo:['Подія','Тренінг для фахівців соцзахисту: як підтримати переселенців','Полтава · листопад 2026'],num:['Допомога','людей отримали гуманітарну допомогу','з початку повномасштабного вторгнення'],icon:['Важливо','Як отримати безоплатну правову консультацію','Заповніть форму на sss-ua.org'],plate:['9 листопада','З Днем української писемності та мови',''],event:['Анонс','Вебінар: як переселенцям отримати житлову допомогу',''],word:['Допомога','Соціальні пральні для громад Сумщини','Чисто, тепло і поруч з домом']};
 const ST=store.get('sss-builder',{});
-const B={fmt:ST.fmt||'ig',tpl:ST.tpl||'photo',th:ST.th||'lis',logo:'ua',photo:null,donor:null};
+const B={fmt:ST.fmt||'ig',tpl:ST.tpl||'photo',th:ST.th||'lis',logo:'ua',photo:null,logos:[{t:'sss'}]};
 const cv=$('cv'),ctx=cv.getContext('2d');
 chips($('bFmt'),Object.entries(FMT).map(([k,v])=>[k,v[2].split(' · ')[0]]),B.fmt,v=>{B.fmt=v;draw()});
 chips($('bTpl'),Object.entries(TPL),B.tpl,v=>{const prev=B.tpl;B.tpl=v;const [c,h,s]=DEF[v];const [pc,ph,ps]=DEF[prev];if($('bChip').value===pc)$('bChip').value=c;if($('bHead').value===ph)$('bHead').value=h;if($('bSub').value===ps)$('bSub').value=s;if(v==='word'&&/^\d/.test($('bBig').value))$('bBig').value='ВОДА';if(v==='num'&&!/^\d/.test($('bBig').value))$('bBig').value='543 370';if(v==='icon'&&B.th==='lis')setTheme('ter');draw()});
 $('bThm').innerHTML=Object.entries(TH).map(([k,t])=>`<button data-v="${k}" aria-pressed="${k===B.th}" title="${t.n}" aria-label="${t.n}" style="background:${t.bg}"></button>`).join('');
 function setTheme(k){B.th=k;press($('bThm'),$('bThm').querySelector(`[data-v="${k}"]`))}
 $('bThm').onclick=e=>{const b=e.target.closest('[data-v]');if(!b)return;setTheme(b.dataset.v);draw()};
-$('bLogo').onclick=e=>{const b=e.target.closest('[data-v]');if(!b)return;press($('bLogo'),b);B.logo=b.dataset.v;draw()};
+$('bLogo').onclick=e=>{const b=e.target.closest('[data-v]');if(!b)return;press($('bLogo'),b);B.logo=b.dataset.v;renderLogos();draw()};
 $('bIcon').innerHTML=ICONS.filter(i=>i[1]!=='arrow').map(i=>`<option value="${i[1]}">${i[2]}</option>`).join('');$('bIcon').value='legal';
 ['bChip','bHead','bSub','bBig','bIcon','bDate','bTime','bPlace'].forEach(id=>$(id).addEventListener('input',()=>draw()));
 function loadImg(file,cb){if(!file)return cb(null);const url=URL.createObjectURL(file);const im=new Image();im.onload=()=>cb(im);im.onerror=()=>{toast('Не вдалося відкрити файл');cb(null)};im.src=url}
 function upl(id,key){const inp=$(id),nm=$(id+'N'),x=$(id+'X');
   inp.onchange=e=>{const f=e.target.files[0];loadImg(f,im=>{B[key]=im;nm.textContent=im?f.name:'Файл не обрано';x.hidden=!im;draw()})};
   x.onclick=()=>{B[key]=null;inp.value='';nm.textContent='Файл не обрано';x.hidden=true;draw()}}
-upl('bPhoto','photo');upl('bDonor','donor');
+upl('bPhoto','photo');
+function renderLogos(){const L=B.logos,n=L.length;
+  $('bLogos').innerHTML=L.map((it,i)=>`<div class="lgi"><span class="nr">${i+1}</span><span class="th">${it.t==='sss'?`<svg viewBox="0 0 ${LOGO[B.logo].w} ${LOGO[B.logo].h}" fill="${C.les}">${logoSvgInner(B.logo)}</svg>`:`<img src="${it.src}" alt="">`}</span><span class="nm">${it.t==='sss'?'SSS (наш логотип)':it.name}</span><button type="button" data-mv="${i}" data-d="-1" ${i===0?'disabled':''} aria-label="Перемістити вліво">←</button><button type="button" data-mv="${i}" data-d="1" ${i===n-1?'disabled':''} aria-label="Перемістити вправо">→</button>${it.t==='sss'?'<button type="button" disabled style="visibility:hidden">✕</button>':`<button type="button" class="del" data-del="${i}" aria-label="Видалити">✕</button>`}</div>`).join('');
+  $('bLogoHint').textContent=n>=3&&B.logo!=='sym'?'Порада: коли логотипів 3 і більше, SSS краще ставити символом — повна назва фонду вже є в тексті допису.':''}
+$('bLogos').onclick=e=>{const m=e.target.closest('[data-mv]'),d=e.target.closest('[data-del]');
+  if(m){const i=+m.dataset.mv,j=i+ +m.dataset.d,L=B.logos;if(j<0||j>=L.length)return;[L[i],L[j]]=[L[j],L[i]];renderLogos();draw()}
+  if(d){B.logos.splice(+d.dataset.del,1);renderLogos();draw()}};
+$('bAdd').onchange=e=>{const fs=[...e.target.files];let left=fs.length;fs.forEach(f=>{const url=URL.createObjectURL(f),im=new Image();im.onload=()=>{const sssI=B.logos.findIndex(x=>x.t==='sss');B.logos.splice(sssI<0?B.logos.length:sssI,0,{t:'img',img:im,src:url,name:f.name});if(--left===0){renderLogos();draw()}};im.onerror=()=>{toast('Не вдалося відкрити '+f.name);if(--left===0){renderLogos();draw()}};im.src=url});e.target.value=''};
+renderLogos();
 
 const FD='Manrope',FT='Onest';
 function setLS(v){if('letterSpacing' in ctx)ctx.letterSpacing=v}
@@ -135,10 +165,18 @@ function text(L,x,y,sz,lh,color,{w=800,fam=FD,ls='-0.02em',hl=null}={}){ctx.font
 function rr(x,y,w,h,r){ctx.beginPath();ctx.roundRect?ctx.roundRect(x,y,w,h,r):ctx.rect(x,y,w,h)}
 function chip(t,x,y,s,bg,fg){if(!t)return y;ctx.font=`700 ${22*s}px ${FD}`;setLS('0.07em');const T=t.toUpperCase(),w=ctx.measureText(T).width+40*s,h=54*s;ctx.fillStyle=bg;rr(x,y,w,h,h/2);ctx.fill();ctx.fillStyle=fg;ctx.textBaseline='middle';ctx.fillText(T,x+20*s,y+h/2+1*s);ctx.textBaseline='alphabetic';return y+h}
 function photo(x,y,w,h,r=0){ctx.save();rr(x,y,w,h,r);ctx.clip();if(B.photo){const im=B.photo,k=Math.max(w/im.width,h/im.height),iw=im.width*k,ih=im.height*k;ctx.drawImage(im,x+(w-iw)/2,y+(h-ih)/2,iw,ih)}else{const g=ctx.createRadialGradient(x+w*.35,y+h*.3,0,x+w*.5,y+h*.5,Math.max(w,h)*.75);g.addColorStop(0,'#d9d2c0');g.addColorStop(.4,'#9aa58a');g.addColorStop(.75,'#55684a');g.addColorStop(1,'#2f3d2a');ctx.fillStyle=g;ctx.fillRect(x,y,w,h);ctx.font=`700 ${Math.max(14,h*.035)}px ${FD}`;setLS('0.08em');ctx.fillStyle='rgba(255,255,255,.85)';ctx.textBaseline='middle';ctx.textAlign='center';ctx.fillText('ДОДАЙТЕ ФОТО',x+w/2,y+h/2);ctx.textAlign='left';ctx.textBaseline='alphabetic'}ctx.restore()}
-function logo(x,y,s,color,plate){const kind=B.logo,h=(kind==='sym'?48:kind==='en'?44:40)*s;
-  if(B.donor||plate){const dh=h*1.1,dw=B.donor?dh*B.donor.width/B.donor.height:0,lw=LOGO[kind].w*h/LOGO[kind].h,pad=18*s,gap=B.donor?24*s:0,W=pad*2+dw+gap+lw+(B.donor?2*s:0),H=pad*2+Math.max(dh,h);
-    ctx.fillStyle=C.wht;rr(x,y,W,H,14*s);ctx.fill();let cx=x+pad;if(B.donor){ctx.drawImage(B.donor,cx,y+(H-dh)/2,dw,dh);cx+=dw+gap/2;ctx.fillStyle=C.pis;ctx.fillRect(cx,y+H*.2,2*s,H*.6);cx+=gap/2+2*s}drawLogo(ctx,kind,cx,y+(H-h)/2,h,C.les);return y+H}
-  drawLogo(ctx,kind,x,y,h,color);return y+h}
+function logo(x,y,s,color,plate){const kind=B.logo,L=B.logos,n=L.length;
+  if(n<=1&&!plate){const h=(kind==='sym'?48:kind==='en'?44:40)*s;drawLogo(ctx,kind,x,y,h,color);return y+h}
+  const maxW=cv.width-2*x;let h=(n>=4?34:n===3?38:kind==='sym'?44:40)*s,pad=18*s,gap=28*s;
+  const iw=it=>it.t==='sss'?LOGO[kind].w*h/LOGO[kind].h:(h*1.15)*it.img.width/it.img.height;
+  let tot=L.reduce((a,it)=>a+iw(it),0)+gap*(n-1)+pad*2;
+  if(tot>maxW){const k=(maxW-pad*2-gap*(n-1))/(tot-pad*2-gap*(n-1));h*=k;tot=maxW}
+  const full=n>=4,PW=full?maxW:tot,PH=pad*2+h*1.15;
+  ctx.fillStyle=C.wht;rr(x,y,PW,PH,14*s);ctx.fill();
+  const sum=L.reduce((a,it)=>a+iw(it),0),g=n>1?(full?(PW-pad*2-sum)/(n-1):gap):0;let cx=x+pad;
+  L.forEach((it,i)=>{const w=iw(it);if(it.t==='sss')drawLogo(ctx,kind,cx,y+(PH-h)/2,h,C.les);else{const ih=h*1.15;ctx.drawImage(it.img,cx,y+(PH-ih)/2,w,ih)}
+    cx+=w;if(i<n-1){ctx.fillStyle=C.pis;ctx.fillRect(cx+g/2-1*s,y+PH*.22,2*s,PH*.56);cx+=g}});
+  return y+PH}
 function bigFit(t,maxW,maxH,lines){let sz=100;ctx.font=`800 ${sz}px ${FD}`;setLS('-0.06em');const wmax=Math.max(...lines.map(l=>ctx.measureText(l).width));sz=Math.min(100*maxW/wmax,maxH/(lines.length*.8+.1));return sz}
 let warn='';
 function draw(){

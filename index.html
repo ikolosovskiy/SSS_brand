@@ -1,5 +1,5 @@
 <!doctype html>
-<!-- build 2.2 -->
+<!-- build 2.5 -->
 <html lang="uk">
 <head>
 <meta charset="utf-8">
@@ -115,6 +115,45 @@ section.s{padding:104px 0 24px}
 .vd{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
 .vd span{padding:6px 12px;border-radius:99px;font:700 13px var(--fd)}
 .ok{background:var(--par)}.no{background:var(--ter);color:#fff}
+.gw{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+@media(max-width:900px){.gw{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:560px){.gw{grid-template-columns:1fr}}
+.gc{background:var(--wht);border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column;transition:transform .25s var(--ease),box-shadow .25s}
+.gc:hover{transform:translateY(-4px);box-shadow:0 18px 30px -20px rgba(27,42,24,.5)}
+.gc .sw{height:170px;position:relative;display:flex;align-items:flex-end;padding:16px;font:800 22px var(--fd)}
+.gc .sw::after{content:"";position:absolute;inset:0;background-image:var(--grain);mix-blend-mode:overlay;opacity:.45;pointer-events:none}
+.gc .bd{padding:16px;display:grid;gap:10px;flex:1;align-content:start}
+.gc .bd p{font-size:14px}
+.gc .meta{font:600 12px var(--fd);color:var(--kam)}
+.gc .acts{display:flex;gap:6px;flex-wrap:wrap;margin-top:auto}
+.more{margin-top:12px;font:700 14px var(--fd)}.more a{color:var(--les)}
+.tb{width:100%;border-collapse:collapse;font-size:14.5px;font-variant-numeric:tabular-nums}
+.tb th{font:700 11px var(--fd);letter-spacing:.08em;text-transform:uppercase;color:var(--kam);text-align:left;padding:10px 12px;border-bottom:2px solid var(--gly)}
+.tb td{padding:11px 12px;border-bottom:1px solid var(--pis);vertical-align:top}
+.tb td:first-child{font:700 14px var(--fd)}
+.tw{overflow-x:auto;background:var(--wht);border-radius:var(--r);padding:6px 10px}
+.g3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.g4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+@media(max-width:900px){.g3,.g4{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:560px){.g3,.g4{grid-template-columns:1fr}}
+.ul{margin:0;padding:0;list-style:none;display:grid;gap:8px}.ul li{position:relative;padding-left:18px;font-size:15px}.ul li::before{content:"";position:absolute;left:0;top:.55em;width:8px;height:8px;border-radius:2px;background:var(--par)}
+.sgc{position:relative;overflow:hidden;border-radius:var(--r);height:220px;padding:18px;display:flex;flex-direction:column;gap:6px}
+.sgc b{font:800 18px var(--fd);position:relative;z-index:1}.sgc p{font-size:14px;position:relative;z-index:1;max-width:22ch}
+.sgx{position:absolute;font:800 110px/.8 var(--fd);letter-spacing:-.06em;pointer-events:none;white-space:nowrap}
+.sgi{position:absolute;right:-50px;bottom:-60px;width:210px;height:210px}.sgi svg{width:100%;height:100%}
+.tones{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:10px}
+@media(max-width:900px){.tones{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.tone{position:relative;overflow:hidden;border:0;border-radius:12px;height:96px;padding:12px;text-align:left;cursor:pointer;display:flex;flex-direction:column;gap:2px;font:700 13px var(--fd);box-shadow:inset 0 0 0 1px rgba(0,0,0,.06)}
+.tone .sgx{font-size:90px;right:-6px;bottom:-14px}.tone b,.tone span:not(.sgx){position:relative}
+.tone span:not(.sgx){font:600 12px ui-monospace,Menlo,Consolas,monospace}
+.steps b{display:block;font:800 16px var(--fd);margin-bottom:4px}
+.rl{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:16px}
+@media(max-width:860px){.rl{grid-template-columns:1fr}}
+.rl ul{margin:0;padding:0;list-style:none;display:grid;gap:10px}
+.rl li{position:relative;padding-left:22px;font-size:15px}
+.rl li::before{content:"";position:absolute;left:0;top:.5em;width:10px;height:10px;border-radius:3px;background:var(--par)}
+.rl .nope li::before{background:var(--ter);border-radius:50%}
+:root{--grain:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .5 0 0 0 0 .5 0 0 0 0 .5 0 0 0 .9 0'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E")}
 /* fonts */
 .fw{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
 @media(max-width:860px){.fw{grid-template-columns:1fr}}
@@ -139,8 +178,8 @@ section.s{padding:104px 0 24px}
 .drawer .acts .btn{justify-content:center}
 /* builder */
 .bw{display:grid;grid-template-columns:minmax(0,420px) minmax(0,1fr);gap:24px;align-items:start}
-@media(max-width:960px){.bw{grid-template-columns:1fr}}
-.bctl{display:grid;gap:16px}
+@media(max-width:960px){.bw{grid-template-columns:minmax(0,1fr)}}
+.bctl{display:grid;gap:16px;grid-template-columns:minmax(0,1fr)}
 .bctl .row{display:flex;gap:6px;flex-wrap:wrap}
 .thm{display:flex;gap:8px;flex-wrap:wrap}
 .thm button{width:42px;height:42px;border-radius:50%;border:0;cursor:pointer;box-shadow:inset 0 0 0 1px rgba(0,0,0,.1);transition:transform .2s}
@@ -154,10 +193,22 @@ section.s{padding:104px 0 24px}
 .up:hover{background:var(--les);color:var(--mol)}
 .file input:focus-visible+.up{outline:3px solid var(--son);outline-offset:2px}
 .fn{font:500 13px var(--ft);color:var(--kam);overflow-wrap:anywhere}
+div.f{grid-template-columns:minmax(0,1fr)}
+.lglist{display:grid;gap:6px;grid-template-columns:minmax(0,1fr)}
+.lgi{display:flex;align-items:center;gap:10px;background:var(--mol);border:1.5px solid var(--pis);border-radius:12px;padding:6px 8px;animation:pop .3s var(--ease) both}
+.lgi .th{width:64px;height:34px;flex:none;display:grid;place-items:center;background:var(--wht);border-radius:6px;overflow:hidden}
+.lgi .th img,.lgi .th svg{max-width:58px;max-height:28px;width:auto;height:auto}
+.lgi .nm{flex:1;min-width:0;font:600 13px var(--ft);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.lgi .nr{font:800 12px var(--fd);color:var(--kam);width:16px;text-align:center}
+.lgi button{border:0;background:var(--wht);width:32px;height:32px;border-radius:8px;cursor:pointer;font:700 15px var(--fd);color:var(--les);flex:none}
+.lgi button:hover:not(:disabled){background:var(--par)}
+.lgi button:disabled{opacity:.3;cursor:default}
+.lgi button.del{color:var(--ter)}
 .rm{border:0;background:none;color:var(--ter);font:700 13px var(--fd);cursor:pointer;padding:4px}
 .file input{font-size:13px;max-width:100%}
 .hint{font-size:13px;color:var(--kam)}
-.two{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.two{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.two input,.two select,.bctl input,.bctl textarea,.bctl select{min-width:0}
 /* templates */
 .tgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:18px;align-items:start}
 .tp{background:var(--wht);border-radius:var(--r);padding:12px;display:grid;gap:10px;transition:transform .25s var(--ease),box-shadow .25s}
@@ -199,7 +250,7 @@ footer a{color:var(--mol)}
   <div class="wrap">
     <a href="#hero" aria-label="На початок"><svg class="logo lgsvg" data-kind="sym" fill="currentColor"></svg></a>
     <nav class="mn" aria-label="Розділи">
-      <a href="#logo">Логотип</a><a href="#colors">Кольори</a><a href="#fonts">Шрифти</a><a href="#icons">Іконки</a><a href="#builder">Конструктор</a><a href="#canva">Шаблони Canva</a><a href="#name">Назва фонду</a><a href="#prep">Перед публікацією</a>
+      <a href="#logo">Логотип</a><a href="#colors">Кольори</a><a href="#grad">Градієнти</a><a href="#fonts">Шрифти</a><a href="#graphics">Графіка</a><a href="#icons">Іконки</a><a href="#photo">Фото</a><a href="#social">Соцмережі</a><a href="#video">Відео</a><a href="#cobrand">Кобрендинг</a><a href="#builder">Конструктор</a><a href="#canva">Шаблони Canva</a><a href="#name">Назва і текст</a><a href="#prep">Перед публікацією</a>
     </nav>
     <a class="btn g s" href="brandbook.html">Брендбук</a>
   </div>
@@ -242,6 +293,11 @@ footer a{color:var(--mol)}
       <p class="hint" id="lgNote"></p>
     </div>
   </div>
+  <div class="rl rv">
+    <div class="card"><span class="lbl">Правила</span><ul style="margin-top:12px"><li>Захисне поле — висота символу SSS з усіх боків.</li><li>Мінімум: основний 140 px / 35 мм, англомовний 150 px / 38 мм, символ 32 px / 10 мм.</li><li>Місце: лівий верхній кут, відступ дорівнює полю макета (64 px на 1080 px). Лівий нижній — коли вгорі фото з людьми.</li><li>Логотип однотонний, колір — за фоном (див. перемикач вище).</li><li>На строкатому фото — біла плашка з полями x.</li><li>Аватар соцмереж: символ Молоко на колі Ліс, 62 % діаметра.</li></ul></div>
+    <div class="card"><span class="lbl">Не можна</span><ul class="nope" style="margin-top:12px"><li>Розтягувати, стискати, повертати.</li><li>Фарбувати частини логотипа в різні кольори.</li><li>Обведення, тіні, світіння, градієнт.</li><li>Набирати назву фонду іншим шрифтом або без символу.</li><li>Ставити на строкате фото без плашки.</li><li>Перефарбовувати логотипи донорів у наші кольори.</li></ul></div>
+  </div>
+  <p class="more rv"><a href="brandbook.html#logo">Детальніше в брендбуці →</a></p>
 </div></section>
 
 <!-- COLORS -->
@@ -255,11 +311,42 @@ footer a{color:var(--mol)}
       <p class="hint" style="margin-top:14px">AA від 4,5:1 — будь-який текст. Від 3:1 — тільки заголовки від 44 px на макеті 1080 px.</p></div>
     <div class="ccprev" id="ccP"><span class="lbl" style="color:inherit;opacity:.8">Приклад</span><div><div class="big">543 370 людей</div><p style="margin-top:8px;font-size:17px">отримали гуманітарну допомогу. Підпис основним текстом 30 px.</p></div></div>
   </div>
+  <div class="rl rv">
+    <div class="card"><span class="lbl">Правила</span><ul style="margin-top:12px"><li>Пропорції 60 · 30 · 10: фон, площини, акцент.</li><li>На макеті до трьох кольорів плюс колір тексту.</li><li>Кольори напрямів: Соняшник — гуманітарна допомога; Небо — права, правопросвітництво; Паросток — громади, ради ВПО; Ліс — голос фонду, адвокація, звіти.</li><li>Теракота — тільки термінові повідомлення, не частіше раза на тиждень.</li><li>Текст — Глибина, другорядний текст — Камінь. Лінії — Пісок.</li></ul></div>
+    <div class="card"><span class="lbl">Не можна</span><ul class="nope" style="margin-top:12px"><li>Теракота і Паросток поруч великими площинами.</li><li>Соняшник чи Паросток як колір тексту на світлому фоні.</li><li>Усі акценти разом на одному макеті.</li><li>Чистий чорний (#000, #1E1E1E) і сірий.</li><li>Кольори поза палітрою, крім логотипів партнерів.</li></ul></div>
+  </div>
+  <p class="more rv"><a href="brandbook.html#color">Детальніше в брендбуці →</a></p>
+</div></section>
+
+<!-- GRADIENTS -->
+<section class="s" id="grad"><div class="wrap">
+  <div class="sh rv"><span class="lbl">03 · Градієнти</span><h2>Шість фірмових градієнтів і правила до них</h2><p>Градієнт працює як світло на фоні, а не як прикраса. Інших градієнтів не створюємо. Скопіюйте CSS або завантажте готовий фон PNG із зерном для Canva.</p></div>
+  <div class="ibar rv"><span class="lbl">Формат фону</span><div style="display:flex;gap:6px;flex-wrap:wrap" id="gFmt"></div>
+    <label class="hint" style="display:flex;gap:8px;align-items:center"><input type="checkbox" id="gGrain" checked style="accent-color:var(--les);width:18px;height:18px"> Зерно 5 %</label></div>
+  <div class="gw rv" id="gGrid"></div>
+  <div class="rl rv">
+    <div class="card"><span class="lbl">Правила</span><ul style="margin-top:12px">
+      <li>Переходимо тільки між сусідніми кольорами палітри. Два кольори, максимум три.</li>
+      <li>Кути 135° (діагональ) або 180° (згори вниз). Радіальний градієнт ставимо з кута макета.</li>
+      <li>Градієнт тільки на фоні або великій площині. На тексті, логотипі та іконках його немає.</li>
+      <li>Основний текст ставимо на ділянку з контрастом від 4,5:1 або на плашку.</li>
+      <li>Додаємо зерно 4–6 %: градієнт виглядає сучасно і не «смужить» після стиснення в соцмережах. У Canva — накладіть PNG-фон звідси або текстуру зерна з прозорістю 5 %.</li>
+      <li>«Аура» — найяскравіший, тому не частіше одного з шести дописів у стрічці.</li>
+    </ul></div>
+    <div class="card"><span class="lbl">Не можна</span><ul class="nope" style="margin-top:12px">
+      <li>Райдужні переходи і кольори поза палітрою.</li>
+      <li>Перехід Теракота → Небо або Соняшник → Небо: дає брудно-сірий центр.</li>
+      <li>Градієнт + суперграфіка + фото на одному макеті.</li>
+      <li>Градієнт в історіях людей: там головне фото.</li>
+      <li>Неонове світіння, кольорові тіні, ефект скла поверх тексту.</li>
+      <li>Градієнт у логотипі, іконках, тексті.</li>
+    </ul></div>
+  </div>
 </div></section>
 
 <!-- FONTS -->
 <section class="s" id="fonts"><div class="wrap">
-  <div class="sh rv"><span class="lbl">03 · Шрифти</span><h2>Рівні цифри, чиста кирилиця</h2><p>Manrope для заголовків і чисел, Onest для тексту. Обидва безкоштовні (OFL). Встановіть на комп’ютер і завантажте в Бренд-кіт Canva.</p></div>
+  <div class="sh rv"><span class="lbl">04 · Шрифти</span><h2>Рівні цифри, чиста кирилиця</h2><p>Manrope для заголовків і чисел, Onest для тексту. Обидва безкоштовні (OFL). Встановіть на комп’ютер і завантажте в Бренд-кіт Canva.</p></div>
   <div class="fw rv">
     <div class="card"><div style="display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap"><span class="lbl">Manrope · заголовки, числа</span><a class="btn g s" href="fonts/Manrope/Manrope-ExtraBold.ttf" download>ExtraBold</a></div>
       <p style="font:800 64px/1 var(--fd);letter-spacing:-.04em;margin-top:18px">543 370</p>
@@ -273,11 +360,45 @@ footer a{color:var(--mol)}
     <div class="tctl"><div class="row" style="display:flex;gap:6px" id="tFont"><button class="chip" data-v="800|var(--fd)" aria-pressed="true">Manrope 800</button><button class="chip" data-v="700|var(--fd)" aria-pressed="false">Manrope 700</button><button class="chip" data-v="400|var(--ft)" aria-pressed="false">Onest 400</button><button class="chip" data-v="500|var(--ft)" aria-pressed="false">Onest 500</button></div>
       <label class="hint" style="display:flex;gap:8px;align-items:center">Розмір <input type="range" id="tSize" min="16" max="120" value="56"> <span id="tSizeV">56 px</span></label></div>
   </div>
+  <div class="card rv" style="margin-top:16px"><span class="lbl">Шкала для макета 1080 px</span>
+    <div class="tw" style="margin-top:10px"><table class="tb">
+      <tr><th>Рівень</th><th>Шрифт</th><th>Розмір / інтерліньяж</th></tr>
+      <tr><td>Число-герой</td><td>Manrope 800</td><td>120 / 95 %, трекінг −3 %</td></tr>
+      <tr><td>H1 · обкладинка</td><td>Manrope 800</td><td>80 / 100 %, −2,5 %</td></tr>
+      <tr><td>H2 · заголовок</td><td>Manrope 800</td><td>60 / 104 %, −2 %</td></tr>
+      <tr><td>H3 · підзаголовок</td><td>Manrope 700</td><td>44 / 112 %</td></tr>
+      <tr><td>Лід</td><td>Onest 500</td><td>36 / 130 %</td></tr>
+      <tr><td>Текст</td><td>Onest 400</td><td>30 / 140 %</td></tr>
+      <tr><td>Підпис</td><td>Onest 500</td><td>24 / 135 % — мінімум</td></tr>
+      <tr><td>Мітка</td><td>Manrope 700, капс</td><td>22, трекінг +7 %</td></tr>
+    </table></div></div>
+  <div class="rl rv">
+    <div class="card"><span class="lbl">Правила</span><ul style="margin-top:12px"><li>Заголовки, числа, мітки — Manrope. Текст, підписи, таблиці — Onest.</li><li>Заголовок до 3 рядків і до 60 знаків. Вирівнювання ліворуч.</li><li>Виділення — плашка-маркер під 1–4 словами або колір. Одне на заголовок.</li><li>У таблицях — табличні цифри (Figma: Details → Tabular figures).</li><li>Немає фірмового шрифту: Canva — Montserrat Bold + Inter; Word / PowerPoint — Arial.</li></ul></div>
+    <div class="card"><span class="lbl">Не можна</span><ul class="nope" style="margin-top:12px"><li>Georgia і Raleway: у них «стрибають» цифри.</li><li>Заголовки великими літерами (капс — лише мітки до 3 слів).</li><li>Курсив, підкреслення, тінь під текстом.</li><li>Більше двох накреслень на макеті.</li><li>«Висячі» прийменники в кінці рядка: в, у, і, з, на, до, за.</li></ul></div>
+  </div>
+  <p class="more rv"><a href="brandbook.html#type">Детальніше в брендбуці →</a></p>
+</div></section>
+
+<!-- GRAPHICS -->
+<section class="s" id="graphics"><div class="wrap">
+  <div class="sh rv"><span class="lbl">05 · Графіка</span><h2>Головне — великим планом</h2><p>Суперграфіка: великі цифри, слова й іконки, обрізані краєм макета. Плюс кольорові блоки, плашки-маркери і мітки рубрик.</p></div>
+  <div class="g4 rv">
+    <div class="sgc" style="background:#314C2C;color:#FBF6EC"><span class="sgx" style="color:#F6B93B;font-size:120px;left:-6px;bottom:-30px">543</span><b>Цифра</b><p>Масштаб допомоги. Справжнє число з підписом.</p></div>
+    <div class="sgc" style="background:#A9D48E;color:#1B2A18"><span class="sgx" style="color:#314C2C;font-size:130px;left:-8px;bottom:-34px">ДІМ</span><b>Слово</b><p>Тема одним словом до 6 літер.</p></div>
+    <div class="sgc" style="background:#D7E6FB;color:#1B2A18"><span class="sgi" id="sgIcon"></span><b>Іконка</b><p>Вид допомоги, з фірмового набору.</p></div>
+    <div class="sgc" style="background:#FBF6EC;color:#1B2A18;box-shadow:inset 0 0 0 1px var(--pis)"><i style="position:absolute;left:0;top:0;bottom:0;width:30%;background:#F6B93B"></i><i style="position:absolute;left:30%;right:0;bottom:0;height:45%;background:#314C2C"></i><b style="position:relative;margin-left:34%">Блоки</b><p style="position:relative;margin-left:34%">Площини 1/2, 1/3, 2/3 по сітці.</p></div>
+  </div>
+  <div class="card rv" style="margin-top:16px"><span class="lbl">Кольори тон-в-тон для фонової суперграфіки · натисніть, щоб скопіювати</span><div class="tones" style="margin-top:12px"><button class="tone" data-h="#3D5C37" style="background:#314C2C;color:#FBF6EC"><span class="sgx" style="color:#3D5C37">24</span><b>Ліс</b><span>#3D5C37</span></button><button class="tone" data-h="#F0E8D8" style="background:#FBF6EC;color:#1B2A18"><span class="sgx" style="color:#F0E8D8">24</span><b>Молоко</b><span>#F0E8D8</span></button><button class="tone" data-h="#EBA92A" style="background:#F6B93B;color:#1B2A18"><span class="sgx" style="color:#EBA92A">24</span><b>Соняшник</b><span>#EBA92A</span></button><button class="tone" data-h="#C6D9F4" style="background:#D7E6FB;color:#1B2A18"><span class="sgx" style="color:#C6D9F4">24</span><b>Небо</b><span>#C6D9F4</span></button><button class="tone" data-h="#98C77C" style="background:#A9D48E;color:#1B2A18"><span class="sgx" style="color:#98C77C">24</span><b>Паросток</b><span>#98C77C</span></button><button class="tone" data-h="#CE5631" style="background:#DC643D;color:#FFFFFF"><span class="sgx" style="color:#CE5631">24</span><b>Теракота</b><span>#CE5631</span></button></div></div>
+  <div class="rl rv">
+    <div class="card"><span class="lbl">Правила</span><ul style="margin-top:12px"><li>Одна суперграфіка на макет.</li><li>Розмір від 40 % ширини макета, обрізана одним-двома краями, видно щонайменше половину знака.</li><li>Режим «герой» — контрастний колір, текст поруч. Режим «фон» — тон-в-тон, текст можна ставити поверх.</li><li>Manrope 800, трекінг −6 %. Цифри тільки перевірені.</li><li>Плашка-маркер: Соняшник, Паросток або Молоко. На Теракоті — маркер Глибина з текстом Молоко.</li><li>Мітка рубрики: Manrope 700 капс, повне скруглення, можна з іконкою.</li></ul></div>
+    <div class="card"><span class="lbl">Не можна</span><ul class="nope" style="margin-top:12px"><li>Суперграфіка-герой під текстом або обличчями.</li><li>Дві суперграфіки на макеті або разом з «Аурою».</li><li>Обведені, нахилені, розтягнуті чи градієнтні цифри.</li><li>Довгі слова й фрази як суперграфіка.</li><li>Логотип SSS як суперграфіка.</li><li>Маркер Соняшник на Теракоті — не читається.</li></ul></div>
+  </div>
+  <p class="more rv"><a href="brandbook.html#graphics">Детальніше в брендбуці →</a></p>
 </div></section>
 
 <!-- ICONS -->
 <section class="s" id="icons"><div class="wrap">
-  <div class="sh rv"><span class="lbl">04 · Іконки</span><h2>66 фірмових іконок для допомоги, людей і тем</h2><p>Знайдіть іконку, оберіть кольорову схему і натисніть: скопіюйте SVG для Figma чи завантажте PNG для Canva.</p></div>
+  <div class="sh rv"><span class="lbl">06 · Іконки</span><h2>66 фірмових іконок для допомоги, людей і тем</h2><p>Знайдіть іконку, оберіть кольорову схему і натисніть: скопіюйте SVG для Figma чи завантажте PNG для Canva.</p></div>
   <div class="ibar rv">
     <input type="text" id="iq" placeholder="Пошук: вода, ремонт, юрист…" aria-label="Пошук іконок">
     <div class="row" style="display:flex;gap:6px;flex-wrap:wrap" id="ig"></div>
@@ -288,6 +409,11 @@ footer a{color:var(--mol)}
   </div>
   <div class="igrid" id="igrid"></div>
   <p class="hint" id="icount" style="margin-top:12px"></p>
+  <div class="rl rv">
+    <div class="card"><span class="lbl">Правила</span><ul style="margin-top:12px"><li>Сітка 24 px, лінія 1,6 px, круглі закінчення, одна акцентна пляма.</li><li>Світле тло: лінія Ліс, пляма Соняшник. Темно-зелене: лінія Молоко, пляма Соняшник.</li><li>Розміри на 1080 px: у рядках 44–64, у мітці 30, над заголовком 120–160, іконка-герой 600–1000 з обрізанням краєм.</li><li>Іконки — у дописах, роз’ясненнях, анонсах, аналітиці й дописах без фото, не лише в сторіс.</li><li>Нову іконку малюємо за цими параметрами. Швидкий варіант — Lucide (ISC) з лінією 1,6 і плямою.</li></ul></div>
+    <div class="card"><span class="lbl">Не можна</span><ul class="nope" style="margin-top:12px"><li>Повністю залиті іконки, градієнти, тіні.</li><li>Іконки з різних бібліотек в одному макеті.</li><li>Іконку-героя під текстом чи обличчями.</li><li>Емодзі замість іконок у графіці.</li><li>Фотобанк замість іконки, коли немає власного фото.</li></ul></div>
+  </div>
+  <p class="more rv"><a href="brandbook.html#icons">Детальніше в брендбуці →</a></p>
 </div></section>
 <div class="drawer" id="drawer" role="dialog" aria-label="Іконка">
   <button class="x" id="dx" aria-label="Закрити">×</button>
@@ -296,9 +422,96 @@ footer a{color:var(--mol)}
   <div class="acts"><button class="btn g s" id="dcopy">Копіювати SVG</button><button class="btn o s" id="dsvg">SVG</button><button class="btn p s" id="dpng" style="grid-column:1/-1">PNG · 512 px</button></div>
 </div>
 
+<!-- PHOTO -->
+<section class="s" id="photo"><div class="wrap">
+  <div class="sh rv"><span class="lbl">07 · Фото</span><h2>Реальні люди, реальна робота</h2><p>Гідність героя важливіша за ефектний кадр. Ці правила стосуються і власних фото, і фото від партнерів.</p></div>
+  <div class="g3 rv">
+    <div class="card"><span class="lbl">Стиль</span><ul class="ul" style="margin-top:12px"><li>Люди в дії, не позують.</li><li>Природне світло, теплий баланс білого.</li><li>Камера на рівні очей.</li><li>«Повітря» в кадрі для тексту й логотипа.</li><li>Деталі теж працюють: руки, ключі, набір, кран.</li></ul></div>
+    <div class="card"><span class="lbl">Етика і безпека</span><ul class="ul" style="margin-top:12px"><li>Письмова згода на зйомку і публікацію; за дітей — батьки.</li><li>Без облич дітей і вразливих людей без окремої згоди.</li><li>Без адрес, номерів будинків, орієнтирів у прифронтових громадах і військових об’єктів.</li><li>Розмиваємо персональні дані на документах і екранах.</li></ul></div>
+    <div class="card"><span class="lbl">Обробка</span><ul class="ul" style="margin-top:12px"><li>Легка корекція: експозиція, баланс білого, тепло +3…+5.</li><li>Слабкі фото — дуотон Глибина → Молоко.</li><li>Чорно-біле — лише для днів пам’яті.</li><li>Мінімум 1080 px по короткій стороні.</li><li>Кадруємо між суглобами, не по шиї й колінах.</li></ul></div>
+  </div>
+  <div class="rl rv">
+    <div class="card"><span class="lbl">Правила</span><ul style="margin-top:12px"><li>Фото в прямокутнику з радіусом 24 px або на всю ширину (bleed).</li><li>Текст на фото — лише з фото-накладкою або на плашці.</li><li>Немає фото — макет з іконкою (див. «Конструктор» → «Іконка-герой»).</li></ul></div>
+    <div class="card"><span class="lbl">Не можна</span><ul class="nope" style="margin-top:12px"><li>«Порнографія бідності»: сльози й руїни як фон для жалю.</li><li>HDR, фільтри соцмереж, віньєтки, перенасичення.</li><li>Фото з фотобанків замість реальних.</li><li>Обрізати людей на фото і перекривати обличчя графікою.</li></ul></div>
+  </div>
+  <p class="more rv"><a href="brandbook.html#photo">Детальніше в брендбуці →</a></p>
+</div></section>
+
+<!-- SOCIAL -->
+<section class="s" id="social"><div class="wrap">
+  <div class="sh rv"><span class="lbl">08 · Соцмережі</span><h2>Формати, рубрики, каруселі</h2><p>Розміри для кожної мережі, рубрики з кольорами і структура каруселі. Готові макети — у конструкторі й шаблонах Canva.</p></div>
+  <div class="tw rv"><table class="tb">
+    <tr><th>Мережа</th><th>Допис</th><th>Карусель</th><th>Сторіс / відео</th><th>Інше</th></tr>
+    <tr><td>Instagram</td><td>1080×1350 (4:5)</td><td>до 20 слайдів 1080×1350</td><td>1080×1920</td><td>аватар 1080×1080 · обкладинка Reels: головне в центрі 1080×1440</td></tr>
+    <tr><td>Facebook</td><td>1080×1350 або 1080×1080</td><td>1080×1080</td><td>1080×1920</td><td>посилання 1200×630 · обкладинка 1640×924, головне в центрі 1640×624</td></tr>
+    <tr><td>LinkedIn</td><td>1200×1200 або 1080×1350</td><td>PDF-документ 1080×1350</td><td>—</td><td>посилання 1200×627 · обкладинка 1128×191</td></tr>
+    <tr><td>Telegram</td><td>1280×720 або 1080×1350</td><td>альбом до 10 фото</td><td>1080×1920</td><td>аватар 640×640</td></tr>
+  </table></div>
+  <div class="card rv" style="margin-top:16px"><span class="lbl">Сітка</span><p style="margin-top:8px">Модуль 8 px. Пост 1080 px: поля 64 px, 6 колонок, гатер 24 px, логотип зверху зліва. Сторіс: без тексту у верхніх 250 px і нижніх 340 px. У стрічці профілю Instagram видно центр 3:4 — по 34 px з боків обрізаються.</p></div>
+  <div class="tw rv" style="margin-top:16px"><table class="tb">
+    <tr><th>Рубрика</th><th>Фон</th><th>Композиція</th></tr>
+    <tr><td>Подія</td><td>Ліс або Соняшник</td><td>текст зверху, фото знизу</td></tr>
+    <tr><td>Історія людини</td><td>фото + Молоко</td><td>фото 55 %, цитата до 2 рядків</td></tr>
+    <tr><td>Допомога надана</td><td>Соняшник</td><td>велике число + 1–2 фото</td></tr>
+    <tr><td>Аналітика</td><td>Небо, слайди Молоко</td><td>карусель: обкладинка → цифри → висновок</td></tr>
+    <tr><td>Анонс, онлайн-подія</td><td>«Аура» або Ліс</td><td>дата, час, місце іконками</td></tr>
+    <tr><td>Пам’ятна дата</td><td>фото на весь кадр</td><td>плашка Молоко внизу</td></tr>
+    <tr><td>Звіт проєкту</td><td>Молоко</td><td>заголовок + іконки результатів</td></tr>
+    <tr><td>Важливо</td><td>Теракота</td><td>велика іконка, текст на плашці</td></tr>
+    <tr><td>Без фото</td><td>будь-який фірмовий</td><td>іконка над заголовком або іконка-герой</td></tr>
+  </table></div>
+  <div class="steps rv" style="margin-top:16px">
+    <div><b>Обкладинка.</b> Мітка, заголовок-гачок до 60 знаків, логотип(и), «1 / N».</div>
+    <div><b>Контекст.</b> Чому це важливо і для кого, до 40 слів.</div>
+    <div><b>Зміст.</b> Одна думка на слайд, номер пункту великим Manrope.</div>
+    <div><b>Заклик.</b> Одна дія, гаряча лінія 0 800 332 740 або sss-ua.org, логотипи донорів, дисклеймер.</div>
+  </div>
+  <div class="rl rv">
+    <div class="card"><span class="lbl">Мережі</span><ul style="margin-top:12px"><li>Instagram: усе 4:5; ритм стрічки — фото, колір, фото; альт-текст до кожного зображення.</li><li>Facebook: перші два рядки — суть і цифра; посилання в кінці.</li><li>LinkedIn: професійний тон, результати, PDF-документи; для міжнародної аудиторії — англійською, «громада» = hromada.</li><li>Telegram: жирний заголовок → 1–3 абзаци → список → посилання → 1–3 хештеги; кегль на зображенні від 30 px.</li></ul></div>
+    <div class="card"><span class="lbl">Уникаємо</span><ul class="nope" style="margin-top:12px"><li>Два однакові фони поруч у стрічці.</li><li>Більше п’яти хештегів.</li><li>Більше трьох емодзі на допис.</li><li>Текст у небезпечних зонах сторіс.</li></ul></div>
+  </div>
+  <p class="more rv"><a href="brandbook.html#social">Детальніше в брендбуці →</a></p>
+</div></section>
+
+<!-- VIDEO -->
+<section class="s" id="video"><div class="wrap">
+  <div class="sh rv"><span class="lbl">09 · Відео</span><h2>Reels, стрічка, YouTube</h2><p>Формати й безпечні зони, обкладинки, субтитри, титр спікера, заставка і кінцева картка. Шаблони — у «Шаблонах Canva», фільтр «Відео».</p></div>
+  <div class="tw rv"><table class="tb">
+    <tr><th>Формат</th><th>Розмір</th><th>Безпечна зона</th></tr>
+    <tr><td>9:16 · основний</td><td>1080×1920</td><td>без тексту: верх 250, низ 420, справа 120 px; обкладинка — центр 1080×1440</td></tr>
+    <tr><td>4:5 · стрічка</td><td>1080×1350</td><td>поля 64 px, субтитри не нижче 1210 px</td></tr>
+    <tr><td>16:9 · YouTube</td><td>1920×1080</td><td>поля 96 px; у кінцевій картці права половина — під кнопки</td></tr>
+  </table></div>
+  <div class="g3 rv" style="margin-top:16px">
+    <div class="card"><span class="lbl">Обкладинка</span><ul class="ul" style="margin-top:12px"><li>Кадр зі спікером — для цитат, інтерв’ю, історій: обличчя + цитата до 2 рядків.</li><li>Кольорове тло з назвою — для роз’яснень і анонсів: мітка, заголовок, іконка або число.</li></ul></div>
+    <div class="card"><span class="lbl">Субтитри</span><ul class="ul" style="margin-top:12px"><li>Вшиті завжди.</li><li>Onest SemiBold 44 px (16:9 — 52 px), Молоко.</li><li>До 2 рядків, до 32 знаків у рядку.</li><li>Плашка Глибина 80 %, радіус 12 px, по центру внизу.</li><li>Ключове слово — Соняшник.</li></ul></div>
+    <div class="card"><span class="lbl">Титр спікера</span><ul class="ul" style="margin-top:12px"><li>Плашка Молоко зліва, смуга Соняшник 8 px.</li><li>Ім’я Manrope ExtraBold 40 px, посада Onest Medium 28 px.</li><li>З’являється на 1-й с, тримається 4–5 с.</li><li>Перша поява спікера — завжди з титром.</li></ul></div>
+  </div>
+  <div class="rl rv">
+    <div class="card"><span class="lbl">Правила</span><ul style="margin-top:12px"><li>Заставки в Reels немає: перший кадр — гачок. YouTube — анімація логотипа до 1,5 с.</li><li>Кінцева картка: 2–3 с у Reels, 5 с у YouTube. Ліс, логотип, заклик, логотипи донорів, дисклеймер.</li><li>Тривалість: Reels і цитати 15–45 с, роз’яснення до 60–90 с, YouTube 2–8 хв.</li><li>Музика лише з ліцензією, 15–20 % гучності під голосом.</li></ul></div>
+    <div class="card"><span class="lbl">Не можна</span><ul class="nope" style="margin-top:12px"><li>Музика в історіях про втрату і в зверненнях.</li><li>Текст і субтитри в небезпечних зонах.</li><li>Відео без субтитрів.</li><li>Трендові треки без ліцензії.</li></ul></div>
+  </div>
+  <p class="more rv"><a href="brandbook.html#video">Детальніше в брендбуці →</a></p>
+</div></section>
+
+<!-- COBRAND -->
+<section class="s" id="cobrand"><div class="wrap">
+  <div class="sh rv"><span class="lbl">10 · Кобрендинг</span><h2>Донори, партнери, проєкти</h2><p>Як поєднати вимоги донорів з брендом фонду. Смугу з кількома логотипами в потрібному порядку можна скласти в конструкторі.</p></div>
+  <div class="g3 rv">
+    <div class="card" style="background:var(--les);color:var(--mol)"><span class="lbl" style="color:var(--son)">Пріоритет 1</span><h4 style="font:800 18px var(--fd);margin:8px 0">Угода і гайдлайн донора</h4><p style="color:#DDE5D6;font-size:15px">Розмір і місце логотипа донора, охоронне поле, обов’язкові формулювання, дисклеймер.</p></div>
+    <div class="card"><span class="lbl">Пріоритет 2</span><h4 style="font:800 18px var(--fd);margin:8px 0">Брендбук фонду</h4><p style="font-size:15px">Усе інше: шрифти, кольори, сітка, макети рубрик, фото, іконки.</p></div>
+    <div class="card"><span class="lbl">Якщо суперечать</span><h4 style="font:800 18px var(--fd);margin:8px 0">Мінімальна зміна</h4><p style="font-size:15px">Виконуємо вимогу донора і змінюємо якнайменше. Сумнівне — погоджуємо з менеджером проєкту до публікації.</p></div>
+  </div>
+  <div class="rl rv">
+    <div class="card"><span class="lbl">Правила</span><ul style="margin-top:12px"><li>Порядок, якщо угода не визначає інше: донор → координатор → партнер → проєкт → SSS.</li><li>До 3 логотипів — біла плашка зверху зліва. 4 і більше — плашка на всю ширину.</li><li>5 і більше — на обкладинці лише донор і SSS, повна смуга — на останньому слайді (якщо угода дозволяє).</li><li>Усі логотипи однієї оптичної висоти, між ними розділювач.</li><li>Обов’язкове формулювання — над логотипами, Onest 20–22 px. Дисклеймер — у тексті і на останньому слайді.</li><li>Колір проєкту — лише в логотипі проєкту та в матеріалах самого проєкту, якщо цього вимагає донор.</li></ul></div>
+    <div class="card"><span class="lbl">Не можна</span><ul class="nope" style="margin-top:12px"><li>Перефарбовувати, обрізати, ставити логотипи донорів на кольорове тло без плашки.</li><li>Фарбувати в кольори проєкту фони, маркери, мітки, графіки дописів фонду.</li><li>Змішувати кольори проєкту з фірмовими акцентами.</li><li>Публікувати проєктний допис без перевірки вимог угоди.</li></ul></div>
+  </div>
+  <p class="more rv"><a href="brandbook.html#cobrand">Детальніше в брендбуці →</a></p>
+</div></section>
+
 <!-- BUILDER -->
 <section class="s" id="builder"><div class="wrap">
-  <div class="sh rv"><span class="lbl">05 · Конструктор дописів</span><h2>Готовий допис за брендбуком — без дизайнера</h2><p>Оберіть формат і макет, додайте фото й текст. Поля, шрифти, кольори і розміщення логотипа виставляються автоматично. Завантажте PNG і публікуйте.</p></div>
+  <div class="sh rv"><span class="lbl">11 · Конструктор дописів</span><h2>Готовий допис за брендбуком — без дизайнера</h2><p>Оберіть формат і макет, додайте фото й текст. Поля, шрифти, кольори і розміщення логотипа виставляються автоматично. Завантажте PNG і публікуйте.</p></div>
   <div class="bw">
     <div class="bctl card">
       <div><span class="lbl">Формат</span><div class="row" id="bFmt" style="margin-top:8px"></div></div>
@@ -311,8 +524,13 @@ footer a{color:var(--mol)}
       <label class="f" id="wIcon">Іконка<select id="bIcon"></select></label>
       <div class="two" id="wEv"><label class="f">Дата<input type="text" id="bDate" value="14 листопада"></label><label class="f">Час<input type="text" id="bTime" value="15:00"></label><label class="f" style="grid-column:1/-1">Місце<input type="text" id="bPlace" value="Zoom · реєстрація в профілі"></label></div>
       <div class="f" id="wPhoto" style="display:grid;gap:6px;font:600 13px var(--fd)">Фото<span class="file"><input type="file" id="bPhoto" accept="image/*"><label class="up" for="bPhoto">Обрати фото</label><span class="fn" id="bPhotoN">Файл не обрано</span><button type="button" class="rm" id="bPhotoX" hidden>Прибрати</button></span><span class="hint">Без фото буде заглушка. Фото обрізається автоматично.</span></div>
-      <div class="f" style="display:grid;gap:6px;font:600 13px var(--fd)">Логотип донора (необов’язково)<span class="file"><input type="file" id="bDonor" accept="image/png,image/svg+xml,image/jpeg"><label class="up" for="bDonor">Обрати файл</label><span class="fn" id="bDonorN">Файл не обрано</span><button type="button" class="rm" id="bDonorX" hidden>Прибрати</button></span><span class="hint">PNG або SVG з прозорим фоном.</span></div>
       <div><span class="lbl">Логотип SSS</span><div class="row" id="bLogo" style="margin-top:8px"><button class="chip" data-v="ua" aria-pressed="true">Повний</button><button class="chip" data-v="sym" aria-pressed="false">Символ</button><button class="chip" data-v="en" aria-pressed="false">Англійська</button></div></div>
+      <div class="f" style="display:grid;gap:8px;font:600 13px var(--fd)">Логотипи на макеті
+        <div class="lglist" id="bLogos"></div>
+        <span class="file"><input type="file" id="bAdd" accept="image/png,image/svg+xml,image/jpeg,image/webp" multiple><label class="up" for="bAdd">+ Додати логотип</label></span>
+        <span class="hint">Донорів, партнерів, проєкту — скільки потрібно. Стрілками змініть порядок, як вимагає угода: зазвичай донор → партнер → проєкт → SSS. Найкраще — PNG або SVG з прозорим фоном.</span>
+        <span class="hint" id="bLogoHint" style="color:var(--ter)"></span>
+      </div>
     </div>
     <div class="bprev"><canvas id="cv" width="1080" height="1350" aria-label="Попередній перегляд допису"></canvas>
       <div class="meta"><button class="btn p" id="bDl">Завантажити PNG</button><span class="hint" id="bInfo"></span></div>
@@ -322,7 +540,7 @@ footer a{color:var(--mol)}
 
 <!-- CANVA -->
 <section class="s" id="canva"><div class="wrap">
-  <div class="sh rv"><span class="lbl">06 · Шаблони Canva</span><h2>44 шаблони, які відкриваються в Canva</h2><p>Кожен шаблон — PDF з редагованим текстом. Canva перетворює його на дизайн: міняйте заголовок, фото і цифри.</p></div>
+  <div class="sh rv"><span class="lbl">12 · Шаблони Canva</span><h2>44 шаблони, які відкриваються в Canva</h2><p>Кожен шаблон — PDF з редагованим текстом. Canva перетворює його на дизайн: міняйте заголовок, фото і цифри.</p></div>
   <div class="steps rv">
     <div>Завантажте шрифти Manrope і Onest у Canva: Бренд → Шрифти → Завантажити.</div>
     <div>Завантажте PDF шаблону нижче.</div>
@@ -335,16 +553,21 @@ footer a{color:var(--mol)}
 
 <!-- NAME -->
 <section class="s" id="name"><div class="wrap">
-  <div class="sh rv"><span class="lbl">07 · Назва фонду</span><h2>Як правильно написати назву</h2><p>Оберіть, що ви пишете, і скопіюйте правильну форму. Юридичну назву — для документів і підпису під заявами, скорочені — для дописів і дисклеймерів.</p></div>
+  <div class="sh rv"><span class="lbl">13 · Назва і текст</span><h2>Як правильно написати назву і текст</h2><p>Оберіть, що ви пишете, і скопіюйте правильну форму. Юридичну назву — для документів і підпису під заявами, скорочені — для дописів і дисклеймерів.</p></div>
   <div class="nm rv">
     <div class="card" style="display:grid;gap:8px;align-content:start" id="nmCtx"></div>
     <div class="nmout" id="nmOut" aria-live="polite"></div>
   </div>
+  <div class="rl rv">
+    <div class="card"><span class="lbl">Пишемо</span><ul style="margin-top:12px"><li>«люди, які отримали допомогу» замість «бенефіціари» у публічних текстах.</li><li>ВПО — розшифровуємо при першій згадці.</li><li>«люди з інвалідністю», «літні люди».</li><li>Лапки «ялинки», апостроф ’, тире з пробілами.</li><li>Тисячі — пробілом: 543 370. Дати: 14 листопада 2026 у тексті, 14.11.2026 у таблицях.</li><li>Хештеги: #ЗаРадиВПО та 2–4 тематичні.</li></ul></div>
+    <div class="card"><span class="lbl">Не пишемо</span><ul class="nope" style="margin-top:12px"><li>Канцелярит: «було здійснено видачу».</li><li>«інваліди», «пенсіонери» як категорія.</li><li>SSS чи ССС без родового слова в тексті.</li><li>БО «ССС» у дописах — це юридична форма.</li><li>«благодійний фонд» з малої, «Фонд» з великої посеред речення.</li></ul></div>
+  </div>
+  <p class="more rv"><a href="brandbook.html#text">Детальніше в брендбуці →</a></p>
 </div></section>
 
 <!-- PREP -->
 <section class="s" id="prep"><div class="wrap">
-  <div class="sh rv"><span class="lbl">08 · Перед публікацією</span><h2>Назва файлу і чекліст</h2><p>Однакові назви файлів допомагають знаходити макети через рік. Чекліст займає хвилину і рятує від помилок у публічному просторі.</p></div>
+  <div class="sh rv"><span class="lbl">14 · Перед публікацією</span><h2>Назва файлу і чекліст</h2><p>Однакові назви файлів допомагають знаходити макети через рік. Чекліст займає хвилину і рятує від помилок у публічному просторі.</p></div>
   <div class="pw rv">
     <div class="card"><span class="lbl">Генератор назви файлу</span>
       <div class="two" style="margin-top:14px"><label class="f">Дата<input type="date" id="fnD"></label><label class="f">Формат<select id="fnN"><option>IG-post</option><option>IG-story</option><option>IG-carousel</option><option>FB-post</option><option>FB-link</option><option>LI-post</option><option>LI-doc</option><option>TG-post</option><option>slide</option><option>print</option></select></label>
@@ -363,8 +586,8 @@ footer a{color:var(--mol)}
   <div style="display:grid;gap:6px;text-align:right"><a href="brandbook.html">Повний брендбук</a><a href="docs/SSS_Brandbook_2.0.pdf" download>Брендбук PDF</a><a href="sss-brand-kit.zip" download>Усі файли ZIP</a><span>info@sss-ua.org</span></div>
 </div></footer>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
-<script src="assets/icons.js?v=2.2"></script>
-<script src="assets/logo.js?v=2.2"></script>
-<script src="assets/app.js?v=2.2"></script>
+<script src="assets/icons.js?v=2.5"></script>
+<script src="assets/logo.js?v=2.5"></script>
+<script src="assets/app.js?v=2.5"></script>
 </body>
 </html>
