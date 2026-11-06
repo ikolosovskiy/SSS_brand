@@ -1,5 +1,5 @@
 <!doctype html>
-<!-- build 2.5 -->
+<!-- build 2.6 -->
 <html lang="uk">
 <head>
 <meta charset="utf-8">
@@ -194,6 +194,7 @@ section.s{padding:104px 0 24px}
 .file input:focus-visible+.up{outline:3px solid var(--son);outline-offset:2px}
 .fn{font:500 13px var(--ft);color:var(--kam);overflow-wrap:anywhere}
 div.f{grid-template-columns:minmax(0,1fr)}
+.gchip{display:inline-flex;align-items:center;gap:8px}.gchip i{width:18px;height:18px;border-radius:50%;background:var(--g);box-shadow:inset 0 0 0 1px rgba(0,0,0,.1)}
 .lglist{display:grid;gap:6px;grid-template-columns:minmax(0,1fr)}
 .lgi{display:flex;align-items:center;gap:10px;background:var(--mol);border:1.5px solid var(--pis);border-radius:12px;padding:6px 8px;animation:pop .3s var(--ease) both}
 .lgi .th{width:64px;height:34px;flex:none;display:grid;place-items:center;background:var(--wht);border-radius:6px;overflow:hidden}
@@ -517,6 +518,7 @@ footer a{color:var(--mol)}
       <div><span class="lbl">Формат</span><div class="row" id="bFmt" style="margin-top:8px"></div></div>
       <div><span class="lbl">Макет</span><div class="row" id="bTpl" style="margin-top:8px"></div></div>
       <div><span class="lbl">Колір</span><div class="thm" id="bThm" style="margin-top:8px"></div></div>
+      <div><span class="lbl">Градієнт фону</span><div class="row" id="bGrad" style="margin-top:8px"></div><span class="hint" style="display:block;margin-top:6px">Колір тексту підбирається до градієнта автоматично. «Аура» — не частіше 1 з 6 дописів.</span></div>
       <label class="f">Мітка рубрики<input type="text" id="bChip" value="Подія" maxlength="24"></label>
       <label class="f">Заголовок<textarea id="bHead" maxlength="90">Тренінг для фахівців соцзахисту: як підтримати переселенців</textarea></label>
       <label class="f">Підпис<textarea id="bSub" maxlength="140">Полтава · листопад 2026</textarea></label>
@@ -526,9 +528,14 @@ footer a{color:var(--mol)}
       <div class="f" id="wPhoto" style="display:grid;gap:6px;font:600 13px var(--fd)">Фото<span class="file"><input type="file" id="bPhoto" accept="image/*"><label class="up" for="bPhoto">Обрати фото</label><span class="fn" id="bPhotoN">Файл не обрано</span><button type="button" class="rm" id="bPhotoX" hidden>Прибрати</button></span><span class="hint">Без фото буде заглушка. Фото обрізається автоматично.</span></div>
       <div><span class="lbl">Логотип SSS</span><div class="row" id="bLogo" style="margin-top:8px"><button class="chip" data-v="ua" aria-pressed="true">Повний</button><button class="chip" data-v="sym" aria-pressed="false">Символ</button><button class="chip" data-v="en" aria-pressed="false">Англійська</button></div></div>
       <div class="f" style="display:grid;gap:8px;font:600 13px var(--fd)">Логотипи на макеті
+        <div id="bLogosBox" style="display:grid;gap:8px;transition:opacity .2s">
         <div class="lglist" id="bLogos"></div>
-        <span class="file"><input type="file" id="bAdd" accept="image/png,image/svg+xml,image/jpeg,image/webp" multiple><label class="up" for="bAdd">+ Додати логотип</label></span>
-        <span class="hint">Донорів, партнерів, проєкту — скільки потрібно. Стрілками змініть порядок, як вимагає угода: зазвичай донор → партнер → проєкт → SSS. Найкраще — PNG або SVG з прозорим фоном.</span>
+        <span class="file"><input type="file" id="bAdd" accept="image/png,image/svg+xml,image/jpeg,image/webp" multiple><label class="up" for="bAdd">+ Додати логотип</label><button type="button" class="up" id="bSssBack" hidden>+ Повернути логотип SSS</button></span>
+        <span class="hint">Донорів, партнерів, проєкту — скільки потрібно. Стрілками змініть порядок, ✕ — прибрати (зокрема й логотип SSS). Найкраще — PNG або SVG з прозорим фоном.</span>
+        </div>
+        <span style="margin-top:6px">Або готова плашка з логотипами</span>
+        <span class="file"><input type="file" id="bPlate" accept="image/png,image/svg+xml,image/jpeg,image/webp"><label class="up" for="bPlate">Обрати плашку</label><span class="fn" id="bPlateN">Файл не обрано</span><button type="button" class="rm" id="bPlateX" hidden>Прибрати</button></span>
+        <span class="hint">Якщо донор надав готову смугу логотипів — завантажте її: вона стане зверху зліва замість наших логотипів, на ширину до полів макета.</span>
         <span class="hint" id="bLogoHint" style="color:var(--ter)"></span>
       </div>
     </div>
@@ -586,8 +593,8 @@ footer a{color:var(--mol)}
   <div style="display:grid;gap:6px;text-align:right"><a href="brandbook.html">Повний брендбук</a><a href="docs/SSS_Brandbook_2.0.pdf" download>Брендбук PDF</a><a href="sss-brand-kit.zip" download>Усі файли ZIP</a><span>info@sss-ua.org</span></div>
 </div></footer>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
-<script src="assets/icons.js?v=2.5"></script>
-<script src="assets/logo.js?v=2.5"></script>
-<script src="assets/app.js?v=2.5"></script>
+<script src="assets/icons.js?v=2.6"></script>
+<script src="assets/logo.js?v=2.6"></script>
+<script src="assets/app.js?v=2.6"></script>
 </body>
 </html>
