@@ -258,8 +258,8 @@ const fmt=n=>String(Math.round(n)).replace(/\B(?=(\d{3})+(?!\d))/g,' ');
 function countUp(el,to,dur,html){if(RM){el.innerHTML=html?html(to):fmt(to);return}const t0=performance.now();const step=t=>{const p=Math.min(1,(t-t0)/dur),e=1-Math.pow(1-p,3),v=to*e;el.innerHTML=html?html(v):fmt(v);if(p<1)requestAnimationFrame(step)};requestAnimationFrame(step)}
 countUp($('heroNum'),543370,2200,v=>{const s=String(Math.round(v)).padStart(6,'0');return s.slice(0,3)+'<br>'+s.slice(3)});
 document.querySelectorAll('[data-count]').forEach(el=>countUp(el,+el.dataset.count,1600));
-const WORDS=['ДІМ','ВОДА','ПРАВО','ТЕПЛО','РАЗОМ'];let wi=0;
-if(!RM)setInterval(()=>{wi=(wi+1)%WORDS.length;const sp=$('heroWord');const n=document.createElement('span');n.id='heroWord';n.textContent=WORDS[wi];sp.replaceWith(n)},2600);
+const WORDS=['Гуманітарна допомога постраждалим від війни','Відновлення та розвиток громад','Адвокація','Правопросвітництво','Підтримка рад ВПО','Підтримка системи соціального захисту населення'];let wi=0;
+if(!RM)setInterval(()=>{wi=(wi+1)%WORDS.length;const sp=$('heroWord');const n=document.createElement('span');n.id='heroWord';n.textContent=WORDS[wi];sp.replaceWith(n)},3200);
 const rv=[...document.querySelectorAll('.rv')];
 if(!RM&&'IntersectionObserver' in window){const io=new IntersectionObserver(es=>es.forEach(en=>{if(en.isIntersecting){en.target.classList.remove('hid');io.unobserve(en.target)}}),{rootMargin:'0px 0px -8% 0px'});
   rv.forEach(el=>{if(el.getBoundingClientRect().top>innerHeight){el.classList.add('hid');io.observe(el)}})}
