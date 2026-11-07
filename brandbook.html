@@ -65,9 +65,9 @@ main{min-width:0;padding-left:max(16px,env(safe-area-inset-left,0px));padding-ri
 .cover .lead{position:relative;z-index:2;max-width:46ch;font-size:clamp(17px,1.6vw,20px);margin-top:28px;color:#E9EDE3}
 .cover .meta{position:relative;z-index:2;display:flex;gap:28px;flex-wrap:wrap;margin-top:48px;font:600 13px var(--fd);color:#C9D2C2}
 .cover .meta b{display:block;color:var(--mol);font-size:15px}
-.cover .art{position:absolute;right:-2%;bottom:-8%;z-index:1;font-size:clamp(170px,26vw,400px);color:#3D5C37;text-align:right}
+.cover .art{position:absolute;right:4%;bottom:5%;z-index:1;font-size:clamp(120px,24vw,360px);color:#3D5C37;text-align:right}
 .sg{font-family:var(--fd);font-weight:800;letter-spacing:-.06em;line-height:.8;white-space:nowrap;pointer-events:none;user-select:none}
-@media (max-width:700px){.cover .art{right:-20%;bottom:-4%}}
+@media (max-width:700px){.cover .art{right:5%;bottom:3%;opacity:.7}}
 /* ---------- chapters ---------- */
 section.ch{padding-block:96px 24px;scroll-margin-top:60px}
 .chh{display:grid;grid-template-columns:auto minmax(0,1fr);gap:8px 28px;align-items:end;margin-bottom:40px;padding-bottom:28px;border-bottom:2px solid var(--gly)}
@@ -212,7 +212,8 @@ footer svg{height:30px;width:auto;fill:var(--lg)}
 .vt .bdg{flex:none;font:800 11px Manrope,Arial,sans-serif;letter-spacing:.06em;text-transform:uppercase;padding:3px 8px;border-radius:99px}
 .vt .y{background:#A9D48E;color:#1B2A18}.vt .n{background:#A63F1F;color:#fff}
 .vt .sgv{position:absolute;font:800 120px/.8 Manrope,Arial,sans-serif;letter-spacing:-.06em;white-space:nowrap}
-.sw{border-radius:12px;min-height:110px;padding:12px;display:flex;flex-direction:column;justify-content:flex-end;gap:2px;color:#1B2A18}.sw b{font:800 14px Manrope,Arial,sans-serif}.sw span{font:500 12px Onest,Arial,sans-serif}
+.serc{grid-template-columns:repeat(6,minmax(0,1fr))}@media(max-width:700px){.serc{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.sw{min-width:0;overflow-wrap:anywhere;border-radius:12px;min-height:110px;padding:12px;display:flex;flex-direction:column;justify-content:flex-end;gap:2px;color:#1B2A18}.sw b{font:800 14px Manrope,Arial,sans-serif}.sw span{font:500 12px Onest,Arial,sans-serif}
 .gp{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px}.gpn{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:10px}
 @media(max-width:900px){.gp{grid-template-columns:repeat(2,minmax(0,1fr))}.gpn{grid-template-columns:1fr}}
 .gpi{border-radius:12px;min-height:96px;padding:12px;display:flex;flex-direction:column;justify-content:flex-end;gap:2px;position:relative}
@@ -263,7 +264,7 @@ footer svg{height:30px;width:auto;fill:var(--lg)}
     <div>Ключовий колір<b>Ліс #314C2C</b></div>
     <div>Шрифти<b>Manrope + Onest</b></div>
     <div>Іконок у наборі<b id="icount">60</b></div>
-    <div>Контакт бренд-команди<b>info@sss-ua.org</b></div>
+    <div>Контакт бренд-команди<b>info@cfsss.org</b></div>
   </div>
   <div class="art sg" aria-hidden="true">543<br>370</div>
 </header>
@@ -539,7 +540,7 @@ footer svg{height:30px;width:auto;fill:var(--lg)}
     <div class="grid g3">
       <div class="card"><span class="lbl">Georgia · було</span><p style="font:400 46px/1.1 Georgia,serif;margin-top:12px;letter-spacing:-.01em">543 370<br>2016 · 69</p></div>
       <div class="card"><span class="lbl">Raleway · було</span><p style="font:500 46px/1.1 Raleway,sans-serif;margin-top:12px">543 370<br>2016 · 69</p></div>
-      <div class="card" style="background:var(--les);color:var(--mol)"><span class="lbl" style="color:var(--son)">Manrope · стало</span><p style="font:800 46px/1.1 var(--fd);margin-top:12px;letter-spacing:-.03em">543 370<br>2016 · 69</p></div>
+      <div class="card" style="background:var(--les);color:var(--mol)"><span class="lbl" style="color:var(--son)">Manrope · стало</span><p style="font:800 46px/1.1 var(--fd);margin-top:12px;letter-spacing:-.03em;color:var(--mol)">543 370<br>2016 · 69</p></div>
     </div>
   </div>
 
@@ -1089,7 +1090,7 @@ footer svg{height:30px;width:auto;fill:var(--lg)}
   <div class="blk">
     <h3>Порядок кольорів для рядів даних</h3>
     <p class="sub">Перший ряд — завжди Ліс. Небо світле, тому на білому тлі — з обведенням Камінь. Ці кольори вбудовані в шаблон Excel і презентацію.</p>
-    <div class="grid" style="grid-template-columns:repeat(6,1fr);gap:8px">
+    <div class="grid serc" style="gap:8px">
       <div class="sw" style="background:#314C2C;color:#FBF6EC"><b>1 · Ліс</b><span>#314C2C</span></div>
       <div class="sw" style="background:#F6B93B"><b>2 · Соняшник</b><span>#F6B93B</span></div>
       <div class="sw" style="background:#A9D48E"><b>3 · Паросток</b><span>#A9D48E</span></div>
@@ -1112,7 +1113,7 @@ footer svg{height:30px;width:auto;fill:var(--lg)}
   <div class="blk">
     <h3>Готові файли</h3>
     <div class="grid g3">
-      <div class="card"><h4>Презентація .pptx</h4><p>templates/pptx/SSS_presentation_16x9.pptx — 10 слайдів: обкладинка, зміст, розділ, напрями з іконками, цифри, графік, текст і фото, цитата, кроки, фінал з плашкою донорів. У презентаціях — лише повний логотип.</p></div>
+      <div class="card"><h4>Презентація .pptx</h4><p>templates/pptx/SSS_presentation_16x9.pptx — 10 слайдів: обкладинка, зміст, розділ, напрями з іконками, цифри, графік, текст і фото, цитата, кроки, фінал з контактами фонду й плашкою донорів. У презентаціях — лише повний логотип.</p></div>
       <div class="card"><h4>Canva</h4><p>Командний акаунт фонду (Canva for Nonprofits), Brand Kit з логотипами, кольорами й шрифтами, шаблони рубрик — спільними посиланнями. PDF-імпорт — лише щоб створити шаблон уперше: після імпорту перевірити шрифти й відстані.</p></div>
       <div class="card"><h4>Сайт</h4><p>web/sss-web.css і web/theme.json для WordPress: змінні кольорів, типографіка, кнопки, посилання, картки, мітки, форми. Одна головна дія на екрані — кнопка Соняшник; посилання завжди підкреслені.</p></div>
     </div>
@@ -1129,7 +1130,7 @@ footer svg{height:30px;width:auto;fill:var(--lg)}
         <div style="font:400 14px/1.5 Arial,sans-serif;color:#1B2A18">
           <b style="font-size:15px">Ім’я Прізвище</b><br>
           <span style="color:#66705F">Посада · Напрям</span><br>
-          +38 0XX XXX XX XX · info@sss-ua.org<br>
+          +38 0XX XXX XX XX · info@cfsss.org<br>
           <span style="color:#314C2C;font-weight:bold">sss-ua.org</span>
           <svg viewBox="0 0 772.09 97.7" style="display:block;height:20px;width:auto;fill:#214E34;margin-top:12px"><use href="#lua"/></svg>
         </div>
@@ -1237,7 +1238,7 @@ footer svg{height:30px;width:auto;fill:var(--lg)}
 
 <footer><a href="index.html" style="font-weight:700">← Бренд-кіт</a>
   <svg viewBox="0 0 772.09 97.7"><use href="#lua"/></svg>
-  <div>Брендбук 2.0 · листопад 2026<br>Питання щодо бренду: info@sss-ua.org</div>
+  <div>Брендбук 2.0 · листопад 2026<br>Питання щодо бренду: info@cfsss.org</div>
 </footer>
 </div>
 </main>
@@ -1536,7 +1537,7 @@ P.urgent=frame('r45',1080,C.ter,`
  <div class="abs" style="right:${u(-40)};top:${u(110)}">${ic('alert',C.mol,C.son,u(420),1.3)}</div>
  <div class="abs" style="left:var(--mg);right:var(--mg);top:${u(470)}">${chip('Важливо',C.mol,C.gly,'feedback',C.gly,C.son)}
   <div class="H2" style="color:${C.mol};margin-top:${u(32)}">Як повідомити про <span class="mk" style="background:${C.gly};color:${C.mol}">порушення</span> під час отримання допомоги</div></div>
- <div class="abs TX" style="left:var(--mg);right:var(--mg);bottom:var(--mg);background:${C.mol};border-radius:${u(24)};padding:${u(36)} ${u(40)}">Анонімно і безпечно: форма «Залишити повідомлення» на сайті sss-ua.org або лист на info@sss-ua.org</div>`);
+ <div class="abs TX" style="left:var(--mg);right:var(--mg);bottom:var(--mg);background:${C.mol};border-radius:${u(24)};padding:${u(36)} ${u(40)}">Анонімно і безпечно: форма «Залишити повідомлення» на сайті sss-ua.org або лист на info@cfsss.org</div>`);
 P.thanks=frame('r45',1080,C.par,`
  <div class="abs" style="left:var(--mg);top:var(--mg)">${SYMb(C.les,40)}</div>
  <div class="abs" style="left:var(--mg);right:var(--mg);top:${u(200)};background:${C.wht};border-radius:${u(24)};height:${u(300)};display:grid;place-items:center"><div style="width:${u(420)};height:${u(150)};border:${u(3)} dashed ${C.kam};border-radius:${u(12)};display:grid;place-items:center;font:700 ${u(26)} var(--fd);letter-spacing:.08em;color:${C.kam}">ЛОГОТИП ДОНОРА</div></div>
@@ -1638,28 +1639,28 @@ const SL1=frame('r169',1920,C.les,`${SG('2025',TONE.les,720,`right:${u(-60)};bot
  <div class="abs" style="left:${u(96)};top:${u(80)};height:${u(56)}"><svg viewBox="${LUA}" style="height:100%;width:auto;fill:${C.mol}"><use href="#lua"/></svg></div>
  <div class="abs" style="left:${u(96)};top:${u(300)};width:${u(1200)}"><div class="H1" style="font-size:${u(120)};color:${C.mol}">Звіт про діяльність 2025</div><div class="LD" style="color:#C9D2C2;margin-top:${u(28)};font-size:${u(36)}">Рада директорів · Київ · 2026</div></div>`);
 const SL2=frame('r169',1920,C.son,`${BIG('aid',C.les,C.ter,900,`right:${u(-110)};top:${u(150)}`,1.4)}
- <div class="abs" style="left:${u(96)};top:${u(96)}">${SYMb(C.gly,56)}</div>
+ <div class="abs" style="left:${u(96)};top:${u(96)}"><div style="height:${u(52)}"><svg viewBox="${LUA}" style="height:100%;width:auto;fill:${LG};display:block"><use href="#lua"/></svg></div></div>
  <div class="abs" style="left:${u(96)};bottom:${u(120)};width:${u(880)}"><div style="font:800 ${u(220)}/.85 var(--fd);letter-spacing:-.05em">02</div><div class="H1" style="font-size:${u(96)};margin-top:${u(28)}">Гуманітарне реагування</div></div>`);
 const SL3=frame('r169',1920,C.mol,`
- <div class="abs" style="left:${u(96)};top:${u(80)}">${SYMb(C.les,44)}</div>
+ <div class="abs" style="left:${u(96)};top:${u(80)}"><div style="height:${u(48)}"><svg viewBox="${LUA}" style="height:100%;width:auto;fill:${LG};display:block"><use href="#lua"/></svg></div></div>
  <div class="abs" style="left:${u(96)};top:${u(200)};width:${u(1100)}"><div class="H2" style="font-size:${u(72)};color:${C.les}">Ключові результати</div><div class="LD" style="font-size:${u(30)};color:${C.kam};margin-top:${u(16)}">з початку повномасштабного вторгнення</div></div>
  <div class="abs" style="left:${u(96)};right:${u(96)};bottom:${u(96)};display:grid;grid-template-columns:repeat(3,1fr);gap:${u(32)}">${[['543 370','людей отримали гуманітарну допомогу',C.neb],['315 086','наборів видано',C.son],['2 168','об’єктів відремонтовано',C.par]].map(([n,t,b])=>`<div style="background:${b};border-radius:${u(28)};padding:${u(48)};height:${u(440)};display:flex;flex-direction:column;justify-content:space-between"><div style="font:800 ${u(120)}/.95 var(--fd);letter-spacing:-.04em">${n}</div><div class="LD" style="font-size:${u(30)}">${t}</div></div>`).join('')}</div>`);
 const SL4=frame('r169',1920,C.mol,`${PH('phB',`right:0;top:0;bottom:0;width:${u(860)}`,'фото')}
- <div class="abs" style="left:${u(96)};top:${u(80)}">${SYMb(C.les,44)}</div>
+ <div class="abs" style="left:${u(96)};top:${u(80)}"><div style="height:${u(48)}"><svg viewBox="${LUA}" style="height:100%;width:auto;fill:${LG};display:block"><use href="#lua"/></svg></div></div>
  <div class="abs" style="left:${u(96)};top:${u(260)};width:${u(820)}"><div class="H2" style="font-size:${u(72)};color:${C.les}">Соціальні пральні в Сумській і Чернігівській областях</div><div class="TX" style="font-size:${u(30)};margin-top:${u(28)}">Текст слайда до 5 рядків. Один слайд, одна думка, одне фото.</div></div>`);
 const SL5=frame('r169',1920,C.ter,`${BIG('heart',C.mol,C.son,1100,`left:${u(-180)};top:${u(-40)}`,1.4)}
  <div class="abs" style="left:${u(1000)};top:${u(150)};height:${u(56)}"><svg viewBox="${LUA}" style="height:100%;width:auto;fill:${C.mol}"><use href="#lua"/></svg></div>
- <div class="abs" style="left:${u(1000)};top:${u(500)}"><div class="H1" style="font-size:${u(110)};color:${C.mol}">Дякуємо!</div><div class="LD" style="font-size:${u(34)};color:${C.mol};margin-top:${u(28)}">info@sss-ua.org<br>sss-ua.org</div></div>`);
-$('slides').innerHTML=item(SL1,'Титул','Ліс + число тон-в-тон')+item(SL2,'Розділ','іконка-герой')+item(SL3,'Цифри','плитки напрямів')+item(SL4,'Текст + фото','половина на половину')+item(SL5,'Фінальний','Теракота + іконка');
+ <div class="abs" style="left:${u(1000)};top:${u(380)}"><div class="H1" style="font-size:${u(110)};color:${C.mol}">Дякуємо!</div><div class="LD" style="font-size:${u(34)};color:${C.mol};margin-top:${u(28)};line-height:1.45">sss-ua.org<br>info@cfsss.org<br>0 800 332 740<br><span style="opacity:.8">Фейсбук та Інстаграм:</span><br>@stabilizationsupportservices</div></div>`);
+$('slides').innerHTML=item(SL1,'Титул','Ліс + число тон-в-тон')+item(SL2,'Розділ','іконка-герой')+item(SL3,'Цифри','плитки напрямів')+item(SL4,'Текст + фото','половина на половину')+item(SL5,'Фінальний','Теракота + іконка + контакти');
 
 const A4=`<div class="pf" style="aspect-ratio:210/297;background:${C.wht}"><div class="in" style="--w:1050">
  <div class="abs" style="left:${u(90)};top:${u(80)};height:${u(42)}"><svg viewBox="${LUA}" style="height:100%;width:auto;fill:${LG}"><use href="#lua"/></svg></div>
- <div class="abs" style="right:${u(90)};top:${u(74)};text-align:right;font:500 ${u(15)}/1.5 var(--ft);color:${C.kam}">вул. Володимирська, 49 А, секція 2, офіс 156<br>Київ, 01001 · ЄДРПОУ 40567253<br>info@sss-ua.org · +38 050 449 46 04</div>
+ <div class="abs" style="right:${u(90)};top:${u(74)};text-align:right;font:500 ${u(15)}/1.5 var(--ft);color:${C.kam}">вул. Володимирська, 49 А, секція 2, офіс 156<br>Київ, 01001 · ЄДРПОУ 40567253<br>info@cfsss.org · +38 050 449 46 04</div>
  <div class="abs" style="left:${u(90)};right:${u(90)};top:${u(170)};height:${u(3)};background:${C.les}"></div>
  <div class="abs" style="left:${u(90)};right:${u(90)};top:${u(240)};display:grid;gap:${u(14)}">${[90,100,96,100,70,0,100,94,100,60].map(w=>`<i style="height:${u(12)};width:${w}%;background:${w?C.pis:'transparent'};border-radius:${u(3)}"></i>`).join('')}</div>
  <div class="abs" style="left:0;right:0;bottom:0;height:${u(28)};display:flex"><i style="flex:6;background:${C.les}"></i><i style="flex:3;background:${C.son}"></i><i style="flex:1;background:${C.par}"></i></div></div></div>`;
 const CARD1=frame('rcard',900,C.les,`<div class="abs" style="inset:0;display:grid;place-items:center"><svg viewBox="${SYM}" style="width:${u(380)};fill:${C.mol}"><use href="#sym"/></svg></div>`);
-const CARD2=frame('rcard',900,C.mol,`<div class="abs" style="left:${u(60)};top:${u(56)}"><div style="font:800 ${u(44)}/1.1 var(--fd);color:${C.les}">Ім’я Прізвище</div><div style="font:500 ${u(26)}/1.3 var(--ft);color:${C.kam};margin-top:${u(8)}">Посада · Напрям</div></div><div class="abs" style="left:${u(60)};bottom:${u(52)};font:500 ${u(24)}/1.5 var(--ft)">+38 0XX XXX XX XX<br>info@sss-ua.org · sss-ua.org</div><div class="abs" style="right:${u(60)};bottom:${u(60)};width:${u(110)};height:${u(110)};border:${u(3)} solid ${C.les};border-radius:${u(10)};display:grid;place-items:center;font:700 ${u(20)} var(--fd);color:${C.les}">QR</div><i class="abs" style="left:0;top:0;bottom:0;width:${u(18)};background:${C.son}"></i>`);
+const CARD2=frame('rcard',900,C.mol,`<div class="abs" style="left:${u(60)};top:${u(56)}"><div style="font:800 ${u(44)}/1.1 var(--fd);color:${C.les}">Ім’я Прізвище</div><div style="font:500 ${u(26)}/1.3 var(--ft);color:${C.kam};margin-top:${u(8)}">Посада · Напрям</div></div><div class="abs" style="left:${u(60)};bottom:${u(52)};font:500 ${u(24)}/1.5 var(--ft)">+38 0XX XXX XX XX<br>info@cfsss.org · sss-ua.org</div><div class="abs" style="right:${u(60)};bottom:${u(60)};width:${u(110)};height:${u(110)};border:${u(3)} solid ${C.les};border-radius:${u(10)};display:grid;place-items:center;font:700 ${u(20)} var(--fd);color:${C.les}">QR</div><i class="abs" style="left:0;top:0;bottom:0;width:${u(18)};background:${C.son}"></i>`);
 const ROLL=`<div class="pf" style="aspect-ratio:85/200;background:${C.les};max-width:240px"><div class="in" style="--w:850">${GRAIN}
  <div class="abs" style="left:${u(70)};top:${u(80)};height:${u(56)}"><svg viewBox="${LUA}" style="height:100%;width:auto;fill:${C.mol}"><use href="#lua"/></svg></div>
  <div class="abs" style="left:${u(70)};right:${u(70)};top:${u(260)}"><div class="H1" style="font-size:${u(96)};color:${C.mol}">Долаємо соціальні наслідки війни разом</div></div>
