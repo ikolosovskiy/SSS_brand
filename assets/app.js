@@ -79,22 +79,40 @@ tester.style.fontWeight=800;tester.style.fontFamily='var(--fd)';tester.style.let
 
 /* ---------- icons ---------- */
 const IP={};
+/* SSS glass icons renderer (SVG) */
+var GN=0;
+function shadeHex(h,k){const n=[1,3,5].map(i=>parseInt(h.slice(i,i+2),16));return '#'+n.map(v=>Math.max(0,Math.min(255,Math.round(k<0?v*(1+k):v+(255-v)*k))).toString(16).padStart(2,'0')).join('')}
+function glassGrad(acc){const a=(acc||'').toUpperCase();if(a==='#F6B93B')return ['#F6B93B','#DC643D'];if(a==='#A9D48E')return ['#A9D48E','#5E9A4E'];if(a==='#D7E6FB'||a==='#FFFFFF'||a==='#FBF6EC')return ['#C6D9F4','#7FA3D6'];return [acc,shadeHex(acc,-.28)]}
+function glassInner(i,line,acc,sw,dark){const u='sg'+(++GN),[c1,c2]=glassGrad(acc),front=i[5],back=i[6]||`<g transform="translate(2.4 -2.4)">${i[5]}</g>`;
+ return `<defs><linearGradient id="${u}g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="${c1}"/><stop offset="1" stop-color="${c2}"/></linearGradient><linearGradient id="${u}h" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff"/><stop offset=".5" stop-color="#fff" stop-opacity=".12"/><stop offset="1" stop-color="#fff" stop-opacity=".7"/></linearGradient><clipPath id="${u}c">${front}</clipPath><mask id="${u}m"><rect x="-4" y="-4" width="32" height="32" fill="#fff"/><g fill="#000">${front}</g></mask><filter id="${u}b" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="1.5"/></filter></defs><g mask="url(#${u}m)" fill="url(#${u}g)">${back}</g><g clip-path="url(#${u}c)"><g fill="url(#${u}g)" filter="url(#${u}b)">${back}</g><rect x="-4" y="-4" width="32" height="32" fill="#fff" fill-opacity="${dark?.3:.55}"/></g><g fill="none" stroke="url(#${u}h)" stroke-width=".6">${front}</g><g fill="none" stroke="${line}" stroke-width="${sw||1.4}" stroke-linecap="round" stroke-linejoin="round">${i[4]}</g>`}
+function _lumH(h){if(!h||h[0]!=='#')return 0;const c=[1,3,5].map(i=>parseInt(h.slice(i,i+2),16)/255).map(x=>x<=.03928?x/12.92:((x+.055)/1.055)**2.4);return .2126*c[0]+.7152*c[1]+.0722*c[2]}
+function useGlass(line,acc,sw){return acc&&acc!=='none'&&acc!==line&&!(sw>=2)&&ICONS[0].length>5}
+
 function iconPaths(id){
   if(IP[id])return IP[id];
-  const ic=ICONS.find(i=>i[1]===id);const doc=new DOMParser().parseFromString(`<svg xmlns="http://www.w3.org/2000/svg"><g id="a">${ic[3]}</g><g id="l">${ic[4]}</g></svg>`,'image/svg+xml');
+  const ic=ICONS.find(i=>i[1]===id);const doc=new DOMParser().parseFromString(`<svg xmlns="http://www.w3.org/2000/svg"><g id="a">${ic[3]}</g><g id="l">${ic[4]}</g><g id="f">${ic[5]||''}</g><g id="b">${ic[6]||''}</g></svg>`,'image/svg+xml');
   const conv=el=>{const t=el.tagName,g=a=>parseFloat(el.getAttribute(a)||0);
     if(t==='path')return el.getAttribute('d');
     if(t==='circle'){const cx=g('cx'),cy=g('cy'),r=g('r');return `M${cx-r} ${cy}a${r} ${r} 0 1 0 ${2*r} 0a${r} ${r} 0 1 0 ${-2*r} 0z`}
     if(t==='ellipse'){const cx=g('cx'),cy=g('cy'),rx=g('rx'),ry=g('ry');return `M${cx-rx} ${cy}a${rx} ${ry} 0 1 0 ${2*rx} 0a${rx} ${ry} 0 1 0 ${-2*rx} 0z`}
     if(t==='rect'){const x=g('x'),y=g('y'),w=g('width'),h=g('height'),r=Math.min(g('rx'),w/2,h/2);if(!r)return `M${x} ${y}h${w}v${h}h${-w}z`;return `M${x+r} ${y}h${w-2*r}a${r} ${r} 0 0 1 ${r} ${r}v${h-2*r}a${r} ${r} 0 0 1 ${-r} ${r}h${-(w-2*r)}a${r} ${r} 0 0 1 ${-r} ${-r}v${-(h-2*r)}a${r} ${r} 0 0 1 ${r} ${-r}z`}
     return ''};
-  const pick=gid=>[...doc.getElementById(gid).children].map(conv).filter(Boolean).map(d=>new Path2D(d));
-  return IP[id]={a:pick('a'),l:pick('l')};
+  const pick=gid=>[...doc.getElementById(gid).children].map(conv).filter(Boolean);
+  const P=pick('a').map(d=>new Path2D(d)),L=pick('l').map(d=>new Path2D(d)),F=pick('f'),B=pick('b');
+  const front=new Path2D(),back=new Path2D();F.forEach(d=>front.addPath(new Path2D(d)));
+  if(B.length)B.forEach(d=>back.addPath(new Path2D(d)));else F.forEach(d=>back.addPath(new Path2D(d),new DOMMatrix().translate(2.4,-2.4)));
+  return IP[id]={a:P,l:L,fl:F.map(d=>new Path2D(d)),front,back};
 }
-function drawIcon(ctx,id,x,y,size,line,acc,sw=1.6){const P=iconPaths(id),k=size/24;ctx.save();ctx.translate(x,y);ctx.scale(k,k);if(acc&&acc!=='none'){ctx.fillStyle=acc;P.a.forEach(p=>ctx.fill(p))}ctx.strokeStyle=line;ctx.lineWidth=sw;ctx.lineCap='round';ctx.lineJoin='round';P.l.forEach(p=>ctx.stroke(p));ctx.restore()}
-function iconSvg(id,line,acc,size){const i=ICONS.find(x=>x[1]===id);return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"${size?` width="${size}" height="${size}"`:''}><g fill="${acc}">${i[3]}</g><g fill="none" stroke="${line}" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">${i[4]}</g></svg>`}
+function drawIcon(ctx,id,x,y,size,line,acc,sw=1.8){const P=iconPaths(id),k=size/24;ctx.save();ctx.translate(x,y);ctx.scale(k,k);
+  if(useGlass(line,acc,sw)&&P.fl.length){const [c1,c2]=glassGrad(acc),gr=ctx.createLinearGradient(0,0,24,24);gr.addColorStop(0,c1);gr.addColorStop(1,c2);
+    ctx.save();const ex=new Path2D();ex.rect(-6,-6,36,36);ex.addPath(P.front);ctx.clip(ex,'evenodd');ctx.fillStyle=gr;ctx.fill(P.back);ctx.restore();
+    ctx.save();ctx.clip(P.front);if('filter' in ctx)ctx.filter=`blur(${(1.5*k).toFixed(1)}px)`;ctx.fillStyle=gr;ctx.fill(P.back);if('filter' in ctx)ctx.filter='none';ctx.fillStyle=`rgba(255,255,255,${_lumH(line)>.5?.3:.55})`;ctx.fillRect(-6,-6,36,36);ctx.restore();
+    const h=ctx.createLinearGradient(0,0,24,24);h.addColorStop(0,'rgba(255,255,255,1)');h.addColorStop(.5,'rgba(255,255,255,.12)');h.addColorStop(1,'rgba(255,255,255,.7)');ctx.strokeStyle=h;ctx.lineWidth=.6;P.fl.forEach(p=>ctx.stroke(p));sw=Math.min(sw,1.4)}
+  else if(acc&&acc!=='none'){ctx.fillStyle=acc;P.a.forEach(p=>ctx.fill(p))}
+  ctx.strokeStyle=line;ctx.lineWidth=sw;ctx.lineCap='round';ctx.lineJoin='round';P.l.forEach(p=>ctx.stroke(p));ctx.restore()}
+function iconSvg(id,line,acc,size){const i=ICONS.find(x=>x[1]===id);const inner=useGlass(line,acc)?glassInner(i,line,acc,1.4,_lumH(line)>.5):`<g fill="${acc}">${i[3]}</g><g fill="none" stroke="${line}" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">${i[4]}</g>`;return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="${useGlass(line,acc)?'-2 -3 28 28':'0 0 24 24'}"${size?` width="${size}" height="${size}"`:''} style="overflow:visible">${inner}</svg>`}
 const IST=[['Основний',C.les,C.son,C.wht],['На Ліс',C.mol,C.son,C.les],['На Соняшник',C.gly,C.mol,C.son],['На Небо',C.les,C.wht,C.neb],['На Теракота',C.mol,C.son,C.ter],['Моно',C.gly,'none',C.wht]];
-const SYN={water:'вода питна',wash:'вода кран водопостачання санітарія',laundry:'прання гігієна',home:'дім житло будинок',repair:'ремонт молоток відновлення',legal:'юрист право закон суд терези',consult:'консультація розмова чат',hotline:'телефон дзвінок лінія',idp:'переселенці впо валіза',kids:'діти дитина',elderly:'літні пенсіонери',access:'інвалідність доступність візок',veteran:'ветерани медаль військові',cash:'гроші виплати кошти',food:'їжа продукти набір',med:'медицина аптечка ліки',heat:'тепло опалення вогонь',winter:'зима холод сніг',energy:'енергія світло генератор',truck:'доставка логістика авто',sprout:'розвиток росток громади',edu:'освіта навчання тренінг',donate:'донат підтримати пожертва',jobs:'вакансія робота тендер',alert:'увага терміново важливо',psy:'психолог підтримка ментальне',partner:'партнерство співпраця',gov:'держава установа міністерство',media:'медіа телефон новини'};
+const SYN={water:'вода питна',wash:'вода кран водопостачання санітарія',laundry:'прання гігієна',home:'дім житло будинок',repair:'ремонт молоток відновлення',legal:'юрист право закон суд терези',consult:'консультація розмова чат',hotline:'телефон дзвінок лінія',idp:'переселенці впо валіза',kids:'діти дитина',elderly:'літні пенсіонери',access:'інвалідність доступність візок',cash:'гроші виплати кошти',food:'їжа продукти набір',med:'медицина аптечка ліки',heat:'тепло опалення вогонь',winter:'зима холод сніг',energy:'енергія світло генератор',truck:'доставка логістика авто',sprout:'розвиток росток громади',edu:'освіта навчання тренінг',donate:'донат підтримати пожертва',jobs:'вакансія робота тендер',alert:'увага терміново важливо',psy:'психолог підтримка ментальне',partner:'партнерство співпраця',gov:'держава установа міністерство',media:'медіа телефон новини'};
 let iStyle=0,iGroup='all';
 const groups=[...new Set(ICONS.map(i=>i[0]))];
 chips($('ig'),[['all','Усі'],...groups.map(g=>[g,g])],'all',v=>{iGroup=v;renderIcons()});

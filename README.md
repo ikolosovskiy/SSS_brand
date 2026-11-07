@@ -1,6 +1,6 @@
 # Бренд-кіт Благодійного фонду «Стабілізейшен Суппорт Сервісез»
 
-Логотипи (зокрема CMYK для друку), кольори, шрифти, 66 фірмових іконок, конструктори дописів і графіків, шаблони Canva, PowerPoint і Excel, веб-набір для WordPress, анімація логотипа. Повні правила — у [брендбуку](brandbook.html) ([PDF](docs/SSS_Brandbook_2.0.pdf)), коротко — у [шпаргалці на одну сторінку](docs/SSS_shpargalka.pdf).
+Логотипи (зокрема CMYK для друку), кольори, шрифти, 65 фірмових іконок, конструктори дописів і графіків, шаблони Canva, PowerPoint і Excel, веб-набір для WordPress, анімація логотипа. Повні правила — у [брендбуку](brandbook.html) ([PDF](docs/SSS_Brandbook_2.0.pdf)), коротко — у [шпаргалці на одну сторінку](docs/SSS_shpargalka.pdf).
 
 ## Сайт бренд-кіту
 
@@ -30,7 +30,8 @@ docs/                 брендбук PDF, шпаргалка PDF
 logo/svg, logo/png    логотип UA, EN, символ × 6 кольорів (original #214E34, Ліс, Молоко, Глибина, білий, чорний)
 logo/print            CMYK PDF і EPS для друку (зелений CMYK 91·40·86·44, білий, чорний)
 logo/original         оригінальні векторні файли від дизайнера
-icons/svg             іконки, фірмові кольори
+icons/svg             іконки «скло» (від 40 px)
+icons/svg-flat        плоскі іконки для дрібних розмірів
 icons/svg-mono        іконки currentColor (для коду і Figma)
 icons/png             іконки 512 px з прозорим фоном (Canva)
 icons/sprite.svg      SVG-спрайт для сайту
@@ -82,7 +83,7 @@ sss-brand-kit.zip     усі файли одним архівом
 - Canva: **Завантаження → Завантажити файли** → PNG або SVG з `icons/`.
 - HTML: `<svg width="24" height="24"><use href="icons/sprite.svg#sss-home"/></svg>`; кольори задаються змінними `--icon-line` і `--icon-accent`.
 
-Стиль: сітка 24 px, лінія 1,6 px з круглими закінченнями, одна акцентна пляма. Нові іконки малюємо за цими параметрами (див. брендбук, розділ «Іконки»).
+Стиль «скло»: кольорова задня форма (градієнт Соняшник → Теракота), матове скло спереду і контур деталей 1,4 px. Від 40 px. Для дрібних розмірів — плоский дуотон (`icons/svg-flat`). Нові іконки малюємо за цими параметрами (див. брендбук, розділ «Іконки»).
 
 ## Кольори
 
@@ -139,7 +140,6 @@ sss-brand-kit.zip     усі файли одним архівом
 | <img src="icons/svg/kids.svg" width="32"> | Діти | [`kids.svg`](icons/svg/kids.svg) · [png](icons/png/kids.png) |
 | <img src="icons/svg/elderly.svg" width="32"> | Літні люди | [`elderly.svg`](icons/svg/elderly.svg) · [png](icons/png/elderly.png) |
 | <img src="icons/svg/access.svg" width="32"> | Люди з інвалідністю | [`access.svg`](icons/svg/access.svg) · [png](icons/png/access.png) |
-| <img src="icons/svg/veteran.svg" width="32"> | Ветерани | [`veteran.svg`](icons/svg/veteran.svg) · [png](icons/png/veteran.png) |
 | <img src="icons/svg/equal.svg" width="32"> | Гендерна рівність | [`equal.svg`](icons/svg/equal.svg) · [png](icons/png/equal.png) |
 
 ### Громади і розвиток

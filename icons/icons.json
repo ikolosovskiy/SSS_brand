@@ -4,6 +4,7 @@
   "name": "Гуманітарна допомога",
   "group": "Гуманітарне реагування",
   "svg": "icons/svg/aid.svg",
+  "flat": "icons/svg-flat/aid.svg",
   "png": "icons/png/aid.png"
  },
  {
@@ -11,6 +12,7 @@
   "name": "Продуктовий набір",
   "group": "Гуманітарне реагування",
   "svg": "icons/svg/food.svg",
+  "flat": "icons/svg-flat/food.svg",
   "png": "icons/png/food.png"
  },
  {
@@ -18,6 +20,7 @@
   "name": "Гігієнічний набір",
   "group": "Гуманітарне реагування",
   "svg": "icons/svg/hygiene.svg",
+  "flat": "icons/svg-flat/hygiene.svg",
   "png": "icons/png/hygiene.png"
  },
  {
@@ -25,6 +28,7 @@
   "name": "Медичний набір",
   "group": "Гуманітарне реагування",
   "svg": "icons/svg/med.svg",
+  "flat": "icons/svg-flat/med.svg",
   "png": "icons/png/med.png"
  },
  {
@@ -32,6 +36,7 @@
   "name": "Непродовольчі товари (НПД)",
   "group": "Гуманітарне реагування",
   "svg": "icons/svg/nfi.svg",
+  "flat": "icons/svg-flat/nfi.svg",
   "png": "icons/png/nfi.png"
  },
  {
@@ -39,6 +44,7 @@
   "name": "Питна вода",
   "group": "Гуманітарне реагування",
   "svg": "icons/svg/water.svg",
+  "flat": "icons/svg-flat/water.svg",
   "png": "icons/png/water.png"
  },
  {
@@ -46,6 +52,7 @@
   "name": "WASH / водопостачання",
   "group": "Гуманітарне реагування",
   "svg": "icons/svg/wash.svg",
+  "flat": "icons/svg-flat/wash.svg",
   "png": "icons/png/wash.png"
  },
  {
@@ -53,6 +60,7 @@
   "name": "Соціальна пральня",
   "group": "Гуманітарне реагування",
   "svg": "icons/svg/laundry.svg",
+  "flat": "icons/svg-flat/laundry.svg",
   "png": "icons/png/laundry.png"
  },
  {
@@ -60,6 +68,7 @@
   "name": "Житло",
   "group": "Гуманітарне реагування",
   "svg": "icons/svg/home.svg",
+  "flat": "icons/svg-flat/home.svg",
   "png": "icons/png/home.png"
  },
  {
@@ -67,6 +76,7 @@
   "name": "Ремонт житла",
   "group": "Гуманітарне реагування",
   "svg": "icons/svg/repair.svg",
+  "flat": "icons/svg-flat/repair.svg",
   "png": "icons/png/repair.png"
  },
  {
@@ -74,6 +84,7 @@
   "name": "Будматеріали",
   "group": "Гуманітарне реагування",
   "svg": "icons/svg/bricks.svg",
+  "flat": "icons/svg-flat/bricks.svg",
   "png": "icons/png/bricks.png"
  },
  {
@@ -81,6 +92,7 @@
   "name": "Енергостійкість",
   "group": "Гуманітарне реагування",
   "svg": "icons/svg/energy.svg",
+  "flat": "icons/svg-flat/energy.svg",
   "png": "icons/png/energy.png"
  },
  {
@@ -88,6 +100,7 @@
   "name": "Обігрів",
   "group": "Гуманітарне реагування",
   "svg": "icons/svg/heat.svg",
+  "flat": "icons/svg-flat/heat.svg",
   "png": "icons/png/heat.png"
  },
  {
@@ -95,6 +108,7 @@
   "name": "Паливо",
   "group": "Гуманітарне реагування",
   "svg": "icons/svg/fuel.svg",
+  "flat": "icons/svg-flat/fuel.svg",
   "png": "icons/png/fuel.png"
  },
  {
@@ -102,6 +116,7 @@
   "name": "Зимова допомога",
   "group": "Гуманітарне реагування",
   "svg": "icons/svg/winter.svg",
+  "flat": "icons/svg-flat/winter.svg",
   "png": "icons/png/winter.png"
  },
  {
@@ -109,6 +124,7 @@
   "name": "Грошова допомога",
   "group": "Гуманітарне реагування",
   "svg": "icons/svg/cash.svg",
+  "flat": "icons/svg-flat/cash.svg",
   "png": "icons/png/cash.png"
  },
  {
@@ -116,6 +132,7 @@
   "name": "Доставка",
   "group": "Гуманітарне реагування",
   "svg": "icons/svg/truck.svg",
+  "flat": "icons/svg-flat/truck.svg",
   "png": "icons/png/truck.png"
  },
  {
@@ -123,6 +140,7 @@
   "name": "Логістика / склад",
   "group": "Гуманітарне реагування",
   "svg": "icons/svg/boxes.svg",
+  "flat": "icons/svg-flat/boxes.svg",
   "png": "icons/png/boxes.png"
  },
  {
@@ -130,6 +148,7 @@
   "name": "ВПО",
   "group": "Захист і ВПО",
   "svg": "icons/svg/idp.svg",
+  "flat": "icons/svg-flat/idp.svg",
   "png": "icons/png/idp.png"
  },
  {
@@ -137,6 +156,7 @@
   "name": "Ради та обговорення",
   "group": "Захист і ВПО",
   "svg": "icons/svg/council.svg",
+  "flat": "icons/svg-flat/council.svg",
   "png": "icons/png/council.png"
  },
  {
@@ -144,6 +164,7 @@
   "name": "Гаряча лінія",
   "group": "Захист і ВПО",
   "svg": "icons/svg/hotline.svg",
+  "flat": "icons/svg-flat/hotline.svg",
   "png": "icons/png/hotline.png"
  },
  {
@@ -151,6 +172,7 @@
   "name": "Правова допомога",
   "group": "Захист і ВПО",
   "svg": "icons/svg/legal.svg",
+  "flat": "icons/svg-flat/legal.svg",
   "png": "icons/png/legal.png"
  },
  {
@@ -158,6 +180,7 @@
   "name": "Консультація",
   "group": "Захист і ВПО",
   "svg": "icons/svg/consult.svg",
+  "flat": "icons/svg-flat/consult.svg",
   "png": "icons/png/consult.png"
  },
  {
@@ -165,6 +188,7 @@
   "name": "Документи",
   "group": "Захист і ВПО",
   "svg": "icons/svg/docs.svg",
+  "flat": "icons/svg-flat/docs.svg",
   "png": "icons/png/docs.png"
  },
  {
@@ -172,6 +196,7 @@
   "name": "Скарги та пропозиції",
   "group": "Захист і ВПО",
   "svg": "icons/svg/feedback.svg",
+  "flat": "icons/svg-flat/feedback.svg",
   "png": "icons/png/feedback.png"
  },
  {
@@ -179,6 +204,7 @@
   "name": "Психосоціальна підтримка",
   "group": "Захист і ВПО",
   "svg": "icons/svg/psy.svg",
+  "flat": "icons/svg-flat/psy.svg",
   "png": "icons/png/psy.png"
  },
  {
@@ -186,6 +212,7 @@
   "name": "Захист",
   "group": "Захист і ВПО",
   "svg": "icons/svg/shield.svg",
+  "flat": "icons/svg-flat/shield.svg",
   "png": "icons/png/shield.png"
  },
  {
@@ -193,6 +220,7 @@
   "name": "Діти",
   "group": "Захист і ВПО",
   "svg": "icons/svg/kids.svg",
+  "flat": "icons/svg-flat/kids.svg",
   "png": "icons/png/kids.png"
  },
  {
@@ -200,6 +228,7 @@
   "name": "Літні люди",
   "group": "Захист і ВПО",
   "svg": "icons/svg/elderly.svg",
+  "flat": "icons/svg-flat/elderly.svg",
   "png": "icons/png/elderly.png"
  },
  {
@@ -207,20 +236,15 @@
   "name": "Люди з інвалідністю",
   "group": "Захист і ВПО",
   "svg": "icons/svg/access.svg",
+  "flat": "icons/svg-flat/access.svg",
   "png": "icons/png/access.png"
- },
- {
-  "id": "veteran",
-  "name": "Ветерани",
-  "group": "Захист і ВПО",
-  "svg": "icons/svg/veteran.svg",
-  "png": "icons/png/veteran.png"
  },
  {
   "id": "equal",
   "name": "Гендерна рівність",
   "group": "Захист і ВПО",
   "svg": "icons/svg/equal.svg",
+  "flat": "icons/svg-flat/equal.svg",
   "png": "icons/png/equal.png"
  },
  {
@@ -228,6 +252,7 @@
   "name": "Громада",
   "group": "Громади і розвиток",
   "svg": "icons/svg/community.svg",
+  "flat": "icons/svg-flat/community.svg",
   "png": "icons/png/community.png"
  },
  {
@@ -235,6 +260,7 @@
   "name": "Розвиток громад",
   "group": "Громади і розвиток",
   "svg": "icons/svg/sprout.svg",
+  "flat": "icons/svg-flat/sprout.svg",
   "png": "icons/png/sprout.png"
  },
  {
@@ -242,6 +268,7 @@
   "name": "Освіта і тренінги",
   "group": "Громади і розвиток",
   "svg": "icons/svg/edu.svg",
+  "flat": "icons/svg-flat/edu.svg",
   "png": "icons/png/edu.png"
  },
  {
@@ -249,6 +276,7 @@
   "name": "Гейміфікація",
   "group": "Громади і розвиток",
   "svg": "icons/svg/game.svg",
+  "flat": "icons/svg-flat/game.svg",
   "png": "icons/png/game.png"
  },
  {
@@ -256,6 +284,7 @@
   "name": "Молодь та ідеї",
   "group": "Громади і розвиток",
   "svg": "icons/svg/idea.svg",
+  "flat": "icons/svg-flat/idea.svg",
   "png": "icons/png/idea.png"
  },
  {
@@ -263,6 +292,7 @@
   "name": "Медіаграмотність",
   "group": "Громади і розвиток",
   "svg": "icons/svg/media.svg",
+  "flat": "icons/svg-flat/media.svg",
   "png": "icons/png/media.png"
  },
  {
@@ -270,6 +300,7 @@
   "name": "Адвокація",
   "group": "Громади і розвиток",
   "svg": "icons/svg/advocacy.svg",
+  "flat": "icons/svg-flat/advocacy.svg",
   "png": "icons/png/advocacy.png"
  },
  {
@@ -277,6 +308,7 @@
   "name": "Закон і законодавство",
   "group": "Громади і розвиток",
   "svg": "icons/svg/law.svg",
+  "flat": "icons/svg-flat/law.svg",
   "png": "icons/png/law.png"
  },
  {
@@ -284,6 +316,7 @@
   "name": "Партнерство",
   "group": "Громади і розвиток",
   "svg": "icons/svg/partner.svg",
+  "flat": "icons/svg-flat/partner.svg",
   "png": "icons/png/partner.png"
  },
  {
@@ -291,6 +324,7 @@
   "name": "Державні установи",
   "group": "Громади і розвиток",
   "svg": "icons/svg/gov.svg",
+  "flat": "icons/svg-flat/gov.svg",
   "png": "icons/png/gov.png"
  },
  {
@@ -298,6 +332,7 @@
   "name": "Фахівці соцзахисту",
   "group": "Громади і розвиток",
   "svg": "icons/svg/pro.svg",
+  "flat": "icons/svg-flat/pro.svg",
   "png": "icons/png/pro.png"
  },
  {
@@ -305,6 +340,7 @@
   "name": "Волонтерство",
   "group": "Громади і розвиток",
   "svg": "icons/svg/volunteer.svg",
+  "flat": "icons/svg-flat/volunteer.svg",
   "png": "icons/png/volunteer.png"
  },
  {
@@ -312,6 +348,7 @@
   "name": "Підтримати фонд",
   "group": "Громади і розвиток",
   "svg": "icons/svg/donate.svg",
+  "flat": "icons/svg-flat/donate.svg",
   "png": "icons/png/donate.png"
  },
  {
@@ -319,6 +356,7 @@
   "name": "Вакансії та тендери",
   "group": "Громади і розвиток",
   "svg": "icons/svg/jobs.svg",
+  "flat": "icons/svg-flat/jobs.svg",
   "png": "icons/png/jobs.png"
  },
  {
@@ -326,6 +364,7 @@
   "name": "Онлайн-подія",
   "group": "Службові",
   "svg": "icons/svg/online.svg",
+  "flat": "icons/svg-flat/online.svg",
   "png": "icons/png/online.png"
  },
  {
@@ -333,6 +372,7 @@
   "name": "Відео",
   "group": "Службові",
   "svg": "icons/svg/video.svg",
+  "flat": "icons/svg-flat/video.svg",
   "png": "icons/png/video.png"
  },
  {
@@ -340,6 +380,7 @@
   "name": "Цитата",
   "group": "Службові",
   "svg": "icons/svg/quote.svg",
+  "flat": "icons/svg-flat/quote.svg",
   "png": "icons/png/quote.png"
  },
  {
@@ -347,6 +388,7 @@
   "name": "Субтитри",
   "group": "Службові",
   "svg": "icons/svg/subs.svg",
+  "flat": "icons/svg-flat/subs.svg",
   "png": "icons/png/subs.png"
  },
  {
@@ -354,6 +396,7 @@
   "name": "Локація",
   "group": "Службові",
   "svg": "icons/svg/pin.svg",
+  "flat": "icons/svg-flat/pin.svg",
   "png": "icons/png/pin.png"
  },
  {
@@ -361,6 +404,7 @@
   "name": "Дата",
   "group": "Службові",
   "svg": "icons/svg/cal.svg",
+  "flat": "icons/svg-flat/cal.svg",
   "png": "icons/png/cal.png"
  },
  {
@@ -368,6 +412,7 @@
   "name": "Час",
   "group": "Службові",
   "svg": "icons/svg/clock.svg",
+  "flat": "icons/svg-flat/clock.svg",
   "png": "icons/png/clock.png"
  },
  {
@@ -375,6 +420,7 @@
   "name": "Подія / форум",
   "group": "Службові",
   "svg": "icons/svg/event.svg",
+  "flat": "icons/svg-flat/event.svg",
   "png": "icons/png/event.png"
  },
  {
@@ -382,6 +428,7 @@
   "name": "Звіт",
   "group": "Службові",
   "svg": "icons/svg/report.svg",
+  "flat": "icons/svg-flat/report.svg",
   "png": "icons/png/report.png"
  },
  {
@@ -389,6 +436,7 @@
   "name": "Аналітика",
   "group": "Службові",
   "svg": "icons/svg/chart.svg",
+  "flat": "icons/svg-flat/chart.svg",
   "png": "icons/png/chart.png"
  },
  {
@@ -396,6 +444,7 @@
   "name": "Зростання",
   "group": "Службові",
   "svg": "icons/svg/growth.svg",
+  "flat": "icons/svg-flat/growth.svg",
   "png": "icons/png/growth.png"
  },
  {
@@ -403,6 +452,7 @@
   "name": "Увага / екстрено",
   "group": "Службові",
   "svg": "icons/svg/alert.svg",
+  "flat": "icons/svg-flat/alert.svg",
   "png": "icons/png/alert.png"
  },
  {
@@ -410,6 +460,7 @@
   "name": "Інформація",
   "group": "Службові",
   "svg": "icons/svg/info.svg",
+  "flat": "icons/svg-flat/info.svg",
   "png": "icons/png/info.png"
  },
  {
@@ -417,6 +468,7 @@
   "name": "Питання",
   "group": "Службові",
   "svg": "icons/svg/faq.svg",
+  "flat": "icons/svg-flat/faq.svg",
   "png": "icons/png/faq.png"
  },
  {
@@ -424,6 +476,7 @@
   "name": "Виконано",
   "group": "Службові",
   "svg": "icons/svg/done.svg",
+  "flat": "icons/svg-flat/done.svg",
   "png": "icons/png/done.png"
  },
  {
@@ -431,6 +484,7 @@
   "name": "Телефон",
   "group": "Службові",
   "svg": "icons/svg/phone.svg",
+  "flat": "icons/svg-flat/phone.svg",
   "png": "icons/png/phone.png"
  },
  {
@@ -438,6 +492,7 @@
   "name": "Пошта",
   "group": "Службові",
   "svg": "icons/svg/mail.svg",
+  "flat": "icons/svg-flat/mail.svg",
   "png": "icons/png/mail.png"
  },
  {
@@ -445,6 +500,7 @@
   "name": "Сайт",
   "group": "Службові",
   "svg": "icons/svg/web.svg",
+  "flat": "icons/svg-flat/web.svg",
   "png": "icons/png/web.png"
  },
  {
@@ -452,6 +508,7 @@
   "name": "Дякуємо",
   "group": "Службові",
   "svg": "icons/svg/heart.svg",
+  "flat": "icons/svg-flat/heart.svg",
   "png": "icons/png/heart.png"
  },
  {
@@ -459,6 +516,7 @@
   "name": "Стрілка / далі",
   "group": "Службові",
   "svg": "icons/svg/arrow.svg",
+  "flat": "icons/svg-flat/arrow.svg",
   "png": "icons/png/arrow.png"
  }
 ]
