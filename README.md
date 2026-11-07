@@ -42,7 +42,7 @@ templates/canva       44 шаблони PDF для імпорту в Canva
 templates/pptx        шаблон презентації 16:9 з фірмовою темою
 charts/               шаблон Excel з темою і діаграмами, theme1.xml
 web/                  sss-web.css, theme.json для WordPress, приклад demo.html
-video/                анімація логотипа MP4 і MOV з прозорістю
+video/                7 анімацій логотипа: MP4 (тло Ліс), MOV і WebM з прозорим тлом
 templates/preview     прев’ю шаблонів PNG
 sss-brand-kit.zip     усі файли одним архівом
 ```

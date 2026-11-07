@@ -66,3 +66,21 @@ sync();Promise.all(['800 60px Manrope','500 28px Onest','400 24px Onest'].map(f=
 })();
 (function(){const b=document.getElementById('webCopy');if(!b)return;b.onclick=()=>fetch('web/sss-web.css').then(r=>r.text()).then(t=>{const m=t.match(/:root\{[\s\S]*?\n\}/);SSS.copy(m?m[0]:t,'CSS-змінні скопійовано')}).catch(()=>SSS.copy(':root{--sss-lis:#314C2C;--sss-glybyna:#1B2A18;--sss-moloko:#FBF6EC;--sss-sonyashnyk:#F6B93B;--sss-terakota:#DC643D;--sss-parostok:#A9D48E;--sss-nebo:#D7E6FB;--sss-kamin:#66705F;--sss-pisok:#E6DFD0;--sss-white:#FFFFFF;--sss-font-head:Manrope,Arial,sans-serif;--sss-font-text:Onest,Arial,sans-serif}','CSS-змінні скопійовано'))})();
 (function(){const b=document.getElementById('cvKit');if(!b)return;b.onclick=()=>SSS.copy('#314C2C #1B2A18 #FBF6EC #F6B93B #DC643D #A9D48E #D7E6FB #66705F #E6DFD0 #FFFFFF #214E34','Кольори скопійовано — вставте в Brand Kit')})();
+(function(){const $=id=>document.getElementById(id);if(!$('anV'))return;
+const AV=[['ua_rise','Підйом','Літери SSS піднімаються одна за одною, розділювач виростає, назва відкривається зліва направо. Основна заставка.'],
+['ua_pop','Поява','Літери SSS «вистрибують» з легким пружинням, назва м’яко піднімається. Для анонсів і динамічних роликів.'],
+['ua_sweep','Смуга','Смуга Соняшник проходить зліва направо і відкриває логотип. Для заставок YouTube і презентацій.'],
+['ua_fade','Фокус','Логотип проявляється з розмиття і легкого наближення. Спокійний варіант для звернень і серйозних тем.'],
+['en_rise','Підйом · EN','Англійська версія логотипа. Для міжнародних партнерів і донорів.'],
+['en_sweep','Смуга · EN','Англійська версія зі смугою Соняшник.'],
+['sym_drop','Символ','Лише символ SSS, літери падають із відскоком. Для кінцевих карток, аватарок, коротких Reels.']];
+let cur=0,bg='les';
+$('anV').innerHTML=AV.map((a,i)=>`<button class="chip" data-i="${i}" aria-pressed="${i===0}">${a[1]}</button>`).join('');
+function upd(){const [k,t,d]=AV[cur],sym=k.startsWith('sym'),base=`video/SSS_logo_${k}`;$('anT').textContent=t;$('anD').textContent=d;
+  const st=$('anStage');st.classList.toggle('alpha',bg==='alpha');st.style.aspectRatio=sym?'16/9':'16/9';
+  const v=$('anVid');v.src=bg==='alpha'?`${base}_alpha_green.webm`:`${base}_${sym?'1x1':'16x9'}.mp4`;v.play&&v.play().catch(()=>{});
+  const L=[[`${base}_${sym?'1x1':'16x9'}.mp4`,`MP4 ${sym?'1:1':'16:9'}`,'g'],[`${base}_9x16.mp4`,'MP4 9:16','g'],[`${base}_alpha_moloko.mov`,'MOV прозоре · Молоко','o'],[`${base}_alpha_green.mov`,'MOV прозоре · зелений','o'],[`${base}_alpha_moloko.webm`,'WebM прозоре · Молоко','o'],[`${base}_alpha_green.webm`,'WebM прозоре · зелений','o']];
+  $('anDl').innerHTML=L.map(([h,n,c])=>`<a class="btn ${c} s" href="${h}" download>${n}</a>`).join('')}
+$('anV').onclick=e=>{const b=e.target.closest('[data-i]');if(!b)return;cur=+b.dataset.i;$('anV').querySelectorAll('[data-i]').forEach(x=>x.setAttribute('aria-pressed',x===b));upd()};
+$('anBg').onclick=e=>{const b=e.target.closest('[data-v]');if(!b)return;bg=b.dataset.v;$('anBg').querySelectorAll('[data-v]').forEach(x=>x.setAttribute('aria-pressed',x===b));upd()};
+upd()})();

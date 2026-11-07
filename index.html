@@ -274,7 +274,9 @@ footer a{color:var(--mol)}
 code{font:500 .92em ui-monospace,Menlo,Consolas,monospace;background:var(--mol);padding:2px 6px;border-radius:6px}
 .anw{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:16px;align-items:stretch}
 @media(max-width:900px){.anw{grid-template-columns:minmax(0,1fr)}}
-.anw video{width:100%;height:100%;object-fit:cover;aspect-ratio:16/9;border-radius:var(--r);background:var(--les);display:block}
+.anv{position:relative;border-radius:var(--r);overflow:hidden;background:var(--les);aspect-ratio:16/9;width:100%;min-width:0;align-self:start}
+.anv.alpha{background:repeating-conic-gradient(#e9e3d6 0 25%,#f7f3ea 0 50%) 0 0/24px 24px}
+.anv video{width:100%;height:100%;object-fit:contain;display:block}
 .sp2{grid-column:span 2}@media(max-width:960px){.sp2{grid-column:auto}}
 </style>
 </head>
@@ -537,10 +539,12 @@ code{font:500 .92em ui-monospace,Menlo,Consolas,monospace;background:var(--mol);
     <div class="card"><span class="lbl">Титр спікера</span><ul class="ul" style="margin-top:12px"><li>Плашка Молоко зліва, смуга Соняшник 8 px.</li><li>Ім’я Manrope ExtraBold 40 px, посада Onest Medium 28 px.</li><li>З’являється на 1-й с, тримається 4–5 с.</li><li>Перша поява спікера — завжди з титром.</li></ul></div>
   </div>
   <div class="anw rv" style="margin-top:16px">
-    <video src="video/SSS_logo_anim_16x9.mp4" autoplay loop muted playsinline aria-label="Анімація логотипа"></video>
-    <div class="card"><span class="lbl">Анімація логотипа · 1,5 с</span><h4 style="font:800 18px var(--fd);margin:8px 0">Заставка для YouTube і презентацій</h4><p style="font-size:15px">Символ SSS піднімається по літері, розділювач виростає, назва відкривається зліва направо. Тільки на початку відео, без звуку або з коротким фірмовим звуком.</p>
-      <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:14px"><a class="btn g s" href="video/SSS_logo_anim_16x9.mp4" download>MP4 16:9</a><a class="btn g s" href="video/SSS_logo_anim_9x16.mp4" download>MP4 9:16</a><a class="btn o s" href="video/SSS_logo_anim_alpha_moloko.mov" download>MOV з прозорістю · Молоко</a><a class="btn o s" href="video/SSS_logo_anim_alpha_green.mov" download>MOV з прозорістю · зелений</a></div>
-      <p class="hint" style="margin-top:10px">MOV (ProRes 4444) — для монтажу в Premiere, DaVinci, CapCut на ПК: кладіть поверх свого фону.</p></div>
+    <div class="anv" id="anStage"><video id="anVid" autoplay loop muted playsinline aria-label="Анімація логотипа"></video></div>
+    <div class="card"><span class="lbl">Анімація логотипа · 1,5 с</span><h4 style="font:800 18px var(--fd);margin:8px 0" id="anT"></h4><p style="font-size:15px" id="anD"></p>
+      <div class="row" id="anV" style="display:flex;gap:6px;flex-wrap:wrap;margin-top:12px"></div>
+      <div class="row" id="anBg" style="display:flex;gap:6px;flex-wrap:wrap;margin-top:8px"><button class="chip" data-v="les" aria-pressed="true">На Лісі</button><button class="chip" data-v="alpha" aria-pressed="false">Прозоре тло</button></div>
+      <div id="anDl" style="display:flex;gap:8px;flex-wrap:wrap;margin-top:14px"></div>
+      <p class="hint" style="margin-top:10px">MOV з прозорістю (кодек Animation) — для Premiere, After Effects, DaVinci, Final Cut. WebM з прозорістю — для сайтів і браузерних редакторів. MP4 — готове відео на тлі Ліс.</p></div>
   </div>
   <div class="rl rv">
     <div class="card"><span class="lbl">Правила</span><ul style="margin-top:12px"><li>Заставки в Reels немає: перший кадр — гачок. YouTube — анімація логотипа до 1,5 с.</li><li>Кінцева картка: 2–3 с у Reels, 5 с у YouTube. Ліс, логотип, заклик, логотипи донорів, дисклеймер.</li><li>Тривалість: Reels і цитати 15–45 с, роз’яснення до 60–90 с, YouTube 2–8 хв.</li><li>Музика лише з ліцензією, 15–20 % гучності під голосом.</li></ul></div>
@@ -718,9 +722,9 @@ code{font:500 .92em ui-monospace,Menlo,Consolas,monospace;background:var(--mol);
   <div style="display:grid;gap:6px;text-align:right"><a href="brandbook.html">Повний брендбук</a><a href="docs/SSS_Brandbook_2.0.pdf" download>Брендбук PDF</a><a href="sss-brand-kit.zip" download>Усі файли ZIP</a><span>info@sss-ua.org</span></div>
 </div></footer>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
-<script src="assets/icons.js?v=3.6"></script>
-<script src="assets/logo.js?v=3.6"></script>
-<script src="assets/app.js?v=3.6"></script>
-<script src="assets/charts.js?v=3.6"></script>
+<script src="assets/icons.js?v=3.7"></script>
+<script src="assets/logo.js?v=3.7"></script>
+<script src="assets/app.js?v=3.7"></script>
+<script src="assets/charts.js?v=3.7"></script>
 </body>
 </html>
