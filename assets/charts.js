@@ -15,7 +15,7 @@ function sync(){const d=parse();const s=$('chHl');const cur=X.hl;s.innerHTML='<o
 function draw(){
   const [W,H]=CF[X.fmt],s=Math.min(W,H)/1080,wide=W>H,[bg,fg,mu,ln]=CBG[X.bg],dark=X.bg==='les';
   cv.width=W;cv.height=H;g.fillStyle=bg;g.fillRect(0,0,W,H);
-  const M=80*s,unit=$('chUnit').value.trim(),d=parse(),warn=[];
+  const M=80*s,unit='',d=parse(),warn=[];
   let y=M;
   if($('chLogo').checked){drawLogo(g,'ua',M,y,48*s,dark?C.mol:C.les);y+=48*s+64*s}
   g.fillStyle=fg;g.font=`800 ${(wide?60:64)*s}px Manrope`;g.textBaseline='top';
@@ -57,7 +57,7 @@ function draw(){
 }
 function fin(w){$('chWarn').textContent=w.join(' ');$('chInfo').textContent=`${cv.width}×${cv.height} px · ${CF[X.fmt][2]}`}
 chips('chType',CT,'type');chips('chFmt',Object.fromEntries(Object.entries(CF).map(([k,v])=>[k,v[2]])),'fmt');chips('chBg',CBG,'bg');
-['chTitle','chData','chUnit','chSrc','chLogo'].forEach(id=>$(id).addEventListener('input',()=>{if(id==='chData')sync();draw()}));
+['chTitle','chData','chSrc','chLogo'].forEach(id=>$(id).addEventListener('input',()=>{if(id==='chData')sync();draw()}));
 $('chHl').onchange=e=>{X.hl=+e.target.value;draw()};
 $('chDl').onclick=()=>cv.toBlob(b=>{saveBlob(b,`SSS_infografika_${X.type}_${CF[X.fmt][2].replace(':','x')}.png`);toast('PNG завантажено')});
 document.querySelectorAll('[data-hex]').forEach(b=>b.onclick=()=>copy(b.dataset.hex,'Скопійовано '+b.dataset.hex));
@@ -79,8 +79,11 @@ $('anV').innerHTML=AV.map((a,i)=>`<button class="chip" data-i="${i}" aria-presse
 function upd(){const [k,t,d]=AV[cur],sym=k.startsWith('sym'),base=`video/SSS_logo_${k}`;$('anT').textContent=t;$('anD').textContent=d;
   const st=$('anStage');st.classList.toggle('alpha',bg==='alpha');st.style.aspectRatio=sym?'16/9':'16/9';
   const v=$('anVid');v.src=bg==='alpha'?`${base}_alpha_green.webm`:`${base}_${sym?'1x1':'16x9'}.mp4`;v.play&&v.play().catch(()=>{});
-  const L=[[`${base}_${sym?'1x1':'16x9'}.mp4`,`MP4 ${sym?'1:1':'16:9'}`,'g'],[`${base}_9x16.mp4`,'MP4 9:16','g'],[`${base}_alpha_moloko.mov`,'MOV прозоре · Молоко','o'],[`${base}_alpha_green.mov`,'MOV прозоре · зелений','o'],[`${base}_alpha_moloko.webm`,'WebM прозоре · Молоко','o'],[`${base}_alpha_green.webm`,'WebM прозоре · зелений','o']];
-  $('anDl').innerHTML=L.map(([h,n,c])=>`<a class="btn ${c} s" href="${h}" download>${n}</a>`).join('')}
+  const row=(t,d,btns)=>`<div class="anr"><div><b>${t}</b><span>${d}</span></div><div class="anb">${btns}</div></div>`,btn=(h,n,c='g')=>`<a class="btn ${c} s" href="${h}" download>${n}</a>`;
+  $('anDl').innerHTML=row('Reels, Stories, TikTok','вертикальне відео 9:16 на тлі Ліс',btn(`${base}_9x16.mp4`,'MP4 9:16'))
+   +(sym?row('Пост у стрічці','квадрат 1:1 на тлі Ліс',btn(`${base}_1x1.mp4`,'MP4 1:1')):row('YouTube, презентація, екран на заході','горизонтальне відео 16:9 на тлі Ліс; вставляється в PowerPoint',btn(`${base}_16x9.mp4`,'MP4 16:9')))
+   +row('Поверх свого темного відео','світлий логотип на прозорому тлі',btn(`${base}_alpha_moloko.mov`,'Для монтажу (MOV)','o')+btn(`${base}_alpha_moloko.webm`,'Для сайту (WebM)','o'))
+   +row('Поверх свого світлого відео','зелений логотип на прозорому тлі',btn(`${base}_alpha_green.mov`,'Для монтажу (MOV)','o')+btn(`${base}_alpha_green.webm`,'Для сайту (WebM)','o'))}
 $('anV').onclick=e=>{const b=e.target.closest('[data-i]');if(!b)return;cur=+b.dataset.i;$('anV').querySelectorAll('[data-i]').forEach(x=>x.setAttribute('aria-pressed',x===b));upd()};
 $('anBg').onclick=e=>{const b=e.target.closest('[data-v]');if(!b)return;bg=b.dataset.v;$('anBg').querySelectorAll('[data-v]').forEach(x=>x.setAttribute('aria-pressed',x===b));upd()};
 upd()})();

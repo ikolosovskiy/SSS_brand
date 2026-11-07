@@ -254,11 +254,11 @@ function draw(){
     paint();
     const parts=big.split(/\s+/).filter(Boolean);
     if(mode==='land'){const lb=logo(m,m,s,T.logo);let y=chip(chipT,m,Math.max(m+90*s,lb+28*s),s,T.cb,T.cf)+24*s;const cw=W*.42-m;y=H1(cw,4,46,30,T.tx,m,y);SUB(cw,y+12*s);
-      const L=[parts.join(' ')],sz=bigFit(big,W*.62,H*1.05,L);text(L,W-W*.6,H-sz*.9,sz,.8,T.hero,{ls:'-0.06em'})}
+      const L=[parts.join(' ')],sz=bigFit(big,W*.55-m,H*.8,L);ctx.font=`800 ${sz}px ${FD}`;setLS('-0.06em');const tw=ctx.measureText(L[0]).width;text(L,W-m-tw,H-m*.6-sz*.86,sz,.8,T.hero,{ls:'-0.06em'})}
     else{const lb=logo(m,mode==='tall'?top:m,s,T.logo);let y=chip(chipT,m,Math.max((mode==='tall'?top:m)+100*s,lb+28*s),s,T.cb,T.cf)+26*s;y=H1(W-2*m,3,48,34,T.tx,m,y);y=SUB(W-2*m,y+12*s);
       const L=parts.length>1&&big.length>4?parts.length>2?[parts.slice(0,-1).join(' '),parts.slice(-1)[0]]:parts:[big];
-      let sz=bigFit(big,W*1.04,H,L);const avail=(mode==='tall'?bot+120*s:H+sz*.12)-(y+32*s);sz=Math.min(sz,avail/(L.length*.8+.05));
-      const yb=(mode==='tall'?bot+120*s:H+sz*.14)-L.length*sz*.8;text(L,-sz*.04,yb-sz*.06,sz,.8,T.hero,{ls:'-0.06em'})}
+      let sz=bigFit(big,W-1.4*m,H,L);const base=mode==='tall'?bot:H-m*.6;const avail=base-(y+32*s);sz=Math.min(sz,avail/(L.length*.8+.1));
+      text(L,m*.7,base-sz*.86-(L.length-1)*sz*.8,sz,.8,T.hero,{ls:'-0.06em'})}
   }
   if(tp==='icon'){
     paint();const id=$('bIcon').value;
@@ -319,7 +319,7 @@ function draw(){
   }
   if(tp==='word'){
     paint();const wd=(big||'ВОДА').toUpperCase();
-    const sz=bigFit(wd,W*1.12,H*.55,[wd]);text([wd],-sz*.05,(mode==='land'?H*.12:H*.28),sz,.8,T.tone,{ls:'-0.06em'});
+    const sz=bigFit(wd,W-1.4*m,H*.5,[wd]);text([wd],m*.7,(mode==='land'?H*.12:H*.28),sz,.8,T.tone,{ls:'-0.06em'});
     const lb=logo(m,mode==='tall'?top:m,s,T.logo);chip(chipT,m,Math.max((mode==='tall'?top:m)+100*s,lb+28*s),s,T.cb,T.cf);
     const cw=mode==='land'?W*.6:W-2*m;const f=fit(head,{max:(mode==='land'?52:60)*s,min:36*s,maxW:cw,lines:3});if(!f.ok)warn='Заголовок задовгий: скоротіть його.';
     const sf=sub?fit(sub,{w:500,fam:FT,max:30*s,min:24*s,maxW:cw,lines:2,ls:'0'}):null;
