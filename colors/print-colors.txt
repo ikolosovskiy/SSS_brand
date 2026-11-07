@@ -1,0 +1,14 @@
+Кольори для друку · CMYK Coated FOGRA39 · Pantone і RAL — орієнтовні відповідники, крім зеленого логотипа.
+Перед тиражем погоджуйте пробний відбиток.
+
+Зелений логотипа  #214E34  CMYK 91 40 86 44     Pantone 3435 C    RAL 6005  тільки логотип; CMYK — з файлів дизайнера
+Ліс               #314C2C  CMYK 75 45 85 50     Pantone 350 C     RAL 6002  фони, жилети, банери
+Глибина           #1B2A18  CMYK 80 55 90 70     Pantone Black 3 C RAL 6009  текст
+Молоко            #FBF6EC  CMYK 0 2 6 1         Pantone —         RAL 9001  у друку — теплий білий папір
+Соняшник          #F6B93B  CMYK 0 30 85 0       Pantone 7409 C    RAL 1028  
+Теракота          #DC643D  CMYK 5 72 85 0       Pantone 7578 C    RAL 2010  
+Паросток          #A9D48E  CMYK 38 0 55 0       Pantone 358 C     RAL 6019  
+Небо              #D7E6FB  CMYK 15 5 0 0        Pantone 656 C     —         лише друк на папері
+Камінь            #66705F  CMYK 55 40 60 30     Pantone 417 C     RAL 7009  
+Пісок             #E6DFD0  CMYK 8 10 18 0       Pantone 7527 C    RAL 1013  
+Білий             #FFFFFF  CMYK 0 0 0 0         Pantone —         RAL 9016  

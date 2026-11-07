@@ -1,0 +1,23 @@
+<!doctype html><html lang="uk"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SSS · веб-набір</title>
+<style>
+@font-face{font-family:Manrope;font-weight:700;src:url(../fonts/Manrope/Manrope-Bold.ttf)}
+@font-face{font-family:Manrope;font-weight:800;src:url(../fonts/Manrope/Manrope-ExtraBold.ttf)}
+@font-face{font-family:Onest;font-weight:400;src:url(../fonts/Onest/Onest-Regular.ttf)}
+</style>
+<link rel="stylesheet" href="sss-web.css">
+<style>body{margin:0}.demo{display:grid;gap:28px;padding:28px}.row{display:flex;flex-wrap:wrap;gap:12px;align-items:center}</style>
+</head><body>
+<div class="demo">
+  <div><span class="sss-eyebrow">Новини</span><h2 style="margin:.3em 0">Допомога, що <span class="sss-mark">повертає</span> дім</h2>
+  <p class="sss-lead" style="margin:0;max-width:60ch">Текст Onest 18 px, посилання <a href="#">підкреслене кольором Ліс</a>, а при наведенні — смугою Соняшник.</p></div>
+  <div class="row"><a class="sss-btn sss-btn--primary" href="#">Підтримати</a><a class="sss-btn sss-btn--secondary" href="#">Отримати допомогу</a><a class="sss-btn sss-btn--outline" href="#">Детальніше</a><button class="sss-btn sss-btn--primary" disabled>Неактивна</button></div>
+  <div class="row"><span class="sss-chip">Подія</span><span class="sss-chip sss-chip--help">Допомога</span><span class="sss-chip sss-chip--community">Громади</span><span class="sss-chip sss-chip--law">Права</span><span class="sss-chip sss-chip--urgent">Терміново</span></div>
+  <div class="sss-grid">
+    <a class="sss-card" href="#"><span class="sss-chip sss-chip--help">Допомога</span><span class="sss-card__title">Соціальні пральні для громад Сумщини</span><p style="margin:0">Чисто, тепло і поруч з домом.</p><span class="sss-card__meta">14 листопада 2026</span></a>
+    <a class="sss-card sss-card--nebo" href="#"><span class="sss-chip">Права</span><span class="sss-card__title">Як отримати безоплатну правову консультацію</span><span class="sss-card__meta">Інструкція · 3 хв</span></a>
+    <a class="sss-card sss-card--lis" href="#"><span class="sss-chip sss-chip--help">Звіт</span><span class="sss-card__title">Річний звіт фонду</span><span class="sss-card__meta">PDF · 4 МБ</span></a>
+  </div>
+  <div class="sss-notice"><b style="font-family:var(--sss-font-head)">Увага.</b><span>Банер-оголошення з маркером Соняшник. Для термінового — клас sss-notice--urgent.</span></div>
+  <input class="sss-input" placeholder="Поле форми · ім’я та прізвище">
+</div></body></html>

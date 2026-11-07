@@ -50,7 +50,7 @@ label.f{display:grid;gap:6px;font:600 13px var(--fd)}
 header.top{position:sticky;top:0;z-index:20;background:rgba(251,246,236,.86);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid transparent;transition:border .3s}
 header.top.sc{border-color:var(--pis)}
 header.top .wrap{display:flex;align-items:center;gap:22px;height:64px}
-header.top .logo{height:24px;flex:none;color:var(--les)}
+header.top .logo{height:24px;flex:none;color:#214E34}
 nav.mn{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;flex:1}
 nav.mn a{white-space:nowrap;text-decoration:none;font:600 14px var(--fd);padding:8px 12px;border-radius:99px;transition:background .2s}
 nav.mn a:hover,nav.mn a.on{background:var(--les1)}
@@ -63,7 +63,7 @@ nav.mn a:hover,nav.mn a.on{background:var(--les1)}
 .hero .word{font:800 clamp(24px,2.6vw,34px)/1.15 var(--fd);letter-spacing:-.02em;color:var(--son);min-height:2.3em;margin-top:8px;max-width:26ch}
 .hero .word span{display:block;animation:wordin .7s var(--ease) both}
 @keyframes wordin{from{transform:translateY(100%);opacity:0}to{transform:none;opacity:1}}
-.hero .in{position:relative;z-index:2;max-width:720px}
+.hero .in{position:relative;z-index:2;max-width:980px}
 .hero h1{font-size:clamp(46px,7vw,96px);letter-spacing:-.045em;margin-top:18px}
 .hero h1 em{font-style:normal;color:var(--son)}
 .hero p.l{font-size:clamp(17px,1.6vw,20px);color:#DDE5D6;margin-top:24px;max-width:52ch}
@@ -114,7 +114,7 @@ section.s{padding:104px 0 24px}
 .ratio{font:800 56px/1 var(--fd);letter-spacing:-.03em}
 .vd{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
 .vd span{padding:6px 12px;border-radius:99px;font:700 13px var(--fd)}
-.ok{background:var(--par)}.no{background:var(--ter);color:#fff}
+.ok{background:var(--par)}.no{background:#A63F1F;color:#fff}
 .gw{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
 @media(max-width:900px){.gw{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:560px){.gw{grid-template-columns:1fr}}
@@ -130,7 +130,7 @@ section.s{padding:104px 0 24px}
 .tb{width:100%;border-collapse:collapse;font-size:14.5px;font-variant-numeric:tabular-nums}
 .tb th{font:700 11px var(--fd);letter-spacing:.08em;text-transform:uppercase;color:var(--kam);text-align:left;padding:10px 12px;border-bottom:2px solid var(--gly)}
 .tb td{padding:11px 12px;border-bottom:1px solid var(--pis);vertical-align:top}
-.tb td:first-child{font:700 14px var(--fd)}
+.tb td:first-child{font:700 14px var(--fd)}.tb .mono{font:500 13px ui-monospace,Menlo,Consolas,monospace}.tb a{color:var(--les);font-weight:700}
 .tw{overflow-x:auto;background:var(--wht);border-radius:var(--r);padding:6px 10px}
 .g3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
 .g4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
@@ -244,6 +244,38 @@ footer svg{height:32px;color:var(--mol)}
 footer a{color:var(--mol)}
 .toast{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom,0px));transform:translate(-50%,20px);background:var(--gly);color:var(--mol);padding:12px 18px;border-radius:99px;font:600 14px var(--fd);opacity:0;transition:.3s var(--ease);pointer-events:none;z-index:40}
 .toast.on{opacity:1;transform:translate(-50%,0)}
+.qs{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px}
+@media(max-width:1100px){.qs{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:700px){.qs{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:420px){.qs{grid-template-columns:1fr}}
+.qi{background:#fff;border-radius:14px;padding:16px;display:flex;flex-direction:column;gap:6px}
+.qi .qn{font:800 34px/1 Manrope,Arial,sans-serif;letter-spacing:-.04em;color:#314C2C;box-shadow:inset 0 -8px 0 #F6B93B;width:max-content;padding:0 2px}
+.qi b{font:800 16px Manrope,Arial,sans-serif;color:#1B2A18}
+.qi p{font:400 14px/1.45 Onest,Arial,sans-serif;color:#3A4637;margin:0}
+.vd2{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+@media(max-width:800px){.vd2{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.vt{background:#fff;border-radius:14px;overflow:hidden;display:flex;flex-direction:column}
+.vt .vs{position:relative;aspect-ratio:4/3;overflow:hidden;display:flex;align-items:center;justify-content:center}
+.vt .vc{padding:10px 12px;font:500 13.5px/1.35 Onest,Arial,sans-serif;color:#1B2A18;display:flex;gap:8px;align-items:flex-start}
+.vt .bdg{flex:none;font:800 11px Manrope,Arial,sans-serif;letter-spacing:.06em;text-transform:uppercase;padding:3px 8px;border-radius:99px}
+.vt .y{background:#A9D48E;color:#1B2A18}.vt .n{background:#A63F1F;color:#fff}
+.vt .sgv{position:absolute;font:800 120px/.8 Manrope,Arial,sans-serif;letter-spacing:-.06em;white-space:nowrap}
+.ser{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:8px}
+@media(max-width:900px){.ser{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.ser button{border:0;border-radius:14px;padding:14px;min-height:150px;text-align:left;display:flex;flex-direction:column;justify-content:flex-end;gap:2px;font:600 13px var(--ft);color:var(--gly);cursor:pointer;transition:transform .2s var(--ease)}
+.ser button:hover{transform:translateY(-3px)}.ser button:focus-visible{outline:3px solid var(--gly);outline-offset:2px}
+.ser i{font:800 28px/1 var(--fd);font-style:normal;margin-bottom:auto}
+.ser b{font:800 16px var(--fd)}.ser span{font-size:12px;opacity:.85;margin-top:4px}
+.ser button[data-hex="#D7E6FB"]{box-shadow:inset 0 0 0 1.5px #66705F}
+.ser .hl{outline:2px dashed var(--ter);outline-offset:3px}
+.webw{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:20px;align-items:start}
+@media(max-width:960px){.webw{grid-template-columns:minmax(0,1fr)}}
+.webw iframe{width:100%;height:760px;border:0;border-radius:var(--r);background:var(--mol);box-shadow:inset 0 0 0 1px var(--pis)}
+code{font:500 .92em ui-monospace,Menlo,Consolas,monospace;background:var(--mol);padding:2px 6px;border-radius:6px}
+.anw{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:16px;align-items:stretch}
+@media(max-width:900px){.anw{grid-template-columns:minmax(0,1fr)}}
+.anw video{width:100%;height:100%;object-fit:cover;aspect-ratio:16/9;border-radius:var(--r);background:var(--les);display:block}
+.sp2{grid-column:span 2}@media(max-width:960px){.sp2{grid-column:auto}}
 </style>
 </head>
 <body>
@@ -251,7 +283,7 @@ footer a{color:var(--mol)}
   <div class="wrap">
     <a href="#hero" aria-label="На початок"><svg class="logo lgsvg" data-kind="sym" fill="currentColor"></svg></a>
     <nav class="mn" aria-label="Розділи">
-      <a href="#logo">Логотип</a><a href="#colors">Кольори</a><a href="#grad">Градієнти</a><a href="#fonts">Шрифти</a><a href="#graphics">Графіка</a><a href="#icons">Іконки</a><a href="#photo">Фото</a><a href="#social">Соцмережі</a><a href="#video">Відео</a><a href="#cobrand">Кобрендинг</a><a href="#builder">Конструктор</a><a href="#canva">Шаблони Canva</a><a href="#name">Назва і текст</a><a href="#prep">Перед публікацією</a>
+      <a href="#quick">Старт</a><a href="#logo">Логотип</a><a href="#colors">Кольори</a><a href="#grad">Градієнти</a><a href="#fonts">Шрифти</a><a href="#graphics">Графіка</a><a href="#icons">Іконки</a><a href="#photo">Фото</a><a href="#social">Соцмережі</a><a href="#video">Відео</a><a href="#cobrand">Кобрендинг</a><a href="#builder">Конструктор</a><a href="#charts">Інфографіка</a><a href="#web">Сайт</a><a href="#canva">Canva</a><a href="#name">Назва і текст</a><a href="#prep">Перед публікацією</a>
     </nav>
     <a class="btn g s" href="brandbook.html">Брендбук</a>
   </div>
@@ -261,8 +293,8 @@ footer a{color:var(--mol)}
   <div class="sg" id="heroNum" aria-hidden="true">543<br>370</div>
   <div class="wrap">
     <div class="in">
-      <span class="lbl">Бренд-кіт · Благодійний фонд «ССС»</span>
-      <h1>Усе для макета <em>за хвилину.</em></h1>
+      <span class="lbl">Версія 2.0 · 2026</span>
+      <h1>Благодійний фонд «Стабілізейшен Суппорт Сервісез» <em>· Бренд-кіт</em></h1>
       <p class="l">Логотипи, кольори, шрифти і 66 фірмових іконок. Конструктор дописів для соцмереж і шаблони, які відкриваються в Canva. Без пошуку файлів по чатах.</p>
       <div class="dir"><span class="lbl">Напрями роботи фонду</span><div class="word" aria-live="off"><span id="heroWord">Гуманітарна допомога постраждалим від війни</span></div></div>
       <div class="cta">
@@ -281,6 +313,10 @@ footer a{color:var(--mol)}
 <div class="mq" aria-hidden="true"><div class="track" id="mq"></div></div>
 
 <main>
+<section class="s" id="quick" style="padding-top:72px"><div class="wrap">
+  <div class="sh rv"><span class="lbl">00 · Короткий старт</span><h2>10 головних правил</h2><p>Шпаргалка на один екран для нових колег і підрядників. Подробиці — у розділах нижче і в брендбуці. <a href="docs/SSS_shpargalka.pdf" download style="font-weight:700;color:var(--les)">Шпаргалка PDF (A4)</a></p></div>
+  <div class="rv"><div class="qs"><div class="qi"><span class="qn">01</span><b>Логотип</b><p>Тільки файли з бренд-кіту. Зверху зліва, із захисним полем. Не перефарбовувати частини, не розтягувати, без тіней.</p></div><div class="qi"><span class="qn">02</span><b>Колір</b><p>Ліс — головний. На макеті до трьох кольорів плюс текст. Теракота — тільки для термінового.</p></div><div class="qi"><span class="qn">03</span><b>Шрифти</b><p>Manrope — заголовки й числа, Onest — текст. Georgia і Raleway більше не використовуємо.</p></div><div class="qi"><span class="qn">04</span><b>Кегль</b><p>Мінімум 24 px на макеті 1080 px — для всього тексту. Заголовок до 3 рядків і 60 знаків.</p></div><div class="qi"><span class="qn">05</span><b>Контраст</b><p>Текст від 4,5:1. На Теракоті — лише заголовки від 44 px, решта — на плашці Молоко.</p></div><div class="qi"><span class="qn">06</span><b>Один акцент</b><p>Одна суперграфіка, або один градієнт, або один маркер у заголовку. Без декоративних форм.</p></div><div class="qi"><span class="qn">07</span><b>Іконки</b><p>Тільки з фірмового набору. Немає фото — макет з іконкою, а не фото з фотобанку.</p></div><div class="qi"><span class="qn">08</span><b>Фото</b><p>Реальні люди і робота, із письмовою згодою. Без адрес, персональних даних і облич дітей без дозволу.</p></div><div class="qi"><span class="qn">09</span><b>Формати</b><p>Пости 4:5 (1080×1350), сторіс 9:16 — без тексту у верхніх 250 і нижніх 340 px.</p></div><div class="qi"><span class="qn">10</span><b>Перед публікацією</b><p>Правильна назва фонду, вимоги донора виконані, цифри з джерелом, чекліст пройдено.</p></div></div></div>
+</div></section>
 <!-- LOGO -->
 <section class="s" id="logo"><div class="wrap">
   <div class="sh rv"><span class="lbl">01 · Логотип</span><h2>Правильний логотип у правильному кольорі</h2><p>Оберіть версію і фон. Кольори логотипа підбираються автоматично за правилами брендбука. Завантажуйте SVG для друку і дизайну, PNG для документів і Canva.</p></div>
@@ -294,6 +330,14 @@ footer a{color:var(--mol)}
       <p class="hint" id="lgNote"></p>
     </div>
   </div>
+  <div class="card rv" style="margin-top:16px"><span class="lbl">Файли для друку та оригінали</span>
+    <p class="hint" style="margin:6px 0 12px">CMYK PDF та EPS — для друкарні, вивісок, текстилю. Зелений: CMYK 91·40·86·44 (як у файлах дизайнера). PNG і SVG для друку не використовуємо.</p>
+    <div class="tw"><table class="tb"><tr><th>Версія</th><th>Зелений CMYK</th><th>Білий</th><th>Чорний</th><th>Оригінал дизайнера</th></tr>
+      <tr><td>Українська</td><td><a href="logo/print/sss-logo-ua-cmyk-green.pdf" download>PDF</a> · <a href="logo/print/sss-logo-ua-cmyk-green.eps" download>EPS</a></td><td><a href="logo/print/sss-logo-ua-cmyk-white.pdf" download>PDF</a> · <a href="logo/print/sss-logo-ua-cmyk-white.eps" download>EPS</a></td><td><a href="logo/print/sss-logo-ua-cmyk-black.pdf" download>PDF</a> · <a href="logo/print/sss-logo-ua-cmyk-black.eps" download>EPS</a></td><td><a href="logo/original/sss-logo-ua-original.pdf" download>PDF</a></td></tr>
+      <tr><td>Англійська</td><td><a href="logo/print/sss-logo-en-cmyk-green.pdf" download>PDF</a> · <a href="logo/print/sss-logo-en-cmyk-green.eps" download>EPS</a></td><td><a href="logo/print/sss-logo-en-cmyk-white.pdf" download>PDF</a> · <a href="logo/print/sss-logo-en-cmyk-white.eps" download>EPS</a></td><td><a href="logo/print/sss-logo-en-cmyk-black.pdf" download>PDF</a> · <a href="logo/print/sss-logo-en-cmyk-black.eps" download>EPS</a></td><td><a href="logo/original/sss-logo-en-original.pdf" download>PDF</a></td></tr>
+      <tr><td>Символ</td><td><a href="logo/print/sss-symbol-cmyk-green.pdf" download>PDF</a> · <a href="logo/print/sss-symbol-cmyk-green.eps" download>EPS</a></td><td><a href="logo/print/sss-symbol-cmyk-white.pdf" download>PDF</a> · <a href="logo/print/sss-symbol-cmyk-white.eps" download>EPS</a></td><td><a href="logo/print/sss-symbol-cmyk-black.pdf" download>PDF</a> · <a href="logo/print/sss-symbol-cmyk-black.eps" download>EPS</a></td><td><a href="logo/original/sss-symbol-original.pdf" download>PDF</a></td></tr>
+    </table></div></div>
+  <div class="rv" style="margin-top:16px"><span class="lbl" style="display:block;margin-bottom:10px">Правильно і неправильно</span><div class="vd2"><div class="vt"><div class="vs" style="background:#FBF6EC;"><div style="width:72%"><svg class="lgsvg" data-kind="ua" style="display:block;width:100%;height:auto;fill:#214E34;"></svg></div></div><div class="vc"><span class="bdg y">Так</span><span>Однотонний логотип на спокійному фоні, із захисним полем.</span></div></div><div class="vt"><div class="vs" style="background:#000;"><div style="position:absolute;inset:0;background:radial-gradient(100% 90% at 60% 35%,#f1d6b2 0,#d28e64 35%,#7b5a45 70%,#3b3027 100%)"></div><div style="position:relative;background:#fff;padding:10px 14px;border-radius:8px;width:60%"><svg class="lgsvg" data-kind="ua" style="display:block;width:100%;height:auto;fill:#214E34;"></svg></div></div><div class="vc"><span class="bdg y">Так</span><span>На строкатому фото — біла плашка з полями.</span></div></div><div class="vt"><div class="vs" style="background:#314C2C;"><div style="width:72%"><svg class="lgsvg" data-kind="ua" style="display:block;width:100%;height:auto;fill:#FBF6EC;"></svg></div></div><div class="vc"><span class="bdg y">Так</span><span>На темному фоні — Молоко або білий.</span></div></div><div class="vt"><div class="vs" style="background:#FBF6EC;"><div style="width:72%;transform:scaleX(1.35) scaleY(.8)"><svg class="lgsvg" data-kind="ua" style="display:block;width:100%;height:auto;fill:#214E34;"></svg></div></div><div class="vc"><span class="bdg n">Ні</span><span>Розтягувати чи стискати.</span></div></div><div class="vt"><div class="vs" style="background:#FBF6EC;"><div style="width:72%;filter:drop-shadow(4px 6px 3px rgba(0,0,0,.45))"><svg class="lgsvg" data-kind="ua" style="display:block;width:100%;height:auto;fill:#DC643D;"></svg></div></div><div class="vc"><span class="bdg n">Ні</span><span>Фарбувати частини в різні кольори, додавати тінь.</span></div></div><div class="vt"><div class="vs" style="background:#000;"><div style="position:absolute;inset:0;background:radial-gradient(100% 90% at 60% 35%,#f1d6b2 0,#d28e64 35%,#7b5a45 70%,#3b3027 100%)"></div><div style="position:relative;width:72%"><svg class="lgsvg" data-kind="ua" style="display:block;width:100%;height:auto;fill:#214E34;"></svg></div></div><div class="vc"><span class="bdg n">Ні</span><span>Ставити на строкате фото без плашки.</span></div></div></div></div>
   <div class="rl rv">
     <div class="card"><span class="lbl">Правила</span><ul style="margin-top:12px"><li>Захисне поле — висота символу SSS з усіх боків.</li><li>Мінімум: основний 140 px / 35 мм, англомовний 150 px / 38 мм, символ 32 px / 10 мм.</li><li>Місце: лівий верхній кут, відступ дорівнює полю макета (64 px на 1080 px). Лівий нижній — коли вгорі фото з людьми.</li><li>Логотип однотонний, колір — за фоном (див. перемикач вище).</li><li>На строкатому фото — біла плашка з полями x.</li><li>Аватар соцмереж: символ Молоко на колі Ліс, 62 % діаметра.</li></ul></div>
     <div class="card"><span class="lbl">Не можна</span><ul class="nope" style="margin-top:12px"><li>Розтягувати, стискати, повертати.</li><li>Фарбувати частини логотипа в різні кольори.</li><li>Обведення, тіні, світіння, градієнт.</li><li>Набирати назву фонду іншим шрифтом або без символу.</li><li>Ставити на строкате фото без плашки.</li><li>Перефарбовувати логотипи донорів у наші кольори.</li></ul></div>
@@ -312,8 +356,10 @@ footer a{color:var(--mol)}
       <p class="hint" style="margin-top:14px">AA від 4,5:1 — будь-який текст. Від 3:1 — тільки заголовки від 44 px на макеті 1080 px.</p></div>
     <div class="ccprev" id="ccP"><span class="lbl" style="color:inherit;opacity:.8">Приклад</span><div><div class="big">543 370 людей</div><p style="margin-top:8px;font-size:17px">отримали гуманітарну допомогу. Підпис основним текстом 30 px.</p></div></div>
   </div>
+  <div class="card rv" style="margin-top:16px"><span class="lbl">Кольори для друку</span><p class="hint" style="margin:6px 0 12px">CMYK — Coated FOGRA39. Pantone і RAL — найближчі відповідники; усі значення, крім зеленого логотипа, орієнтовні. Перед тиражем погоджуйте пробний відбиток. <a href="colors/print-colors.txt" download>Завантажити таблицю</a></p><div class="tw"><table class="tb"><tr><th>Колір</th><th>HEX</th><th>CMYK</th><th>Pantone</th><th>RAL</th><th>Примітка</th></tr><tr><td><span style="display:inline-block;width:14px;height:14px;border-radius:4px;background:#214E34;box-shadow:inset 0 0 0 1px rgba(0,0,0,.12);vertical-align:-2px;margin-right:8px"></span>Зелений логотипа</td><td class="mono">#214E34</td><td class="mono">91 · 40 · 86 · 44</td><td>3435 C</td><td>RAL 6005</td><td>тільки логотип; CMYK — з файлів дизайнера</td></tr><tr><td><span style="display:inline-block;width:14px;height:14px;border-radius:4px;background:#314C2C;box-shadow:inset 0 0 0 1px rgba(0,0,0,.12);vertical-align:-2px;margin-right:8px"></span>Ліс</td><td class="mono">#314C2C</td><td class="mono">75 · 45 · 85 · 50</td><td>350 C</td><td>RAL 6002</td><td>фони, жилети, банери</td></tr><tr><td><span style="display:inline-block;width:14px;height:14px;border-radius:4px;background:#1B2A18;box-shadow:inset 0 0 0 1px rgba(0,0,0,.12);vertical-align:-2px;margin-right:8px"></span>Глибина</td><td class="mono">#1B2A18</td><td class="mono">80 · 55 · 90 · 70</td><td>Black 3 C</td><td>RAL 6009</td><td>текст</td></tr><tr><td><span style="display:inline-block;width:14px;height:14px;border-radius:4px;background:#FBF6EC;box-shadow:inset 0 0 0 1px rgba(0,0,0,.12);vertical-align:-2px;margin-right:8px"></span>Молоко</td><td class="mono">#FBF6EC</td><td class="mono">0 · 2 · 6 · 1</td><td>—</td><td>RAL 9001</td><td>у друку — теплий білий папір</td></tr><tr><td><span style="display:inline-block;width:14px;height:14px;border-radius:4px;background:#F6B93B;box-shadow:inset 0 0 0 1px rgba(0,0,0,.12);vertical-align:-2px;margin-right:8px"></span>Соняшник</td><td class="mono">#F6B93B</td><td class="mono">0 · 30 · 85 · 0</td><td>7409 C</td><td>RAL 1028</td><td></td></tr><tr><td><span style="display:inline-block;width:14px;height:14px;border-radius:4px;background:#DC643D;box-shadow:inset 0 0 0 1px rgba(0,0,0,.12);vertical-align:-2px;margin-right:8px"></span>Теракота</td><td class="mono">#DC643D</td><td class="mono">5 · 72 · 85 · 0</td><td>7578 C</td><td>RAL 2010</td><td></td></tr><tr><td><span style="display:inline-block;width:14px;height:14px;border-radius:4px;background:#A9D48E;box-shadow:inset 0 0 0 1px rgba(0,0,0,.12);vertical-align:-2px;margin-right:8px"></span>Паросток</td><td class="mono">#A9D48E</td><td class="mono">38 · 0 · 55 · 0</td><td>358 C</td><td>RAL 6019</td><td></td></tr><tr><td><span style="display:inline-block;width:14px;height:14px;border-radius:4px;background:#D7E6FB;box-shadow:inset 0 0 0 1px rgba(0,0,0,.12);vertical-align:-2px;margin-right:8px"></span>Небо</td><td class="mono">#D7E6FB</td><td class="mono">15 · 5 · 0 · 0</td><td>656 C</td><td>—</td><td>лише друк на папері</td></tr><tr><td><span style="display:inline-block;width:14px;height:14px;border-radius:4px;background:#66705F;box-shadow:inset 0 0 0 1px rgba(0,0,0,.12);vertical-align:-2px;margin-right:8px"></span>Камінь</td><td class="mono">#66705F</td><td class="mono">55 · 40 · 60 · 30</td><td>417 C</td><td>RAL 7009</td><td></td></tr><tr><td><span style="display:inline-block;width:14px;height:14px;border-radius:4px;background:#E6DFD0;box-shadow:inset 0 0 0 1px rgba(0,0,0,.12);vertical-align:-2px;margin-right:8px"></span>Пісок</td><td class="mono">#E6DFD0</td><td class="mono">8 · 10 · 18 · 0</td><td>7527 C</td><td>RAL 1013</td><td></td></tr></table></div></div>
+  <div class="rv" style="margin-top:16px"><span class="lbl" style="display:block;margin-bottom:10px">Правильно і неправильно</span><div class="vd2"><div class="vt"><div class="vs" style="background:#314C2C;"><div style="position:absolute;inset:0;padding:18px;display:flex;flex-direction:column;justify-content:flex-start;gap:8px"><div style="font:800 22px/1.1 Manrope,Arial,sans-serif;letter-spacing:-.02em;color:#FBF6EC;">Тренінг для <span style="background:#F6B93B;color:#1B2A18;padding:0 .14em;border-radius:.1em">фахівців</span></div><div style="font:500 13px/1.35 Onest,Arial,sans-serif;color:#C9D2C2;">Полтава · листопад</div></div></div><div class="vc"><span class="bdg y">Так</span><span>Ліс + Соняшник: заголовок Молоко, маркер Соняшник.</span></div></div><div class="vt"><div class="vs" style="background:#FBF6EC;"><div style="position:absolute;inset:0;padding:18px;display:flex;flex-direction:column;justify-content:flex-start;gap:8px"><div style="font:800 22px/1.1 Manrope,Arial,sans-serif;letter-spacing:-.02em;color:#314C2C;">Ремонт <span style="background:#A9D48E;color:#1B2A18;padding:0 .14em;border-radius:.1em">житла</span> у громаді</div><div style="font:500 13px/1.35 Onest,Arial,sans-serif;color:#1B2A18;">Підпис кольором Глибина</div></div></div><div class="vc"><span class="bdg y">Так</span><span>Молоко + Паросток: текст Ліс і Глибина.</span></div></div><div class="vt"><div class="vs" style="background:#DC643D;"><div style="position:absolute;inset:0;padding:18px;display:flex;flex-direction:column;justify-content:flex-start;gap:8px"><div style="font:800 26px/1.1 Manrope,Arial,sans-serif;letter-spacing:-.02em;color:#FBF6EC;">Важливо: як подати скаргу</div><div style="margin-top:auto;background:#FBF6EC;border-radius:8px;padding:8px 10px"><div style="font:500 13px/1.35 Onest,Arial,sans-serif;color:#1B2A18;">Форма на sss-ua.org</div></div></div></div><div class="vc"><span class="bdg y">Так</span><span>Теракота: лише великий заголовок, решта — на плашці Молоко.</span></div></div><div class="vt"><div class="vs" style="background:#FBF6EC;"><div style="position:absolute;inset:0;padding:18px;display:flex;flex-direction:column;justify-content:flex-start;gap:8px"><div style="font:800 22px/1.1 Manrope,Arial,sans-serif;letter-spacing:-.02em;color:#F6B93B;">Ремонт житла</div><div style="font:500 13px/1.35 Onest,Arial,sans-serif;color:#A9D48E;">Підпис кольором Паросток</div></div></div><div class="vc"><span class="bdg n">Ні</span><span>Соняшник чи Паросток як колір тексту на світлому фоні.</span></div></div><div class="vt"><div class="vs" style="background:#DC643D;"><div style="position:absolute;inset:0;padding:18px;display:flex;flex-direction:column;justify-content:flex-start;gap:8px"><div style="font:800 22px/1.1 Manrope,Arial,sans-serif;letter-spacing:-.02em;color:#FBF6EC;">Важливо</div><div style="font:500 13px/1.35 Onest,Arial,sans-serif;color:#FBF6EC;">Подати скаргу можна через форму на сайті або за телефоном гарячої лінії.</div></div></div><div class="vc"><span class="bdg n">Ні</span><span>Дрібний текст прямо на Теракоті: контраст нижче 4,5:1.</span></div></div><div class="vt"><div class="vs" style="background:#fff;"><div style="position:absolute;inset:0;display:grid;grid-template-columns:repeat(4,1fr)"><i style="background:#F6B93B"></i><i style="background:#DC643D"></i><i style="background:#A9D48E"></i><i style="background:#D7E6FB"></i></div></div><div class="vc"><span class="bdg n">Ні</span><span>Усі акценти на одному макеті і Теракота поруч із Паростком.</span></div></div></div></div>
   <div class="rl rv">
-    <div class="card"><span class="lbl">Правила</span><ul style="margin-top:12px"><li>Пропорції 60 · 30 · 10: фон, площини, акцент.</li><li>На макеті до трьох кольорів плюс колір тексту.</li><li>Кольори напрямів: Соняшник — гуманітарна допомога; Небо — права, правопросвітництво; Паросток — громади, ради ВПО; Ліс — голос фонду, адвокація, звіти.</li><li>Теракота — тільки термінові повідомлення, не частіше раза на тиждень.</li><li>Текст — Глибина, другорядний текст — Камінь. Лінії — Пісок.</li></ul></div>
+    <div class="card"><span class="lbl">Правила</span><ul style="margin-top:12px"><li>Пропорції 60 · 30 · 10: фон, площини, акцент.</li><li>На макеті до трьох кольорів плюс колір тексту.</li><li>Кольори напрямів: Соняшник — гуманітарна допомога; Небо — права, правопросвітництво; Паросток — громади, ради ВПО; Ліс — голос фонду, адвокація, звіти.</li><li>Теракота — тільки термінові повідомлення, не частіше раза на тиждень. Жоден колір тексту не дає на ній 4,5:1, тому на Теракоті — лише заголовки від 44 px (Молоко або білий), решта тексту — на плашці Молоко з текстом Глибина.</li><li>Текст — Глибина, другорядний текст — Камінь. Лінії — Пісок.</li></ul></div>
     <div class="card"><span class="lbl">Не можна</span><ul class="nope" style="margin-top:12px"><li>Теракота і Паросток поруч великими площинами.</li><li>Соняшник чи Паросток як колір тексту на світлому фоні.</li><li>Усі акценти разом на одному макеті.</li><li>Чистий чорний (#000, #1E1E1E) і сірий.</li><li>Кольори поза палітрою, крім логотипів партнерів.</li></ul></div>
   </div>
   <p class="more rv"><a href="brandbook.html#color">Детальніше в брендбуці →</a></p>
@@ -324,10 +370,11 @@ footer a{color:var(--mol)}
   <div class="sh rv"><span class="lbl">03 · Градієнти</span><h2>Шість фірмових градієнтів і правила до них</h2><p>Градієнт працює як світло на фоні, а не як прикраса. Інших градієнтів не створюємо. Скопіюйте CSS або завантажте готовий фон PNG із зерном для Canva.</p></div>
   <div class="ibar rv"><span class="lbl">Формат фону</span><div style="display:flex;gap:6px;flex-wrap:wrap" id="gFmt"></div>
     <label class="hint" style="display:flex;gap:8px;align-items:center"><input type="checkbox" id="gGrain" checked style="accent-color:var(--les);width:18px;height:18px"> Зерно 5 %</label></div>
+  <div class="card rv" style="margin-bottom:16px"><span class="lbl">Які кольори «сусідні»</span><p class="hint" style="margin:6px 0 12px">Градієнт — лише між двома кольорами, що стоять поруч на шкалі. Перехід «через колір» дає брудний відтінок посередині.</p><svg viewBox="0 0 760 500" role="img" aria-label="Схема сусідніх кольорів для градієнтів" style="width:100%;height:auto;display:block;font-family:Manrope,Arial,sans-serif"><text x="20" y="34" font-size="15" font-weight="800" fill="#66705F" letter-spacing="1.2">СВІТЛА ШКАЛА</text><path d="M108 94 Q145.0 42 182 94" fill="none" stroke="#3D8B37" stroke-width="3"/><text x="145.0" y="60" text-anchor="middle" font-size="15" font-weight="800" fill="#2E6B2A">Простір ✓</text><path d="M258 94 Q295.0 42 332 94" fill="none" stroke="#3D8B37" stroke-width="3"/><text x="295.0" y="60" text-anchor="middle" font-size="15" font-weight="800" fill="#2E6B2A">✓</text><path d="M408 94 Q445.0 42 482 94" fill="none" stroke="#3D8B37" stroke-width="3"/><text x="445.0" y="60" text-anchor="middle" font-size="15" font-weight="800" fill="#2E6B2A">Поле ✓</text><path d="M558 94 Q595.0 42 632 94" fill="none" stroke="#3D8B37" stroke-width="3"/><text x="595.0" y="60" text-anchor="middle" font-size="15" font-weight="800" fill="#2E6B2A">Ранок ✓</text><circle cx="70" cy="120" r="44" fill="#D7E6FB" stroke="#E6DFD0" stroke-width="2"/><text x="70" y="188" text-anchor="middle" font-size="15" font-weight="700" fill="#1B2A18">Небо</text><circle cx="220" cy="120" r="44" fill="#FBF6EC" stroke="#E6DFD0" stroke-width="2"/><text x="220" y="188" text-anchor="middle" font-size="15" font-weight="700" fill="#1B2A18">Молоко</text><circle cx="370" cy="120" r="44" fill="#A9D48E" stroke="#E6DFD0" stroke-width="2"/><text x="370" y="188" text-anchor="middle" font-size="15" font-weight="700" fill="#1B2A18">Паросток</text><circle cx="520" cy="120" r="44" fill="#F6B93B" stroke="#E6DFD0" stroke-width="2"/><text x="520" y="188" text-anchor="middle" font-size="15" font-weight="700" fill="#1B2A18">Соняшник</text><circle cx="670" cy="120" r="44" fill="#DC643D" stroke="#E6DFD0" stroke-width="2"/><text x="670" y="188" text-anchor="middle" font-size="15" font-weight="700" fill="#1B2A18">Теракота</text><path d="M70 226 H520" stroke="#DC643D" stroke-width="3" stroke-dasharray="6 6"/><text x="76" y="219" font-size="13.5" font-weight="700" fill="#B5462A">✗ Небо → Соняшник — через колір, не можна</text><path d="M70 256 H670" stroke="#DC643D" stroke-width="3" stroke-dasharray="6 6"/><text x="76" y="249" font-size="13.5" font-weight="700" fill="#B5462A">✗ Небо → Теракота — через колір, не можна</text><path d="M370 286 H670" stroke="#DC643D" stroke-width="3" stroke-dasharray="6 6"/><text x="376" y="279" font-size="13.5" font-weight="700" fill="#B5462A">✗ Паросток → Теракота — через колір, не можна</text><text x="20" y="356" font-size="15" font-weight="800" fill="#66705F" letter-spacing="1.2">ТЕМНА ПАРА</text><circle cx="70" cy="420" r="44" fill="#314C2C"/><circle cx="220" cy="420" r="44" fill="#1B2A18"/><path d="M110 420 H180" stroke="#3D8B37" stroke-width="3"/><text x="145.0" y="408" text-anchor="middle" font-size="15" font-weight="800" fill="#2E6B2A">Ліс ✓</text><text x="70" y="486" text-anchor="middle" font-size="15" font-weight="700" fill="#1B2A18">Ліс</text><text x="220" y="486" text-anchor="middle" font-size="15" font-weight="700" fill="#1B2A18">Глибина</text><text x="350" y="414" font-size="15" font-weight="800" fill="#1B2A18">«Аура» — виняток:</text><text x="350" y="436" font-size="14" fill="#1B2A18">фон Ліс + м’яке світло Соняшник і Паросток</text><text x="350" y="456" font-size="14" fill="#1B2A18">з протилежних кутів. Інших комбінацій світлого</text><text x="350" y="476" font-size="14" fill="#1B2A18">і темного рядів немає.</text></svg></div>
   <div class="gw rv" id="gGrid"></div>
   <div class="rl rv">
     <div class="card"><span class="lbl">Правила</span><ul style="margin-top:12px">
-      <li>Переходимо тільки між сусідніми кольорами палітри. Два кольори, максимум три.</li>
+      <li>Переходимо тільки між сусідніми кольорами шкали (див. схему). Два кольори, максимум три поспіль.</li>
       <li>Кути 135° (діагональ) або 180° (згори вниз). Радіальний градієнт ставимо з кута макета.</li>
       <li>Градієнт тільки на фоні або великій площині. На тексті, логотипі та іконках його немає.</li>
       <li>Основний текст ставимо на ділянку з контрастом від 4,5:1 або на плашку.</li>
@@ -370,8 +417,8 @@ footer a{color:var(--mol)}
       <tr><td>H3 · підзаголовок</td><td>Manrope 700</td><td>44 / 112 %</td></tr>
       <tr><td>Лід</td><td>Onest 500</td><td>36 / 130 %</td></tr>
       <tr><td>Текст</td><td>Onest 400</td><td>30 / 140 %</td></tr>
-      <tr><td>Підпис</td><td>Onest 500</td><td>24 / 135 % — мінімум</td></tr>
-      <tr><td>Мітка</td><td>Manrope 700, капс</td><td>22, трекінг +7 %</td></tr>
+      <tr><td>Підпис</td><td>Onest 500</td><td>24 / 135 % — мінімум для будь-якого тексту, зокрема дисклеймерів і формулювань донора</td></tr>
+      <tr><td>Мітка</td><td>Manrope 700, капс</td><td>24, трекінг +7 %</td></tr>
     </table></div></div>
   <div class="rl rv">
     <div class="card"><span class="lbl">Правила</span><ul style="margin-top:12px"><li>Заголовки, числа, мітки — Manrope. Текст, підписи, таблиці — Onest.</li><li>Заголовок до 3 рядків і до 60 знаків. Вирівнювання ліворуч.</li><li>Виділення — плашка-маркер під 1–4 словами або колір. Одне на заголовок.</li><li>У таблицях — табличні цифри (Figma: Details → Tabular figures).</li><li>Немає фірмового шрифту: Canva — Montserrat Bold + Inter; Word / PowerPoint — Arial.</li></ul></div>
@@ -390,6 +437,7 @@ footer a{color:var(--mol)}
     <div class="sgc" style="background:#FBF6EC;color:#1B2A18;box-shadow:inset 0 0 0 1px var(--pis)"><i style="position:absolute;left:0;top:0;bottom:0;width:30%;background:#F6B93B"></i><i style="position:absolute;left:30%;right:0;bottom:0;height:45%;background:#314C2C"></i><b style="position:relative;margin-left:34%">Блоки</b><p style="position:relative;margin-left:34%">Площини 1/2, 1/3, 2/3 по сітці.</p></div>
   </div>
   <div class="card rv" style="margin-top:16px"><span class="lbl">Кольори тон-в-тон для фонової суперграфіки · натисніть, щоб скопіювати</span><div class="tones" style="margin-top:12px"><button class="tone" data-h="#3D5C37" style="background:#314C2C;color:#FBF6EC"><span class="sgx" style="color:#3D5C37">24</span><b>Ліс</b><span>#3D5C37</span></button><button class="tone" data-h="#F0E8D8" style="background:#FBF6EC;color:#1B2A18"><span class="sgx" style="color:#F0E8D8">24</span><b>Молоко</b><span>#F0E8D8</span></button><button class="tone" data-h="#EBA92A" style="background:#F6B93B;color:#1B2A18"><span class="sgx" style="color:#EBA92A">24</span><b>Соняшник</b><span>#EBA92A</span></button><button class="tone" data-h="#C6D9F4" style="background:#D7E6FB;color:#1B2A18"><span class="sgx" style="color:#C6D9F4">24</span><b>Небо</b><span>#C6D9F4</span></button><button class="tone" data-h="#98C77C" style="background:#A9D48E;color:#1B2A18"><span class="sgx" style="color:#98C77C">24</span><b>Паросток</b><span>#98C77C</span></button><button class="tone" data-h="#CE5631" style="background:#DC643D;color:#FFFFFF"><span class="sgx" style="color:#CE5631">24</span><b>Теракота</b><span>#CE5631</span></button></div></div>
+  <div class="rv" style="margin-top:16px"><span class="lbl" style="display:block;margin-bottom:10px">Правильно і неправильно</span><div class="vd2"><div class="vt"><div class="vs" style="background:#314C2C;"><div style="position:absolute;left:14px;top:14px;right:14px"><div style="font:800 15px/1.1 Manrope,Arial,sans-serif;letter-spacing:-.02em;color:#FBF6EC;">людей отримали допомогу</div></div><div class="sgv" style="color:#F6B93B;left:-6px;bottom:-18px;font-size:118px">543</div></div><div class="vc"><span class="bdg y">Так</span><span>Число-герой обрізане краєм, підпис зверху.</span></div></div><div class="vt"><div class="vs" style="background:#D7E6FB;"><div class="sgv" style="color:#C6D9F4;left:-8px;top:20px;font-size:120px">2026</div><div style="position:absolute;inset:0;padding:18px;display:flex;flex-direction:column;justify-content:flex-start;gap:8px"><div style="font:800 20px/1.1 Manrope,Arial,sans-serif;letter-spacing:-.02em;color:#314C2C;">Що змінилося для ВПО</div></div></div><div class="vc"><span class="bdg y">Так</span><span>Фонова суперграфіка тон-в-тон, текст поверх.</span></div></div><div class="vt"><div class="vs" style="background:#F6B93B;"><div style="position:absolute;left:14px;top:14px;right:40%"><div style="font:800 18px/1.1 Manrope,Arial,sans-serif;letter-spacing:-.02em;color:#1B2A18;">Правова допомога</div></div><svg viewBox="0 0 24 24" style="position:absolute;right:-30px;bottom:-34px;width:170px;height:170px"><path d="M2 13h6a3 3 0 0 1-6 0z" fill="#FBF6EC"/><g fill="none" stroke="#1B2A18" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M7.5 21h9M4.5 6h15"/><path d="M5 6l-3 7h6zM19 6l-3 7h6z"/><path d="M2 13a3 3 0 0 0 6 0M16 13a3 3 0 0 0 6 0"/></g></svg></div><div class="vc"><span class="bdg y">Так</span><span>Іконка-герой праворуч унизу, текст окремо.</span></div></div><div class="vt"><div class="vs" style="background:#314C2C;"><div class="sgv" style="color:#F6B93B;left:-6px;top:10px;font-size:130px">543</div><div style="position:absolute;inset:0;padding:18px;display:flex;flex-direction:column;justify-content:flex-start;gap:8px"><div style="font:800 20px/1.1 Manrope,Arial,sans-serif;letter-spacing:-.02em;color:#FBF6EC;margin-top:30px">людей отримали гуманітарну допомогу</div></div></div><div class="vc"><span class="bdg n">Ні</span><span>Суперграфіка-герой під текстом: заголовок не читається.</span></div></div><div class="vt"><div class="vs" style="background:#FBF6EC;"><div class="sgv" style="left:6px;top:18px;font-size:110px;color:transparent;-webkit-text-stroke:2px #314C2C;transform:rotate(-12deg)">543</div></div><div class="vc"><span class="bdg n">Ні</span><span>Нахилені, обведені чи градієнтні цифри.</span></div></div><div class="vt"><div class="vs" style="background:#314C2C;"><div class="sgv" style="color:#F6B93B;left:-6px;bottom:-20px;font-size:100px">543</div><div class="sgv" style="color:#A9D48E;right:-10px;top:-6px;font-size:90px">ДІМ</div></div><div class="vc"><span class="bdg n">Ні</span><span>Дві суперграфіки на одному макеті.</span></div></div></div></div>
   <div class="rl rv">
     <div class="card"><span class="lbl">Правила</span><ul style="margin-top:12px"><li>Одна суперграфіка на макет.</li><li>Розмір від 40 % ширини макета, обрізана одним-двома краями, видно щонайменше половину знака.</li><li>Режим «герой» — контрастний колір, текст поруч. Режим «фон» — тон-в-тон, текст можна ставити поверх.</li><li>Manrope 800, трекінг −6 %. Цифри тільки перевірені.</li><li>Плашка-маркер: Соняшник, Паросток або Молоко. На Теракоті — маркер Глибина з текстом Молоко.</li><li>Мітка рубрики: Manrope 700 капс, повне скруглення, можна з іконкою.</li></ul></div>
     <div class="card"><span class="lbl">Не можна</span><ul class="nope" style="margin-top:12px"><li>Суперграфіка-герой під текстом або обличчями.</li><li>Дві суперграфіки на макеті або разом з «Аурою».</li><li>Обведені, нахилені, розтягнуті чи градієнтні цифри.</li><li>Довгі слова й фрази як суперграфіка.</li><li>Логотип SSS як суперграфіка.</li><li>Маркер Соняшник на Теракоті — не читається.</li></ul></div>
@@ -488,6 +536,12 @@ footer a{color:var(--mol)}
     <div class="card"><span class="lbl">Субтитри</span><ul class="ul" style="margin-top:12px"><li>Вшиті завжди.</li><li>Onest SemiBold 44 px (16:9 — 52 px), Молоко.</li><li>До 2 рядків, до 32 знаків у рядку.</li><li>Плашка Глибина 80 %, радіус 12 px, по центру внизу.</li><li>Ключове слово — Соняшник.</li></ul></div>
     <div class="card"><span class="lbl">Титр спікера</span><ul class="ul" style="margin-top:12px"><li>Плашка Молоко зліва, смуга Соняшник 8 px.</li><li>Ім’я Manrope ExtraBold 40 px, посада Onest Medium 28 px.</li><li>З’являється на 1-й с, тримається 4–5 с.</li><li>Перша поява спікера — завжди з титром.</li></ul></div>
   </div>
+  <div class="anw rv" style="margin-top:16px">
+    <video src="video/SSS_logo_anim_16x9.mp4" autoplay loop muted playsinline aria-label="Анімація логотипа"></video>
+    <div class="card"><span class="lbl">Анімація логотипа · 1,5 с</span><h4 style="font:800 18px var(--fd);margin:8px 0">Заставка для YouTube і презентацій</h4><p style="font-size:15px">Символ SSS піднімається по літері, розділювач виростає, назва відкривається зліва направо. Тільки на початку відео, без звуку або з коротким фірмовим звуком.</p>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:14px"><a class="btn g s" href="video/SSS_logo_anim_16x9.mp4" download>MP4 16:9</a><a class="btn g s" href="video/SSS_logo_anim_9x16.mp4" download>MP4 9:16</a><a class="btn o s" href="video/SSS_logo_anim_alpha_moloko.mov" download>MOV з прозорістю · Молоко</a><a class="btn o s" href="video/SSS_logo_anim_alpha_green.mov" download>MOV з прозорістю · зелений</a></div>
+      <p class="hint" style="margin-top:10px">MOV (ProRes 4444) — для монтажу в Premiere, DaVinci, CapCut на ПК: кладіть поверх свого фону.</p></div>
+  </div>
   <div class="rl rv">
     <div class="card"><span class="lbl">Правила</span><ul style="margin-top:12px"><li>Заставки в Reels немає: перший кадр — гачок. YouTube — анімація логотипа до 1,5 с.</li><li>Кінцева картка: 2–3 с у Reels, 5 с у YouTube. Ліс, логотип, заклик, логотипи донорів, дисклеймер.</li><li>Тривалість: Reels і цитати 15–45 с, роз’яснення до 60–90 с, YouTube 2–8 хв.</li><li>Музика лише з ліцензією, 15–20 % гучності під голосом.</li></ul></div>
     <div class="card"><span class="lbl">Не можна</span><ul class="nope" style="margin-top:12px"><li>Музика в історіях про втрату і в зверненнях.</li><li>Текст і субтитри в небезпечних зонах.</li><li>Відео без субтитрів.</li><li>Трендові треки без ліцензії.</li></ul></div>
@@ -504,7 +558,7 @@ footer a{color:var(--mol)}
     <div class="card"><span class="lbl">Якщо суперечать</span><h4 style="font:800 18px var(--fd);margin:8px 0">Мінімальна зміна</h4><p style="font-size:15px">Виконуємо вимогу донора і змінюємо якнайменше. Сумнівне — погоджуємо з менеджером проєкту до публікації.</p></div>
   </div>
   <div class="rl rv">
-    <div class="card"><span class="lbl">Правила</span><ul style="margin-top:12px"><li>Порядок, якщо угода не визначає інше: донор → координатор → партнер → проєкт → SSS.</li><li>До 3 логотипів — біла плашка зверху зліва. 4 і більше — плашка на всю ширину.</li><li>5 і більше — на обкладинці лише донор і SSS, повна смуга — на останньому слайді (якщо угода дозволяє).</li><li>Усі логотипи однієї оптичної висоти, між ними розділювач.</li><li>Обов’язкове формулювання — над логотипами, Onest 20–22 px. Дисклеймер — у тексті і на останньому слайді.</li><li>Колір проєкту — лише в логотипі проєкту та в матеріалах самого проєкту, якщо цього вимагає донор.</li></ul></div>
+    <div class="card"><span class="lbl">Правила</span><ul style="margin-top:12px"><li>Порядок, якщо угода не визначає інше: донор → координатор → партнер → проєкт → SSS.</li><li>До 3 логотипів — біла плашка зверху зліва. 4 і більше — плашка на всю ширину.</li><li>5 і більше — на обкладинці лише донор і SSS, повна смуга — на останньому слайді (якщо угода дозволяє).</li><li>Усі логотипи однієї оптичної висоти, між ними розділювач.</li><li>Обов’язкове формулювання — над логотипами, Onest 24 px. Дисклеймер — у тексті і на останньому слайді.</li><li>Колір проєкту — лише в логотипі проєкту та в матеріалах самого проєкту, якщо цього вимагає донор.</li></ul></div>
     <div class="card"><span class="lbl">Не можна</span><ul class="nope" style="margin-top:12px"><li>Перефарбовувати, обрізати, ставити логотипи донорів на кольорове тло без плашки.</li><li>Фарбувати в кольори проєкту фони, маркери, мітки, графіки дописів фонду.</li><li>Змішувати кольори проєкту з фірмовими акцентами.</li><li>Публікувати проєктний допис без перевірки вимог угоди.</li></ul></div>
   </div>
   <p class="more rv"><a href="brandbook.html#cobrand">Детальніше в брендбуці →</a></p>
@@ -545,14 +599,84 @@ footer a{color:var(--mol)}
   </div>
 </div></section>
 
+<!-- CHARTS -->
+<section class="s" id="charts"><div class="wrap">
+  <div class="sh rv"><span class="lbl">12 · Інфографіка</span><h2>Графіки у фірмовому стилі</h2><p>Один графік — одна думка. Підписи поруч з даними, джерело і дата — внизу. Нижче — порядок кольорів для рядів даних, конструктор і тема для Excel та Google Таблиць.</p></div>
+  <div class="ser rv">
+    <button data-hex="#314C2C" style="background:#314C2C;color:#FBF6EC"><i>1</i><b>Ліс</b>#314C2C<span>Перший або єдиний ряд</span></button>
+    <button data-hex="#F6B93B" style="background:#F6B93B"><i>2</i><b>Соняшник</b>#F6B93B<span>Другий ряд</span></button>
+    <button data-hex="#A9D48E" style="background:#A9D48E"><i>3</i><b>Паросток</b>#A9D48E<span>Третій ряд</span></button>
+    <button data-hex="#66705F" style="background:#66705F;color:#fff"><i>4</i><b>Камінь</b>#66705F<span>Четвертий ряд</span></button>
+    <button data-hex="#D7E6FB" style="background:#D7E6FB"><i>5</i><b>Небо</b>#D7E6FB<span>П’ятий ряд, на білому — з обведенням</span></button>
+    <button data-hex="#DC643D" style="background:#DC643D;color:#1B2A18" class="hl"><i>!</i><b>Теракота</b>#DC643D<span>Тільки виділення одного значення</span></button>
+  </div>
+  <p class="hint rv" style="margin:10px 0 28px">Натисніть на колір, щоб скопіювати HEX. <button class="btn g s" id="chCopyAll" style="margin-left:8px">Копіювати всі 6</button></p>
+  <div class="bw">
+    <div class="bctl card">
+      <div><span class="lbl">Тип</span><div class="row" id="chType" style="margin-top:8px"></div></div>
+      <div><span class="lbl">Формат</span><div class="row" id="chFmt" style="margin-top:8px"></div></div>
+      <div><span class="lbl">Фон</span><div class="row" id="chBg" style="margin-top:8px"></div></div>
+      <label class="f">Заголовок<textarea id="chTitle" maxlength="90">Кому допомогли за рік</textarea></label>
+      <label class="f">Дані<textarea id="chData" rows="6">Гуманітарна допомога; 420
+Правова допомога; 310
+Ремонт житла; 260
+Соціальний захист; 180
+Ради ВПО; 90</textarea><span class="hint" style="font-weight:400">Кожен рядок: назва; число. Можна вставити два стовпчики з Excel.</span></label>
+      <div class="two"><label class="f">Одиниця<input type="text" id="chUnit" value="" placeholder="%, тис., грн" maxlength="8"></label><label class="f" id="chHlW">Виділити Теракотою<select id="chHl"></select></label></div>
+      <label class="f">Джерело і дата<input type="text" id="chSrc" value="Умовні дані для прикладу · листопад 2026"></label>
+      <label class="f" style="display:flex;align-items:center;gap:10px"><input type="checkbox" id="chLogo" checked style="width:20px;height:20px"> Логотип фонду</label>
+    </div>
+    <div class="bprev"><canvas id="chCv" width="1080" height="1350" aria-label="Попередній перегляд графіка"></canvas>
+      <div class="meta"><button class="btn p" id="chDl">Завантажити PNG</button><span class="hint" id="chInfo"></span></div>
+      <p class="hint" id="chWarn" style="margin-top:8px;color:var(--ter)"></p></div>
+  </div>
+  <div class="g3 rv" style="margin-top:32px">
+    <div class="card"><span class="lbl">Excel</span><h4 style="font:800 18px var(--fd);margin:8px 0">Шаблон з фірмовою темою</h4><p style="font-size:15px">Кольори і шрифти вбудовані в тему файла: нова діаграма одразу бере Ліс, Соняшник, Паросток. Усередині — смуги, ряди, кільце, лінія.</p><p style="font-size:15px;margin-top:8px">Щоб тема була в усіх файлах: Розмітка сторінки → Теми → Зберегти поточну тему.</p><a class="btn g s" style="margin-top:14px" href="charts/SSS_charts.xlsx" download>Завантажити .xlsx</a></div>
+    <div class="card"><span class="lbl">Google Таблиці</span><h4 style="font:800 18px var(--fd);margin:8px 0">Тема за 2 хвилини</h4><ol style="font-size:15px;padding-left:20px;margin:0;display:grid;gap:4px"><li>Формат → Тема → Налаштувати.</li><li>Шрифт: Onest (є в Google Fonts).</li><li>Текст #1B2A18, тло #FFFFFF.</li><li>Акценти 1–6: #314C2C, #F6B93B, #A9D48E, #66705F, #D7E6FB, #DC643D.</li><li>Посилання #314C2C. Готово.</li></ol><p style="font-size:15px;margin-top:8px">Або відкрийте .xlsx у Google Таблицях — кольори діаграм збережуться.</p></div>
+    <div class="card"><span class="lbl">Правила</span><ul style="margin-top:12px"><li>Підписи значень на графіку, легенда — лише якщо рядів більше трьох.</li><li>Осі й сітка — Пісок, підписи — Камінь, від 24 px на полотні 1080.</li><li>Тисячі пробілом: 543 370. Відсотки без пробілу: 64%.</li><li>Без 3D, тіней і градієнтів у стовпчиках. Кільце — до 5 секторів.</li></ul></div>
+  </div>
+</div></section>
+
+<!-- WEB -->
+<section class="s" id="web"><div class="wrap">
+  <div class="sh rv"><span class="lbl">13 · Сайт</span><h2>Веб-набір для WordPress</h2><p>CSS-змінні, типографіка, кнопки, посилання, картки, мітки й форми. Один файл стилів — і сайт у фірмовому стилі, без ручного підбору кольорів.</p></div>
+  <div class="webw rv">
+    <iframe src="web/demo.html" title="Приклад компонентів веб-набору" loading="lazy"></iframe>
+    <div style="display:grid;gap:16px;align-content:start">
+      <div class="card"><span class="lbl">Файли</span>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:12px"><a class="btn g s" href="web/sss-web.css" download>sss-web.css</a><a class="btn g s" href="web/theme.json" download>theme.json</a><a class="btn o s" href="web/demo.html" target="_blank" rel="noopener">Відкрити приклад</a></div>
+        <button class="btn p s" id="webCopy" style="margin-top:10px">Копіювати CSS-змінні</button></div>
+      <div class="card"><span class="lbl">Як підключити</span><ol style="font-size:15px;padding-left:20px;margin:12px 0 0;display:grid;gap:6px">
+        <li><b>Класична тема:</b> Вигляд → Налаштувати → Додатковий CSS → вставте вміст sss-web.css.</li>
+        <li><b>Блокова тема:</b> перенесіть налаштування з theme.json у theme.json дочірньої теми — палітра, шрифти й кнопки з’являться в редакторі.</li>
+        <li>У блоці «Кнопки» додайте клас <code>sss-btn sss-btn--primary</code> (Додатково → Додатковий CSS-клас).</li>
+        <li>Шрифти Manrope та Onest підтягуються з Google Fonts. Якщо сайт має працювати без Google — завантажте файли з папки fonts.</li></ol></div>
+    </div>
+  </div>
+  <div class="rl rv">
+    <div class="card"><span class="lbl">Правила</span><ul style="margin-top:12px"><li>Одна головна дія на екрані — кнопка Соняшник. Решта — Ліс або контурні.</li><li>Посилання в тексті завжди підкреслені. Колір — Ліс, на темному — Соняшник.</li><li>Текст від 16 px, основний — 18 px. Висота кнопок і полів — від 48 px.</li><li>Фокус клавіатури видно завжди: рамка Соняшник 3 px.</li><li>Картки — білі на Молоці, кольорові (Небо, Паросток, Ліс) — не більше однієї в ряду.</li></ul></div>
+    <div class="card"><span class="lbl">Не можна</span><ul class="nope" style="margin-top:12px"><li>Кнопки Теракотою, крім термінових повідомлень.</li><li>Білий текст на Соняшнику, Паростку, Небі.</li><li>Посилання без підкреслення, лише кольором.</li><li>Тіні, рамки і градієнти на кнопках.</li><li>Колір логотипа #214E34 для тексту, кнопок, фону.</li></ul></div>
+  </div>
+</div></section>
+
 <!-- CANVA -->
 <section class="s" id="canva"><div class="wrap">
-  <div class="sh rv"><span class="lbl">12 · Шаблони Canva</span><h2>44 шаблони, які відкриваються в Canva</h2><p>Кожен шаблон — PDF з редагованим текстом. Canva перетворює його на дизайн: міняйте заголовок, фото і цифри.</p></div>
+  <div class="sh rv"><span class="lbl">14 · Canva і шаблони</span><h2>Canva Brand Kit, шаблони і презентації</h2><p>Найнадійніше — налаштувати Brand Kit у командному акаунті фонду й ділитися шаблонами посиланням. PDF-шаблони нижче — запасний варіант, щоб швидко створити ці шаблони вперше.</p></div>
+  <div class="g3 rv">
+    <div class="card"><span class="lbl">Крок 1 · Акаунт</span><h4 style="font:800 18px var(--fd);margin:8px 0">Canva for Nonprofits</h4><p style="font-size:15px">Благодійні організації можуть безкоштовно отримати командні функції Canva. Заявку подає відповідальна людина від фонду на сторінці Canva for Nonprofits, з документами про реєстрацію. Усі SMM і дизайнери працюють в одній команді фонду, а не в особистих акаунтах.</p></div>
+    <div class="card"><span class="lbl">Крок 2 · Brand Kit</span><h4 style="font:800 18px var(--fd);margin:8px 0">Налаштувати один раз</h4><ul class="ul" style="margin-top:6px;font-size:15px"><li><b>Логотипи:</b> SVG або PNG з папки logo (повний, символ, англійський — у кольорах original і moloko).</li><li><b>Кольори:</b> текст із файла colors/canva-brand-kit.txt — назви й HEX.</li><li><b>Шрифти:</b> завантажте Manrope і Onest із папки fonts; задайте стилі: заголовок Manrope ExtraBold, підзаголовок Manrope Bold, текст Onest.</li><li>Закрийте редагування Brand Kit для всіх, крім відповідальних.</li></ul><button class="btn g s" id="cvKit" style="margin-top:12px">Копіювати кольори для Canva</button></div>
+    <div class="card"><span class="lbl">Крок 3 · Шаблони</span><h4 style="font:800 18px var(--fd);margin:8px 0">Спільні посилання</h4><ul class="ul" style="margin-top:6px;font-size:15px"><li>Створіть шаблон рубрики один раз (з PDF нижче або з нуля) і перевірте за чеклістом.</li><li>Опублікуйте його в команді як шаблон бренду.</li><li>Посилання на шаблони зберігайте в одній таблиці: рубрика, формат, посилання, хто відповідає.</li><li>Колеги відкривають шаблон — і отримують копію, оригінал не змінюється.</li></ul></div>
+  </div>
+  <div class="g3 rv" style="margin-top:16px">
+    <div class="card sp2" style="background:var(--neb)"><span class="lbl" style="color:var(--gly)">Важливо про PDF-імпорт</span><p style="font-size:15px;margin-top:8px">Canva перетворює PDF на дизайн, але може замінити шрифт, розбити рядок на окремі слова або зсунути текст. Після імпорту перевірте шрифти й відстані, виправте і лише тоді публікуйте як шаблон команди. Для щоденної роботи використовуйте шаблони з посилань, а не PDF.</p></div>
+    <div class="card"><span class="lbl">PowerPoint</span><h4 style="font:800 18px var(--fd);margin:8px 0">Шаблон презентації 16:9</h4><p style="font-size:15px">Тема з кольорами й шрифтами, макети: обкладинка, розділ, тези, цифри, графік, текст і фото, цитата, фінал з плашкою донорів. Працює і в Google Презентаціях.</p><a class="btn g s" style="margin-top:12px" href="templates/pptx/SSS_presentation_16x9.pptx" download>Завантажити .pptx</a></div>
+  </div>
+  <h3 class="rv" style="font:800 24px var(--fd);margin:40px 0 8px">PDF-шаблони для першого налаштування</h3>
   <div class="steps rv">
-    <div>Завантажте шрифти Manrope і Onest у Canva: Бренд → Шрифти → Завантажити.</div>
+    <div>Встановіть шрифти Manrope і Onest у Brand Kit.</div>
     <div>Завантажте PDF шаблону нижче.</div>
     <div>У Canva: Створити дизайн → Імпортувати файл → оберіть PDF.</div>
-    <div>Замініть текст і перетягніть своє фото на заглушку. Експорт: PNG.</div>
+    <div>Перевірте текст, збережіть як шаблон команди й поділіться посиланням.</div>
   </div>
   <div class="row rv" id="tf" style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:18px"></div>
   <div class="tgrid" id="tgrid"></div>
@@ -560,7 +684,7 @@ footer a{color:var(--mol)}
 
 <!-- NAME -->
 <section class="s" id="name"><div class="wrap">
-  <div class="sh rv"><span class="lbl">13 · Назва і текст</span><h2>Як правильно написати назву і текст</h2><p>Оберіть, що ви пишете, і скопіюйте правильну форму. Юридичну назву — для документів і підпису під заявами, скорочені — для дописів і дисклеймерів.</p></div>
+  <div class="sh rv"><span class="lbl">15 · Назва і текст</span><h2>Як правильно написати назву і текст</h2><p>Оберіть, що ви пишете, і скопіюйте правильну форму. Юридичну назву — для документів і підпису під заявами, скорочені — для дописів і дисклеймерів.</p></div>
   <div class="nm rv">
     <div class="card" style="display:grid;gap:8px;align-content:start" id="nmCtx"></div>
     <div class="nmout" id="nmOut" aria-live="polite"></div>
@@ -574,7 +698,7 @@ footer a{color:var(--mol)}
 
 <!-- PREP -->
 <section class="s" id="prep"><div class="wrap">
-  <div class="sh rv"><span class="lbl">14 · Перед публікацією</span><h2>Назва файлу і чекліст</h2><p>Однакові назви файлів допомагають знаходити макети через рік. Чекліст займає хвилину і рятує від помилок у публічному просторі.</p></div>
+  <div class="sh rv"><span class="lbl">16 · Перед публікацією</span><h2>Назва файлу і чекліст</h2><p>Однакові назви файлів допомагають знаходити макети через рік. Чекліст займає хвилину і рятує від помилок у публічному просторі.</p></div>
   <div class="pw rv">
     <div class="card"><span class="lbl">Генератор назви файлу</span>
       <div class="two" style="margin-top:14px"><label class="f">Дата<input type="date" id="fnD"></label><label class="f">Формат<select id="fnN"><option>IG-post</option><option>IG-story</option><option>IG-carousel</option><option>FB-post</option><option>FB-link</option><option>LI-post</option><option>LI-doc</option><option>TG-post</option><option>slide</option><option>print</option></select></label>
@@ -593,8 +717,9 @@ footer a{color:var(--mol)}
   <div style="display:grid;gap:6px;text-align:right"><a href="brandbook.html">Повний брендбук</a><a href="docs/SSS_Brandbook_2.0.pdf" download>Брендбук PDF</a><a href="sss-brand-kit.zip" download>Усі файли ZIP</a><span>info@sss-ua.org</span></div>
 </div></footer>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
-<script src="assets/icons.js?v=2.6"></script>
-<script src="assets/logo.js?v=2.6"></script>
-<script src="assets/app.js?v=2.6"></script>
+<script src="assets/icons.js?v=2.7"></script>
+<script src="assets/logo.js?v=2.7"></script>
+<script src="assets/app.js?v=2.7"></script>
+<script src="assets/charts.js?v=2.7"></script>
 </body>
 </html>

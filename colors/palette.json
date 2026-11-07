@@ -1,72 +1,123 @@
 [
  {
+  "name": "Зелений логотипа",
+  "token": "logo-green",
+  "hex": "#214E34",
+  "role": "Тільки логотип",
+  "cmyk": "91 40 86 44",
+  "pantone": "3435 C",
+  "ral": "RAL 6005",
+  "tone": null,
+  "note": "тільки логотип; CMYK — з файлів дизайнера"
+ },
+ {
   "name": "Ліс",
   "token": "lis",
   "hex": "#314C2C",
   "role": "Ключовий",
-  "tone": "#3D5C37"
- },
- {
-  "name": "Молоко",
-  "token": "moloko",
-  "hex": "#FBF6EC",
-  "role": "Базовий фон",
-  "tone": "#F0E8D8"
+  "cmyk": "75 45 85 50",
+  "pantone": "350 C",
+  "ral": "RAL 6002",
+  "tone": "#3D5C37",
+  "note": "фони, жилети, банери"
  },
  {
   "name": "Глибина",
   "token": "glybyna",
   "hex": "#1B2A18",
   "role": "Текст",
-  "tone": "#2A3D26"
+  "cmyk": "80 55 90 70",
+  "pantone": "Black 3 C",
+  "ral": "RAL 6009",
+  "tone": "#2A3D26",
+  "note": "текст"
+ },
+ {
+  "name": "Молоко",
+  "token": "moloko",
+  "hex": "#FBF6EC",
+  "role": "Базовий фон",
+  "cmyk": "0 2 6 1",
+  "pantone": "—",
+  "ral": "RAL 9001",
+  "tone": "#F0E8D8",
+  "note": "у друку — теплий білий папір"
  },
  {
   "name": "Соняшник",
   "token": "sonyashnyk",
   "hex": "#F6B93B",
-  "role": "Акцент · допомога",
-  "tone": "#EBA92A"
+  "role": "Акцент · гуманітарна допомога",
+  "cmyk": "0 30 85 0",
+  "pantone": "7409 C",
+  "ral": "RAL 1028",
+  "tone": "#EBA92A",
+  "note": ""
  },
  {
   "name": "Теракота",
   "token": "terakota",
   "hex": "#DC643D",
   "role": "Акцент · терміново",
-  "tone": "#CE5631"
+  "cmyk": "5 72 85 0",
+  "pantone": "7578 C",
+  "ral": "RAL 2010",
+  "tone": "#CE5631",
+  "note": ""
  },
  {
   "name": "Паросток",
   "token": "parostok",
   "hex": "#A9D48E",
   "role": "Акцент · громади",
-  "tone": "#98C77C"
+  "cmyk": "38 0 55 0",
+  "pantone": "358 C",
+  "ral": "RAL 6019",
+  "tone": "#98C77C",
+  "note": ""
  },
  {
   "name": "Небо",
   "token": "nebo",
   "hex": "#D7E6FB",
   "role": "Акцент · права",
-  "tone": "#C6D9F4"
+  "cmyk": "15 5 0 0",
+  "pantone": "656 C",
+  "ral": "—",
+  "tone": "#C6D9F4",
+  "note": "лише друк на папері"
  },
  {
   "name": "Камінь",
   "token": "kamin",
   "hex": "#66705F",
   "role": "Другорядний текст",
-  "tone": null
+  "cmyk": "55 40 60 30",
+  "pantone": "417 C",
+  "ral": "RAL 7009",
+  "tone": null,
+  "note": ""
  },
  {
   "name": "Пісок",
   "token": "pisok",
   "hex": "#E6DFD0",
   "role": "Лінії",
-  "tone": null
+  "cmyk": "8 10 18 0",
+  "pantone": "7527 C",
+  "ral": "RAL 1013",
+  "tone": null,
+  "note": ""
  },
  {
   "name": "Білий",
   "token": "white",
   "hex": "#FFFFFF",
   "role": "Плашки",
-  "tone": null
+  "cmyk": "0 0 0 0",
+  "pantone": "—",
+  "ral": "RAL 9016",
+  "tone": null,
+  "note": ""
  }
 ]

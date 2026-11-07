@@ -1,7 +1,7 @@
-/* build 2.6 */
+/* build 2.7 */
 (() => {
 const $ = id => document.getElementById(id);
-const C = {les:'#314C2C',gly:'#1B2A18',mol:'#FBF6EC',wht:'#FFFFFF',son:'#F6B93B',ter:'#DC643D',par:'#A9D48E',neb:'#D7E6FB',kam:'#66705F',pis:'#E6DFD0'};
+const LG='#214E34';const C = {les:'#314C2C',gly:'#1B2A18',mol:'#FBF6EC',wht:'#FFFFFF',son:'#F6B93B',ter:'#DC643D',par:'#A9D48E',neb:'#D7E6FB',kam:'#66705F',pis:'#E6DFD0'};
 const RM = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 /* ---------- utils ---------- */
@@ -19,19 +19,19 @@ function chips(el,items,cur,on){el.innerHTML=items.map(([v,t])=>`<button class="
 /* ---------- logo ---------- */
 const LP={};
 function logoPaths(kind){if(!LP[kind])LP[kind]=LOGO[kind].p.map(([d,tx,ty])=>({p:new Path2D(d),tx,ty}));return LP[kind]}
-function logoSvgInner(kind){const L=LOGO[kind];return L.p.map(([d,tx,ty])=>`<path fill-rule="evenodd" transform="translate(${tx} ${ty})" d="${d}"/>`).join('')}
+function logoSvgInner(kind){const L=LOGO[kind];return L.p.map(([d,tx,ty])=>`<path transform="translate(${tx} ${ty})" d="${d}"/>`).join('')}
 function renderLogo(el,kind){const L=LOGO[kind];el.setAttribute('viewBox',`0 0 ${L.w} ${L.h}`);el.innerHTML=logoSvgInner(kind);if(!el.style.width&&!el.classList.contains('lgs'))el.style.aspectRatio=`${L.w}/${L.h}`}
 document.querySelectorAll('svg.lgsvg').forEach(el=>renderLogo(el,el.dataset.kind));
-function drawLogo(ctx,kind,x,y,h,color){const L=LOGO[kind],k=h/L.h;ctx.save();ctx.translate(x,y);ctx.scale(k,k);ctx.fillStyle=color;logoPaths(kind).forEach(o=>{ctx.save();ctx.translate(o.tx,o.ty);ctx.fill(o.p,'evenodd');ctx.restore()});ctx.restore();return L.w*k}
+function drawLogo(ctx,kind,x,y,h,color){if(color===C.les)color=LG;const L=LOGO[kind],k=h/L.h;ctx.save();ctx.translate(x,y);ctx.scale(k,k);ctx.fillStyle=color;logoPaths(kind).forEach(o=>{ctx.save();ctx.translate(o.tx,o.ty);ctx.fill(o.p);ctx.restore()});ctx.restore();return L.w*k}
 
-const LBG=[['Молоко',C.mol,C.les,'Основний варіант для більшості матеріалів.'],['Білий',C.wht,C.les,'Документи, плашки на фото, матеріали партнерів.'],['Ліс',C.les,C.mol,'Обкладинки, презентації, мерч.'],['Глибина',C.gly,C.mol,'Темні фони, відео.'],['Соняшник',C.son,C.les,'Рубрика «Допомога».'],['Паросток',C.par,C.les,'Громади, подяки.'],['Небо',C.neb,C.les,'Аналітика, правова тема.'],['Теракота',C.ter,C.mol,'Тільки термінові повідомлення.']];
+const LBG=[['Молоко',C.mol,LG,'Основний варіант для більшості матеріалів.'],['Білий',C.wht,LG,'Документи, плашки на фото, матеріали партнерів.'],['Ліс',C.les,C.mol,'Обкладинки, презентації, мерч.'],['Глибина',C.gly,C.mol,'Темні фони, відео.'],['Соняшник',C.son,LG,'Рубрика «Допомога».'],['Паросток',C.par,LG,'Громади, подяки.'],['Небо',C.neb,LG,'Аналітика, правова тема.'],['Теракота',C.ter,C.mol,'Тільки термінові повідомлення.']];
 let lgKind='ua',lgI=0;
 const lgSvg=$('lgSvg'),lgStage=$('lgStage');
 $('lgBg').innerHTML=LBG.map(([n,b,f],i)=>`<button data-i="${i}" aria-pressed="${i===0}" title="${n}" style="background:${b};color:${f}">Aa</button>`).join('');
-function lgUpdate(){const [n,b,f,note]=LBG[lgI];lgStage.style.background=b;lgSvg.style.fill=f;renderLogo(lgSvg,lgKind);lgStage.classList.toggle('sym',lgKind==='sym');$('lgNote').textContent=`${n}: логотип ${f===C.les?'Ліс':'Молоко'}. ${note}`}
+function lgUpdate(){const [n,b,f,note]=LBG[lgI];lgStage.style.background=b;lgSvg.style.fill=f;renderLogo(lgSvg,lgKind);lgStage.classList.toggle('sym',lgKind==='sym');$('lgNote').textContent=`${n}: логотип ${f===LG?'зелений логотипа #214E34':'Молоко'}. ${note}`}
 $('lgBg').onclick=e=>{const b=e.target.closest('[data-i]');if(!b)return;press($('lgBg'),b);lgI=+b.dataset.i;lgUpdate()};
 $('lgKind').onclick=e=>{const b=e.target.closest('[data-v]');if(!b)return;press($('lgKind'),b);lgKind=b.dataset.v;lgUpdate()};
-const cName=hx=>({[C.les]:'lis',[C.mol]:'moloko'}[hx]||'color');
+const cName=hx=>({[LG]:'original',[C.mol]:'moloko'}[hx]||'color');
 $('lgSvgDl').onclick=()=>{const L=LOGO[lgKind],f=LBG[lgI][2];saveBlob(new Blob([`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${L.w} ${L.h}"><g fill="${f}">${logoSvgInner(lgKind)}</g></svg>`],{type:'image/svg+xml'}),`sss-${lgKind==='sym'?'symbol':'logo-'+lgKind}-${cName(f)}.svg`)};
 $('lgPngDl').onclick=()=>{const L=LOGO[lgKind],W=lgKind==='sym'?1200:2000,H=Math.round(W*L.h/L.w),cv=document.createElement('canvas');cv.width=W;cv.height=H;drawLogo(cv.getContext('2d'),lgKind,0,0,H,LBG[lgI][2]);cv.toBlob(b=>saveBlob(b,`sss-${lgKind==='sym'?'symbol':'logo-'+lgKind}-${cName(LBG[lgI][2])}.png`))};
 lgUpdate();
@@ -127,7 +127,7 @@ const TH={
  son:{n:'Соняшник',bg:C.son,tx:C.gly,sub:'#3A3221',cb:C.mol,cf:C.gly,hero:C.gly,tone:'#EBA92A',logo:C.gly,il:C.gly,ia:C.mol},
  neb:{n:'Небо',bg:C.neb,tx:C.les,sub:'#3A4637',cb:C.wht,cf:C.les,hero:C.les,tone:'#C6D9F4',logo:C.les,il:C.les,ia:C.wht},
  par:{n:'Паросток',bg:C.par,tx:C.les,sub:'#2E4128',cb:C.les,cf:C.mol,hero:C.les,tone:'#98C77C',logo:C.les,il:C.les,ia:C.mol},
- ter:{n:'Теракота',bg:C.ter,tx:C.mol,sub:C.mol,cb:C.mol,cf:C.ter,hero:C.mol,tone:'#CE5631',logo:C.mol,il:C.mol,ia:C.son,plate:true}};
+ ter:{n:'Теракота',bg:C.ter,tx:C.mol,sub:C.mol,cb:C.mol,cf:C.gly,hero:C.mol,tone:'#CE5631',logo:C.mol,il:C.mol,ia:C.son,plate:true}};
 const DEF={photo:['Подія','Тренінг для фахівців соцзахисту: як підтримати переселенців','Полтава · листопад 2026'],num:['Допомога','людей отримали гуманітарну допомогу','з початку повномасштабного вторгнення'],icon:['Важливо','Як отримати безоплатну правову консультацію','Заповніть форму на sss-ua.org'],plate:['9 листопада','З Днем української писемності та мови',''],event:['Анонс','Вебінар: як переселенцям отримати житлову допомогу',''],word:['Допомога','Соціальні пральні для громад Сумщини','Чисто, тепло і поруч з домом']};
 const ST=store.get('sss-builder',{});
 const B={fmt:ST.fmt||'ig',tpl:ST.tpl||'photo',th:ST.th||'lis',logo:'ua',photo:null,logos:[{t:'sss'}]};
@@ -175,7 +175,7 @@ function wrap(text,maxW){const out=[];String(text).split('\n').forEach(par=>{con
 function fit(text,{w=800,fam=FD,max,min,maxW,lines=3,ls='-0.02em'}){let sz=max,L;for(;sz>=min;sz-=2){ctx.font=`${w} ${sz}px ${fam}`;setLS(ls);L=wrap(text,maxW);if(L.length<=lines)return{sz,L,ok:true}}ctx.font=`${w} ${min}px ${fam}`;L=wrap(text,maxW);return{sz:min,L:L.slice(0,lines),ok:false}}
 function text(L,x,y,sz,lh,color,{w=800,fam=FD,ls='-0.02em',hl=null}={}){ctx.font=`${w} ${sz}px ${fam}`;setLS(ls);ctx.fillStyle=color;ctx.textBaseline='alphabetic';L.forEach((t,i)=>ctx.fillText(t,x,y+sz*.86+i*sz*lh));return y+L.length*sz*lh}
 function rr(x,y,w,h,r){ctx.beginPath();ctx.roundRect?ctx.roundRect(x,y,w,h,r):ctx.rect(x,y,w,h)}
-function chip(t,x,y,s,bg,fg){if(!t)return y;ctx.font=`700 ${22*s}px ${FD}`;setLS('0.07em');const T=t.toUpperCase(),w=ctx.measureText(T).width+40*s,h=54*s;ctx.fillStyle=bg;rr(x,y,w,h,h/2);ctx.fill();ctx.fillStyle=fg;ctx.textBaseline='middle';ctx.fillText(T,x+20*s,y+h/2+1*s);ctx.textBaseline='alphabetic';return y+h}
+function chip(t,x,y,s,bg,fg){if(!t)return y;ctx.font=`700 ${24*s}px ${FD}`;setLS('0.07em');const T=t.toUpperCase(),w=ctx.measureText(T).width+40*s,h=54*s;ctx.fillStyle=bg;rr(x,y,w,h,h/2);ctx.fill();ctx.fillStyle=fg;ctx.textBaseline='middle';ctx.fillText(T,x+20*s,y+h/2+1*s);ctx.textBaseline='alphabetic';return y+h}
 function photo(x,y,w,h,r=0){ctx.save();rr(x,y,w,h,r);ctx.clip();if(B.photo){const im=B.photo,k=Math.max(w/im.width,h/im.height),iw=im.width*k,ih=im.height*k;ctx.drawImage(im,x+(w-iw)/2,y+(h-ih)/2,iw,ih)}else{const g=ctx.createRadialGradient(x+w*.35,y+h*.3,0,x+w*.5,y+h*.5,Math.max(w,h)*.75);g.addColorStop(0,'#d9d2c0');g.addColorStop(.4,'#9aa58a');g.addColorStop(.75,'#55684a');g.addColorStop(1,'#2f3d2a');ctx.fillStyle=g;ctx.fillRect(x,y,w,h);ctx.font=`700 ${Math.max(14,h*.035)}px ${FD}`;setLS('0.08em');ctx.fillStyle='rgba(255,255,255,.85)';ctx.textBaseline='middle';ctx.textAlign='center';ctx.fillText('ДОДАЙТЕ ФОТО',x+w/2,y+h/2);ctx.textAlign='left';ctx.textBaseline='alphabetic'}ctx.restore()}
 function logo(x,y,s,color,plate){const kind=B.logo,L=B.logos,n=L.length;
   if(B.plate){const im=B.plate.img,maxW=cv.width-2*x;let h=Math.min((cv.width/cv.height>1.3?80:110)*s,im.height),w=h*im.width/im.height;if(w>maxW){w=maxW;h=w*im.height/im.width}ctx.drawImage(im,x,y,w,h);return y+h}
@@ -237,7 +237,7 @@ function draw(){
     const sf=sub?fit(sub,{w:500,fam:FT,max:28*s,min:24*s,maxW:pw-2*pad,lines:2,ls:'0'}):null;
     const ph=pad*2+(chipT?40*s:0)+f.L.length*f.sz*1.05+(sf?16*s+sf.L.length*sf.sz*1.35:0);const py=(mode==='tall'?bot:H-m)-ph;
     ctx.fillStyle=C.mol;rr(m,py,pw,ph,24*s);ctx.fill();let y=py+pad;
-    if(chipT){ctx.font=`700 ${22*s}px ${FD}`;setLS('0.07em');ctx.fillStyle=C.ter;ctx.fillText(chipT.toUpperCase(),m+pad,y+18*s);y+=40*s}
+    if(chipT){ctx.font=`700 ${24*s}px ${FD}`;setLS('0.07em');ctx.fillStyle=C.les;ctx.fillText(chipT.toUpperCase(),m+pad,y+18*s);y+=40*s}
     y=text(f.L,m+pad,y,f.sz,1.05,C.gly);if(sf)text(sf.L,m+pad,y+16*s,sf.sz,1.35,C.kam,{w:500,fam:FT,ls:'0'})
   }
   if(tp==='event'){
@@ -327,4 +327,5 @@ document.querySelectorAll('section.s').forEach(s=>so.observe(s));
 /* draw after fonts */
 Promise.all(['800 60px Manrope','700 22px Manrope','500 30px Onest'].map(f=>document.fonts.load(f))).then(draw,draw);
 draw();
+window.SSS={C,LG,drawLogo,$,toast,copy,saveBlob};
 })();
