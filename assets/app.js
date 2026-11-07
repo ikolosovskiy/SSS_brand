@@ -138,7 +138,7 @@ const mqHtml=mqIds.map((id,i)=>iconSvg(id,i%2?C.gly:C.les,i%2?C.mol:C.wht)).join
 
 /* ---------- builder ---------- */
 const FMT={ig:[1080,1350,'4:5 · Instagram, Facebook'],story:[1080,1920,'9:16 · Сторіс'],sq:[1080,1080,'1:1 · Квадрат'],link:[1200,630,'1200×630 · Посилання'],tg:[1280,720,'16:9 · Telegram']};
-const TPL={photo:'Фото + текст',num:'Цифра-герой',icon:'Іконка-герой',plate:'Фото + плашка',event:'Анонс',word:'Слово тон-в-тон'};
+const TPL={photo:'Фото + текст',num:'Цифра-герой',icon:'Іконка-герой',plate:'Фото + плашка',event:'Анонс',word:'Слово тон-в-тон',quote:'Цитата'};
 const TH={
  lis:{n:'Ліс',bg:C.les,tx:C.mol,sub:'#C9D2C2',cb:C.son,cf:C.gly,hero:C.son,tone:'#3D5C37',logo:C.mol,il:C.mol,ia:C.son},
  mol:{n:'Молоко',bg:C.mol,tx:C.les,sub:C.kam,cb:C.les,cf:C.mol,hero:C.les,tone:'#F0E8D8',logo:C.les,il:C.les,ia:C.son},
@@ -146,7 +146,7 @@ const TH={
  neb:{n:'Небо',bg:C.neb,tx:C.les,sub:'#3A4637',cb:C.wht,cf:C.les,hero:C.les,tone:'#C6D9F4',logo:C.les,il:C.les,ia:C.wht},
  par:{n:'Паросток',bg:C.par,tx:C.les,sub:'#2E4128',cb:C.les,cf:C.mol,hero:C.les,tone:'#98C77C',logo:C.les,il:C.les,ia:C.mol},
  ter:{n:'Теракота',bg:C.ter,tx:C.mol,sub:C.mol,cb:C.mol,cf:C.gly,hero:C.mol,tone:'#CE5631',logo:C.mol,il:C.mol,ia:C.son,plate:true}};
-const DEF={photo:['Подія','Тренінг для фахівців соцзахисту: як підтримати переселенців','Полтава · листопад 2026'],num:['Допомога','людей отримали гуманітарну допомогу','з початку повномасштабного вторгнення'],icon:['Важливо','Як отримати безоплатну правову консультацію','Заповніть форму на sss-ua.org'],plate:['9 листопада','З Днем української писемності та мови',''],event:['Анонс','Вебінар: як переселенцям отримати житлову допомогу',''],word:['Допомога','Соціальні пральні для громад Сумщини','Чисто, тепло і поруч з домом']};
+const DEF={quote:['Цитата','Коли ми отримали ключі від відремонтованого житла, вперше за довгий час відчули, що ми вдома',''],photo:['Подія','Тренінг для фахівців соцзахисту: як підтримати переселенців','Полтава · листопад 2026'],num:['Допомога','людей отримали гуманітарну допомогу','з початку повномасштабного вторгнення'],icon:['Важливо','Як отримати безоплатну правову консультацію','Заповніть форму на sss-ua.org'],plate:['9 листопада','З Днем української писемності та мови',''],event:['Анонс','Вебінар: як переселенцям отримати житлову допомогу',''],word:['Допомога','Соціальні пральні для громад Сумщини','Чисто, тепло і поруч з домом']};
 const ST=store.get('sss-builder',{});
 const B={fmt:ST.fmt||'ig',tpl:ST.tpl||'photo',th:ST.th||'lis',logo:'ua',photo:null,logos:[{t:'sss'}]};
 const cv=$('cv'),ctx=cv.getContext('2d');
@@ -163,7 +163,7 @@ $('bGrad').onclick=e=>{const b=e.target.closest('[data-g]');if(!b)return;press($
 
 $('bLogo').onclick=e=>{const b=e.target.closest('[data-v]');if(!b)return;press($('bLogo'),b);B.logo=b.dataset.v;renderLogos();draw()};
 $('bIcon').innerHTML=ICONS.filter(i=>i[1]!=='arrow').map(i=>`<option value="${i[1]}">${i[2]}</option>`).join('');$('bIcon').value='legal';
-['bChip','bHead','bSub','bBig','bIcon','bDate','bTime','bPlace'].forEach(id=>$(id).addEventListener('input',()=>draw()));
+['bChip','bHead','bSub','bBig','bIcon','bDate','bTime','bPlace','bQAuth','bQRole'].forEach(id=>$(id).addEventListener('input',()=>draw()));
 function loadImg(file,cb){if(!file)return cb(null);const url=URL.createObjectURL(file);const im=new Image();im.onload=()=>cb(im);im.onerror=()=>{toast('Не вдалося відкрити файл');cb(null)};im.src=url}
 function upl(id,key){const inp=$(id),nm=$(id+'N'),x=$(id+'X');
   inp.onchange=e=>{const f=e.target.files[0];loadImg(f,im=>{B[key]=im;nm.textContent=im?f.name:'Файл не обрано';x.hidden=!im;draw()})};
@@ -194,7 +194,7 @@ function fit(text,{w=800,fam=FD,max,min,maxW,lines=3,ls='-0.02em'}){let sz=max,L
 function text(L,x,y,sz,lh,color,{w=800,fam=FD,ls='-0.02em',hl=null}={}){ctx.font=`${w} ${sz}px ${fam}`;setLS(ls);ctx.fillStyle=color;ctx.textBaseline='alphabetic';L.forEach((t,i)=>ctx.fillText(t,x,y+sz*.86+i*sz*lh));return y+L.length*sz*lh}
 function rr(x,y,w,h,r){ctx.beginPath();ctx.roundRect?ctx.roundRect(x,y,w,h,r):ctx.rect(x,y,w,h)}
 function chip(t,x,y,s,bg,fg){if(!t)return y;ctx.font=`700 ${24*s}px ${FD}`;setLS('0.07em');const T=t.toUpperCase(),w=ctx.measureText(T).width+40*s,h=54*s;ctx.fillStyle=bg;rr(x,y,w,h,h/2);ctx.fill();ctx.fillStyle=fg;ctx.textBaseline='middle';ctx.fillText(T,x+20*s,y+h/2+1*s);ctx.textBaseline='alphabetic';return y+h}
-function photo(x,y,w,h,r=0){ctx.save();rr(x,y,w,h,r);ctx.clip();if(B.photo){const im=B.photo,k=Math.max(w/im.width,h/im.height),iw=im.width*k,ih=im.height*k;ctx.drawImage(im,x+(w-iw)/2,y+(h-ih)/2,iw,ih)}else{const g=ctx.createRadialGradient(x+w*.35,y+h*.3,0,x+w*.5,y+h*.5,Math.max(w,h)*.75);g.addColorStop(0,'#d9d2c0');g.addColorStop(.4,'#9aa58a');g.addColorStop(.75,'#55684a');g.addColorStop(1,'#2f3d2a');ctx.fillStyle=g;ctx.fillRect(x,y,w,h);ctx.font=`700 ${Math.max(14,h*.035)}px ${FD}`;setLS('0.08em');ctx.fillStyle='rgba(255,255,255,.85)';ctx.textBaseline='middle';ctx.textAlign='center';ctx.fillText('ДОДАЙТЕ ФОТО',x+w/2,y+h/2);ctx.textAlign='left';ctx.textBaseline='alphabetic'}ctx.restore()}
+function photo(x,y,w,h,r=0,fy=.5){ctx.save();rr(x,y,w,h,r);ctx.clip();if(B.photo){const im=B.photo,k=Math.max(w/im.width,h/im.height),iw=im.width*k,ih=im.height*k;ctx.drawImage(im,x+(w-iw)/2,y+(h-ih)*fy,iw,ih)}else{const g=ctx.createRadialGradient(x+w*.35,y+h*.3,0,x+w*.5,y+h*.5,Math.max(w,h)*.75);g.addColorStop(0,'#d9d2c0');g.addColorStop(.4,'#9aa58a');g.addColorStop(.75,'#55684a');g.addColorStop(1,'#2f3d2a');ctx.fillStyle=g;ctx.fillRect(x,y,w,h);ctx.font=`700 ${Math.max(14,h*.035)}px ${FD}`;setLS('0.08em');ctx.fillStyle='rgba(255,255,255,.85)';ctx.textBaseline='middle';ctx.textAlign='center';ctx.fillText('ДОДАЙТЕ ФОТО',x+w/2,y+h/2);ctx.textAlign='left';ctx.textBaseline='alphabetic'}ctx.restore()}
 function logo(x,y,s,color,plate){const kind=B.logo,L=B.logos,n=L.length;
   if(B.plate){const im=B.plate.img,maxW=cv.width-2*x;let h=Math.min((cv.width/cv.height>1.3?80:110)*s,im.height),w=h*im.width/im.height;if(w>maxW){w=maxW;h=w*im.height/im.width}ctx.drawImage(im,x,y,w,h);return y+h}
   if(!n)return y;
@@ -212,6 +212,24 @@ function logo(x,y,s,color,plate){const kind=B.logo,L=B.logos,n=L.length;
   return y+PH}
 function bigFit(t,maxW,maxH,lines){let sz=100;ctx.font=`800 ${sz}px ${FD}`;setLS('-0.06em');const wmax=Math.max(...lines.map(l=>ctx.measureText(l).width));sz=Math.min(100*maxW/wmax,maxH/(lines.length*.8+.1));return sz}
 let warn='';
+
+const QG={lis:[C.son,C.ter],mol:[C.son,C.ter],neb:[C.son,C.ter],son:[C.les,C.gly],par:[C.les,C.gly],ter:[C.son,'#FBE3A6']};
+function glassGlyph(ch,x,y,size,T,th){const W=cv.width,H=cv.height;ctx.font=`800 ${size}px ${FD}`;setLS('0');const mt=ctx.measureText(ch),asc=mt.actualBoundingBoxAscent,desc=mt.actualBoundingBoxDescent,gx=x+mt.actualBoundingBoxLeft,gb=y+asc,gh=asc+desc,gw=mt.actualBoundingBoxLeft+mt.actualBoundingBoxRight;
+  const d=size*.07,[c1,c2]=QG[th]||QG.lis,dark=_lumH(T.bg)<.35;
+  const mk=()=>{const o=document.createElement('canvas');o.width=W;o.height=H;const c=o.getContext('2d');c.font=ctx.font;return [o,c]};
+  const grad=c=>{const g=c.createLinearGradient(gx,gb-asc,gx+gw,gb+desc);g.addColorStop(0,c1);g.addColorStop(1,c2);return g};
+  const [o1,c1x]=mk();c1x.fillStyle=grad(c1x);c1x.fillText(ch,gx+d,gb-d);c1x.globalCompositeOperation='destination-out';c1x.fillText(ch,gx,gb);ctx.drawImage(o1,0,0);
+  const [o2,c2x]=mk();if('filter' in c2x)c2x.filter=`blur(${(size*.035).toFixed(1)}px)`;c2x.fillStyle=grad(c2x);c2x.fillText(ch,gx+d,gb-d);c2x.filter='none';c2x.globalCompositeOperation='source-over';c2x.fillStyle=`rgba(255,255,255,${dark?.3:.55})`;c2x.fillRect(0,0,W,H);c2x.globalCompositeOperation='destination-in';c2x.fillStyle='#000';c2x.fillText(ch,gx,gb);ctx.drawImage(o2,0,0);
+  const g=ctx.createLinearGradient(gx,gb-asc,gx+gw,gb+desc);g.addColorStop(0,'rgba(255,255,255,1)');g.addColorStop(.5,'rgba(255,255,255,.15)');g.addColorStop(1,'rgba(255,255,255,.7)');ctx.strokeStyle=g;ctx.lineWidth=Math.max(1.5,size*.006);ctx.lineJoin='round';ctx.strokeText(ch,gx,gb);
+  return gb+desc}
+
+const QP=new Path2D('M0.08 0.88 C0.08 0.40 0.40 0.08 0.90 0.00 C0.64 0.13 0.52 0.30 0.52 0.47 A0.42 0.42 0 1 1 0.08 0.88 Z'),QW=2.12;
+function drawQuotes(x,y,h,th){const k=h/1.3,[c1,c2]=QG[th]||QG.lis;
+  [0,1.12].forEach((ox,i)=>{ctx.save();ctx.translate(x+ox*k,y);ctx.scale(k,k);
+    const g=ctx.createLinearGradient(0,0,1,1.3);g.addColorStop(0,i?c2:c1);g.addColorStop(1,i?c1:c2);
+    ctx.shadowColor='rgba(27,42,24,.28)';ctx.shadowBlur=h*.12;ctx.shadowOffsetY=h*.04;ctx.fillStyle=g;ctx.fill(QP);
+    ctx.shadowColor='transparent';const hl=ctx.createLinearGradient(0,0,.6,.9);hl.addColorStop(0,'rgba(255,255,255,.45)');hl.addColorStop(1,'rgba(255,255,255,0)');ctx.fillStyle=hl;ctx.save();ctx.clip(QP);ctx.beginPath();ctx.ellipse(.42,.62,.3,.22,-.6,0,Math.PI*2);ctx.fill();ctx.restore();
+    ctx.restore()})}
 function draw(){
   const [W,H]=FMT[B.fmt];cv.width=W;cv.height=H;const T=TH[B.th],tp=B.tpl;const paint=()=>{if(B.grad!=null){GR[B.grad].draw(ctx,W,H);gtex(W,H)}else{ctx.fillStyle=T.bg;ctx.fillRect(0,0,W,H)}};
   const mode=B.fmt==='story'?'tall':(W/H>1.3?'land':'port');
@@ -219,7 +237,7 @@ function draw(){
   const top=mode==='tall'?270*s:m, bot=mode==='tall'?H-340*s:H-m;
   const head=$('bHead').value.trim(),sub=$('bSub').value.trim(),chipT=$('bChip').value.trim(),big=$('bBig').value.trim();
   warn='';ctx.clearRect(0,0,W,H);
-  ['wBig','wIcon','wEv','wPhoto'].forEach(id=>$(id).hidden=true);
+  ['wBig','wIcon','wEv','wPhoto','wQuote'].forEach(id=>$(id).hidden=true);$('wSub').hidden=tp==='quote';$('bHeadL').textContent=tp==='quote'?'Текст цитати':'Заголовок';$('bHead').maxLength=tp==='quote'?220:90;if(tp==='quote'){$('wQuote').hidden=false;$('wPhoto').hidden=false}
   if(tp==='num'||tp==='word')$('wBig').hidden=false; if(tp==='icon')$('wIcon').hidden=false; if(tp==='event')$('wEv').hidden=false; if(tp==='photo'||tp==='plate')$('wPhoto').hidden=false;
   const H1=(maxW,lines=3,max=60,min=40,color=T.tx,x=m,y)=>{const f=fit(head,{max:max*s,min:min*s,maxW,lines});if(!f.ok)warn='Заголовок задовгий для цього формату: скоротіть його.';return text(f.L,x,y,f.sz,1.05,color)};
   const SUB=(maxW,y,x=m,color=T.sub,lines=2)=>{if(!sub)return y;const f=fit(sub,{w:500,fam:FT,max:30*s,min:24*s,maxW,lines,ls:'0'});
@@ -267,6 +285,37 @@ function draw(){
     let rx=mode==='land'?W*.62:m,ry=mode==='land'?m+130*s:y+40*s;const rs=mode==='land'?32*s:36*s;
     rows.forEach(([id,t])=>{drawIcon(ctx,id,rx,ry,rs*1.25,il,ia,1.7);const f=fit(t,{w:500,fam:FT,max:rs,min:24*s,maxW:(mode==='land'?W-rx-m:cw)-rs*1.7,lines:1,ls:'0'});text(f.L,rx+rs*1.7,ry+rs*.12,f.sz,1.3,tx,{w:500,fam:FT,ls:'0'});ry+=rs*1.75});
     if(!rows.length&&sub)SUB(cw,y+20*s);
+  }
+
+  if(tp==='quote'){
+    paint();const q=head.replace(/^[\s«"“„'‘]+|[\s»"”'’]+$/g,''),auth=$('bQAuth').value.trim(),role=$('bQRole').value.trim();
+    const land=mode==='land',sq=W===H;
+    // photo of the author — the main element
+    let pb;
+    if(land){photo(W*.52,0,W*.48,H,0,.3);pb=null}else{const ph=H*(mode==='tall'?.47:sq?.52:.6);photo(0,0,W,ph,0,.22);pb=ph}
+    if(!B.photo)warn='Додайте фото автора цитати.';
+    logo(m,mode==='tall'?top:m,s,land?T.logo:C.les,!land);
+    const cw=land?W*.52-2*m:W-2*m;
+    // attribution at the bottom
+    const nf=auth?fit(auth,{max:34*s,min:26*s,maxW:cw,lines:1,ls:'-0.01em'}):null;
+    const rf=role?fit(role,{w:500,fam:FT,max:26*s,min:24*s,maxW:cw,lines:2,ls:'0'}):null;
+    const tH=(nf?nf.sz*1.15:0)+(rf?8*s+rf.L.length*rf.sz*1.3:0),aY=bot-tH;
+    // big quote mark: one solid gradient glyph, straddling the photo edge
+    const Q=(land?420:mode==='tall'?600:sq?440:540)*s;ctx.font=`800 ${Q}px ${FD}`;setLS('0');
+    const mt=ctx.measureText('“'),asc=mt.actualBoundingBoxAscent,gh=asc+mt.actualBoundingBoxDescent,gw=mt.actualBoundingBoxLeft+mt.actualBoundingBoxRight;
+    const gTop=land?Math.max((mode==='tall'?top:m)+100*s,m+110*s):pb-gh*.5,gx=m+mt.actualBoundingBoxLeft-6*s,gb=gTop+asc;
+    const [q1,q2]=QG[B.th]||QG.lis;const gg=ctx.createLinearGradient(m,gTop,m+gw,gTop+gh);gg.addColorStop(0,q1);gg.addColorStop(1,q2);
+    ctx.fillStyle=gg;ctx.fillText('“',gx,gb);
+    if(chipT){ctx.font=`700 ${24*s}px ${FD}`;chip(chipT,m+gw+28*s,gTop+gh*(land?.5:.72)-27*s,s,T.cb,T.cf)}
+    let y=gTop+gh+(land?26:28)*s;
+    // quote text
+    const lim=aY-(nf||rf?58*s:0)-y,qmax=(land?52:mode==='tall'?66:sq?48:56)*s;let f;
+    for(let z=qmax;z>=30*s;z-=2*s){ctx.font=`700 ${z}px ${FD}`;setLS('-0.015em');const L=wrap(q||'Текст цитати',cw);f={sz:z,L,ok:L.length*z*1.18<=lim};if(f.ok)break}
+    if(!f.ok)warn='Цитата задовга для цього формату: скоротіть до 150–200 знаків.';
+    text(f.L,m,y,f.sz,1.18,T.tx,{w:700,ls:'-0.015em'});
+    if(nf||rf){const ac=B.th==='son'?C.les:B.th==='ter'?C.mol:C.son;ctx.fillStyle=ac;rr(m,aY-34*s,72*s,7*s,3.5*s);ctx.fill();
+      let ty=aY;if(nf)ty=text(nf.L,m,ty,nf.sz,1.15,T.tx,{ls:'-0.01em'});if(rf)text(rf.L,m,ty+8*s,rf.sz,1.3,T.sub,{w:500,fam:FT,ls:'0'})}
+    if(!auth)warn=warn||'Вкажіть автора цитати: ім’я та посаду.';
   }
   if(tp==='word'){
     paint();const wd=(big||'ВОДА').toUpperCase();
